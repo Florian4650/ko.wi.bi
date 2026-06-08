@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BWL-Fernstudium berufsbegleitend | KO·WI·BI seit 1948</title>
+    <meta name="description" content="Das kompakte BWL-Fernstudium für Führungskräfte und Unternehmer — berufsbegleitend, staatlich anerkannt, seit 1948. Bis zu 75 % staatlich förderbar." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f6f4ef;
+        --ink: #11130f;
+        --ink-2: #3c3f37;
+        --muted: #7a7c72;
+        --line: #1b1d17;
+        --card: #fffdf7;
+        --accent: #c8a96e;
+        --accent-dark: #a0813e;
+        --green: #2f7d3e;
+        --red: #c73838;
+        --chip: #efeadc;
+        --border: #d8d4c7;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+
+      /* ── UTILITY ── */
+      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+      .tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      /* ── NAV ── */
+      nav {
+        border-bottom: 1.5px solid var(--line);
+        background: var(--card);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 28px;
+        max-width: 1100px;
+        margin: 0 auto;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .logo span { color: var(--accent); }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .nav-links a:hover { color: var(--ink); }
+      .nav-cta {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--card) !important;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 10px 22px;
+        border: 1.5px solid var(--line);
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+      .nav-cta:hover { background: var(--accent-dark) !important; border-color: var(--accent-dark); }
+
+      /* ── HERO ── */
+      .hero {
+        border-bottom: 1.5px solid var(--line);
+        padding: 80px 0 64px;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero::before {
+        content: "1948";
+        position: absolute;
+        right: -20px; top: 10px;
+        font-family: "Instrument Serif", serif;
+        font-size: 240px;
+        line-height: 1;
+        color: var(--border);
+        opacity: 0.45;
+        pointer-events: none;
+        user-select: none;
+      }
+      .hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 28px;
+        position: relative;
+      }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .dot {
+        display: inline-block;
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        animation: pulse 2s infinite;
+        flex-shrink: 0;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.7); }
+      }
+      h1 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.92;
+        letter-spacing: -0.025em;
+        max-width: 820px;
+        margin-bottom: 32px;
+      }
+      h1 em { font-style: italic; color: var(--accent); }
+      .hero-sub {
+        font-size: 18px;
+        line-height: 1.65;
+        color: var(--ink-2);
+        max-width: 580px;
+        margin-bottom: 40px;
+      }
+      .hero-sub strong { color: var(--ink); }
+      .cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+      .btn-primary {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--card);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 16px 36px;
+        border: 1.5px solid var(--line);
+        transition: background 0.2s, transform 0.2s;
+      }
+      .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
+      .btn-ghost {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .btn-ghost:hover { color: var(--ink); }
+      .hero-badges {
+        display: flex;
+        gap: 10px;
+        margin-top: 48px;
+        flex-wrap: wrap;
+      }
+      .badge {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        background: var(--chip);
+        border: 1px solid var(--border);
+        color: var(--ink-2);
+      }
+      .badge.highlight {
+        background: var(--ink);
+        color: var(--accent);
+        border-color: var(--ink);
+      }
+
+      /* ── PRESS BAR ── */
+      .press-bar {
+        border-bottom: 1.5px solid var(--line);
+        padding: 22px 0;
+        background: var(--ink);
+      }
+      .press-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .press-lbl {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6b6d63;
+        white-space: nowrap;
+      }
+      .press-quotes {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+      .press-q {
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-size: 15px;
+        color: #c2beb2;
+        line-height: 1.4;
+      }
+      .press-q cite {
+        font-style: normal;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        display: block;
+        margin-top: 4px;
+      }
+
+      /* ── SECTIONS ── */
+      .section { padding: 80px 0; border-bottom: 1.5px solid var(--line); }
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 48px;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      h2 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-size: clamp(34px, 4.5vw, 54px);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      h2 em { font-style: italic; color: var(--accent); }
+
+      /* ── PROBLEM ── */
+      .pain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: 1.5px solid var(--line);
+      }
+      .pain {
+        padding: 32px 28px;
+        border-right: 1px solid var(--border);
+        background: var(--card);
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: relative;
+      }
+      .pain:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 var(--line); z-index: 1; }
+      .pain:last-child { border-right: none; }
+      .pain .icon { font-size: 28px; margin-bottom: 16px; }
+      .pain h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+      .pain p { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+      /* ── FOR WHOM ── */
+      .for-whom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .audience {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 36px 32px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .audience:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--line); }
+      .audience::after {
+        content: attr(data-num);
+        position: absolute;
+        right: -10px; bottom: -20px;
+        font-family: "Instrument Serif", serif;
+        font-size: 120px;
+        color: var(--border);
+        opacity: 0.4;
+        line-height: 1;
+        pointer-events: none;
+      }
+      .audience .tag { margin-bottom: 12px; display: block; }
+      .audience h3 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+      .audience h3 em { font-style: italic; color: var(--accent); }
+      .audience ul { list-style: none; display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+      .audience ul li { font-size: 14px; color: var(--ink-2); padding-left: 20px; position: relative; line-height: 1.5; }
+      .audience ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+
+      /* ── ROI SECTION ── */
+      .roi-section {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 56px 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .roi-left h2 { margin-bottom: 16px; }
+      .roi-left p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-top: 16px; }
+      .roi-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .roi-stat {
+        border-left: 3px solid var(--accent);
+        padding: 16px 20px;
+        background: var(--bg);
+      }
+      .roi-stat .num {
+        font-family: "Instrument Serif", serif;
+        font-size: 48px;
+        line-height: 1;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+      .roi-stat .num em { font-style: normal; color: var(--accent); font-size: 32px; }
+      .roi-stat .desc { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; line-height: 1.5; }
+      .roi-stat .desc strong { color: var(--ink); }
+
+      /* ── FÖRDERUNG ── */
+      .foerder-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 0;
+      }
+      .foerder {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 28px 24px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .foerder:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 var(--line); }
+      .foerder .pct {
+        font-family: "Instrument Serif", serif;
+        font-size: 64px;
+        line-height: 1;
+        color: var(--accent);
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+      .foerder h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+      .foerder p { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+      .foerder .chip {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 9px;
+        background: var(--chip);
+        border: 1px solid var(--border);
+        color: var(--ink-2);
+        margin-top: 14px;
+      }
+
+      /* ── BENEFITS ── */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .benefit {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 16px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 24px 22px;
+        align-items: start;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .benefit:hover { border-color: var(--line); box-shadow: 4px 4px 0 var(--line); }
+      .benefit-num {
+        font-family: "Instrument Serif", serif;
+        font-size: 38px;
+        line-height: 1;
+        color: var(--accent);
+      }
+      .benefit h3 { font-size: 15px; font-weight: 700; margin-bottom: 7px; line-height: 1.3; }
+      .benefit p { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+
+      /* ── ALUMNI ── */
+      .alumni-section {
+        background: var(--ink);
+        color: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 56px 48px;
+        position: relative;
+        overflow: hidden;
+      }
+      .alumni-section::before {
+        content: "";
+        position: absolute;
+        top: -80px; right: -80px;
+        width: 300px; height: 300px;
+        background: var(--accent);
+        border-radius: 50%;
+        opacity: 0.07;
+      }
+      .alumni-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+        margin-bottom: 48px;
+      }
+      .alumni-head .tag { color: var(--accent); margin-bottom: 12px; display: block; }
+      .alumni-head h2 { color: var(--card); }
+      .alumni-head h2 em { color: var(--accent); }
+      .alumni-head p { font-size: 15px; color: #c2beb2; line-height: 1.7; margin-top: 16px; }
+      .alumni-logos {
+        display: flex;
+        gap: 0;
+        flex-wrap: wrap;
+        border: 1px solid #2a2c25;
+      }
+      .alumni-logo {
+        padding: 18px 24px;
+        border-right: 1px solid #2a2c25;
+        border-bottom: 1px solid #2a2c25;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #a09c90;
+        transition: color 0.2s, background 0.2s;
+        white-space: nowrap;
+      }
+      .alumni-logo:hover { color: var(--accent); background: #1a1c15; }
+      .alumni-note {
+        margin-top: 32px;
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: #c2beb2;
+        line-height: 1.6;
+        border-left: 3px solid var(--accent);
+        padding-left: 20px;
+        max-width: 680px;
+      }
+      .alumni-note cite {
+        font-style: normal;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        display: block;
+        margin-top: 8px;
+      }
+
+      /* ── ABSCHLUSS ── */
+      .abschluss {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 56px 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .abschluss .tag { display: block; margin-bottom: 12px; }
+      .abschluss h2 { margin-bottom: 0; }
+      .abschluss-body p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+      .abschluss-body p strong { color: var(--ink); }
+      .akk-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+      .akk-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: var(--ink-2);
+        line-height: 1.5;
+      }
+      .akk-item::before { content: "✓"; color: var(--green); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .testi {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .testi:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 var(--line); }
+      .testi-quote {
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-size: 17px;
+        line-height: 1.55;
+        color: var(--ink);
+        border-left: 3px solid var(--accent);
+        padding-left: 16px;
+        margin-bottom: 20px;
+        flex: 1;
+      }
+      .testi-footer { display: flex; flex-direction: column; gap: 3px; }
+      .testi-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+      .testi-role { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+      /* ── FINAL CTA ── */
+      .final-cta {
+        padding: 100px 0 80px;
+        text-align: center;
+        border-bottom: 1.5px solid var(--line);
+      }
+      .final-cta h2 {
+        font-size: clamp(44px, 6vw, 80px);
+        max-width: 680px;
+        margin: 0 auto 20px;
+        line-height: 0.95;
+      }
+      .final-cta p {
+        font-size: 17px;
+        color: var(--ink-2);
+        max-width: 480px;
+        margin: 0 auto 40px;
+        line-height: 1.65;
+      }
+      .final-note {
+        margin-top: 20px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .foerder-hint {
+        margin-top: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #e8f4ec;
+        border: 1px solid var(--green);
+        padding: 12px 20px;
+        font-size: 13.5px;
+        color: var(--green);
+        font-weight: 600;
+      }
+      .foerder-hint::before { content: "💡"; }
+
+      /* ── FOOTER ── */
+      footer {
+        padding: 32px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      footer .logo { font-size: 12px; }
+      footer .copy {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      footer a { text-decoration: underline; text-underline-offset: 3px; }
+      footer a:hover { color: var(--ink); }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .pain-grid, .foerder-grid, .testimonials-grid { grid-template-columns: 1fr; }
+        .pain { border-right: none; border-bottom: 1px solid var(--border); }
+        .pain:last-child { border-bottom: none; }
+        .for-whom-grid, .benefits-grid { grid-template-columns: 1fr; }
+        .roi-section, .abschluss { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+        .alumni-section { padding: 40px 28px; }
+        .alumni-head { grid-template-columns: 1fr; gap: 24px; }
+        h1 { font-size: clamp(42px, 10vw, 72px); }
+        .hero::before { font-size: 150px; opacity: 0.3; }
+        .nav-links { display: none; }
+      }
+      @media (max-width: 560px) {
+        .wrap, .nav-inner, .press-inner, footer { padding-left: 18px; padding-right: 18px; }
+        .final-cta { padding: 64px 0 56px; }
+        .alumni-logos { flex-direction: column; }
+        .alumni-logo { border-right: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <div class="logo">KO<span>·</span>WI<span>·</span>BI <span style="color:var(--muted);font-weight:400;">seit 1948</span></div>
+        <div class="nav-links">
+          <a href="#fuer-wen">Für wen?</a>
+          <a href="#foerderung">Förderung</a>
+          <a href="#abschluss">Abschluss</a>
+          <a href="#alumni">Alumni</a>
+          <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="nav-cta">Jetzt informieren →</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <div class="dot"></div>
+          <span class="tag">Berufsbegleitendes Fernstudium · Seit 1948 · Staatlich anerkannt</span>
+        </div>
+        <h1>Für Führungskräfte,<br />denen das Studium<br /><em>fehlte.</em></h1>
+        <p class="hero-sub">
+          Du führst Mitarbeiter oder ein Unternehmen — aber niemand hat dir je beigebracht,
+          wie Finanzen, Unternehmensführung und Strategie wirklich zusammenhängen.
+          <strong>Das ändert sich jetzt.</strong>
+        </p>
+        <div class="cta-group">
+          <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary">Kostenlose Infos anfordern →</a>
+          <a href="#fuer-wen" class="btn-ghost">Ist das was für mich?</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">✓ Berufsbegleitend</span>
+          <span class="badge">✓ Fernstudium — 100 % flexibel</span>
+          <span class="badge">✓ Staatlich anerkannter Abschluss</span>
+          <span class="badge">✓ Persönlicher Betreuer</span>
+          <span class="badge highlight">★ Bis zu 75 % förderbar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS BAR -->
+    <div class="press-bar">
+      <div class="press-inner">
+        <div class="press-lbl">Bekannt aus</div>
+        <div class="press-quotes">
+          <div class="press-q">„Kaderschmiede der deutschen Wirtschaft."<cite>WDR</cite></div>
+          <div class="press-q">„Eine praktisch-betriebswirtschaftliche Vollausbildung."<cite>FAZ</cite></div>
+          <div class="press-q">„Praxisorientiert. Für Unternehmer gemacht."<cite>Impulse</cite></div>
+          <div class="press-q">„Berufsbegleitendes Intensivstudium — ohne Praxisverlust."<cite>Welt am Sonntag</cite></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Kennst du<br />das <em>Gefühl?</em></h2>
+          <span class="tag">Das Problem</span>
+        </div>
+        <div class="pain-grid">
+          <div class="pain">
+            <div class="icon">📈</div>
+            <h3>Du triffst täglich Entscheidungen ohne solides Fundament</h3>
+            <p>Investitionen, Personalkosten, Margen — viele Führungskräfte und Unternehmer agieren aus dem Bauchgefühl heraus, weil niemand ihnen je die Grundlagen erklärt hat.</p>
+          </div>
+          <div class="pain">
+            <div class="icon">🎓</div>
+            <h3>Ein Vollstudium kommt nicht infrage</h3>
+            <p>4–6 Jahre neben dem Beruf? Nicht realistisch. Du brauchst Wissen, das du sofort anwenden kannst — nicht in fünf Jahren, wenn dein Unternehmen andere Probleme hat.</p>
+          </div>
+          <div class="pain">
+            <div class="icon">📚</div>
+            <h3>Seminare kratzen nur an der Oberfläche</h3>
+            <p>Zwei-Tages-Workshops geben Impulse, aber kein System. Was fehlt, ist zusammenhängendes Wissen — das bleibt und sich im Alltag anwenden lässt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÜR WEN -->
+    <section class="section" id="fuer-wen">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Für wen ist<br />das <em>richtig?</em></h2>
+          <span class="tag">Zielgruppen</span>
+        </div>
+        <div class="for-whom-grid">
+          <div class="audience" data-num="01">
+            <span class="tag">Zielgruppe 01</span>
+            <h3>Berufstätige<br /><em>Aufsteiger</em></h3>
+            <ul>
+              <li>Fach- oder Führungskraft ohne BWL-Studium</li>
+              <li>Teamleiter, Projektleiter, Abteilungsleiter ab ~30 Jahren</li>
+              <li>Du steckst bei Beförderungen fest, weil dir der formale Nachweis fehlt</li>
+              <li>Branchen: Finanzen, Logistik, Produktion, IT, Gesundheitswesen</li>
+              <li>Viele Arbeitgeber übernehmen einen Teil der Kosten — frag einfach nach</li>
+            </ul>
+          </div>
+          <div class="audience" data-num="02">
+            <span class="tag">Zielgruppe 02</span>
+            <h3>Selbstständige &amp;<br /><em>Unternehmer</em></h3>
+            <ul>
+              <li>Handwerksmeister, Gründer, Mittelständler (ab ~3 Jahren im Markt)</li>
+              <li>Du führst ein Unternehmen, aber Zahlen, Finanzen und Strategie fühlen sich fremd an</li>
+              <li>Jede falsche Entscheidung kostet mehr als die Ausbildung</li>
+              <li>Als Betriebsausgabe steuerlich absetzbar — die realen Kosten sinken erheblich</li>
+              <li>Praxis schlägt Theorie — immer und überall</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="section">
+      <div class="wrap">
+        <div class="roi-section">
+          <div class="roi-left">
+            <span class="tag" style="display:block;margin-bottom:12px;">Dein Return on Investment</span>
+            <h2>Was dieses<br />Wissen <em>wert</em> ist.</h2>
+            <p>Eine Ausbildung ist keine Ausgabe — sie ist eine Investition in deine Entscheidungsqualität. Wer die falschen Zahlen liest, verliert. Wer versteht, wie BWL wirklich funktioniert, gewinnt — im Gehalt, im Unternehmen, im Leben.</p>
+            <p>Und das Beste: Du musst nicht den vollen Betrag tragen. Förderungen, Steuervorteile und Arbeitgeberzuschüsse machen die reale Belastung deutlich kleiner als du denkst.</p>
+          </div>
+          <div class="roi-stats">
+            <div class="roi-stat">
+              <div class="num">+15<em>–30%</em></div>
+              <div class="desc"><strong>Gehaltssprung</strong> nach Abschluss — Führungskräfte mit anerkanntem BWL-Nachweis verhandeln signifikant besser.</div>
+            </div>
+            <div class="roi-stat">
+              <div class="num">bis 40<em>%</em></div>
+              <div class="desc"><strong>Steuerersparnis</strong> für Selbstständige &amp; Unternehmer — als Betriebsausgabe absetzbar reduziert sich die reale Investition erheblich.</div>
+            </div>
+            <div class="roi-stat">
+              <div class="num">bis 75<em>%</em></div>
+              <div class="desc"><strong>Staatliche Förderung</strong> — über Aufstiegs-BAföG, Bildungsprämie oder betriebliche Weiterbildungsbudgets förderbar.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÖRDERUNG -->
+    <section class="section" id="foerderung">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>So wird deine<br />Ausbildung <em>gefördert.</em></h2>
+          <span class="tag">Förderoptionen</span>
+        </div>
+        <div class="foerder-grid">
+          <div class="foerder">
+            <div class="pct">75%</div>
+            <h3>Aufstiegs-BAföG</h3>
+            <p>Wer sich beruflich weiterqualifiziert, kann über das Aufstiegs-BAföG bis zu 75 % der Lehrgangskosten vom Staat zurückbekommen — unabhängig vom Einkommen.</p>
+            <span class="chip">Für Angestellte &amp; Selbstständige</span>
+          </div>
+          <div class="foerder">
+            <div class="pct">40%</div>
+            <h3>Steuerliche Absetzbarkeit</h3>
+            <p>Selbstständige und Unternehmer können die Ausbildungskosten als Betriebsausgabe vollständig absetzen. Je nach Steuersatz sinkt die reale Investition um bis zu 40 %.</p>
+            <span class="chip">Für Selbstständige &amp; GmbH-Inhaber</span>
+          </div>
+          <div class="foerder">
+            <div class="pct">100%</div>
+            <h3>Arbeitgeber-Förderung</h3>
+            <p>Viele Unternehmen übernehmen Weiterbildungskosten vollständig, wenn die Qualifikation dem Betrieb nützt. Frag einfach nach — die Antwort überrascht oft positiv.</p>
+            <span class="chip">Für Angestellte &amp; Führungskräfte</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WIE ES FUNKTIONIERT -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Wie das<br /><em>Programm</em> funktioniert</h2>
+          <span class="tag">Dein Weg</span>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-num">01</div>
+            <div>
+              <h3>Kompaktes, praxiserprobtes Lehrwerk</h3>
+              <p>Kein Theoriedschungel. Das Braunschweig-Lehrwerk wurde von Wirtschaftsprüfern, Unternehmensberatern und Top-Managern entwickelt — und von Lernpsychologen didaktisch optimiert.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">02</div>
+            <div>
+              <h3>100 % berufsbegleitend &amp; ortsunabhängig</h3>
+              <p>Du lernst wann und wo du willst — abends, am Wochenende, im Zug. Kein Präsenztermin, kein starrer Stundenplan. Dein Leben bleibt wie es ist.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">03</div>
+            <div>
+              <h3>Persönlicher Ausbildungsbegleiter</h3>
+              <p>Du bekommst einen festen Ansprechpartner, der deinen Ablauf individuell mit dir plant. Keine anonyme Lernplattform — echte Begleitung.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">04</div>
+            <div>
+              <h3>Sofort messbarer Lernerfolg</h3>
+              <p>Jedes Modul endet mit einem Lernkontrollteil. Du siehst auf Anhieb, wieviel du beherrschst — und kannst Teilklausuren beliebig oft wiederholen.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">05</div>
+            <div>
+              <h3>Ganzheitlicher Ansatz: BWL + Strategie</h3>
+              <p>Das Programm verbindet entscheidungsorientierte BWL mit der Österreichischen Schule der Nationalökonomie — für Denken auf Führungsebene, nicht nur Fachwissen.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">06</div>
+            <div>
+              <h3>Optional: Holistik-Management</h3>
+              <p>Wer über klassische BWL hinauswill: Der Lehrgang „Zertifizierter Quantenphilosoph / Holistik-Manager" ergänzt das Programm für Führungskräfte von morgen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUMNI -->
+    <section class="section" id="alumni" style="padding:0;">
+      <div class="wrap" style="padding-top:80px;padding-bottom:80px;">
+        <div class="alumni-section">
+          <div class="alumni-head">
+            <div>
+              <span class="tag">Absolventenliste</span>
+              <h2 style="margin-top:12px;">Wo unsere<br /><em>Alumni</em> heute sind.</h2>
+            </div>
+            <div>
+              <p>Die Presse nennt KO·WI·BI die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft"</strong> (WDR). Die Absolventenliste liest sich wie das Who is Who der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, Bundes- und Landesminister, EU-Kommissare und mehrere Mitglieder des Sachverständigenrates (die „Fünf Weisen").</p>
+            </div>
+          </div>
+          <div class="alumni-logos">
+            <div class="alumni-logo">Daimler-Benz</div>
+            <div class="alumni-logo">Deutsche Bank</div>
+            <div class="alumni-logo">VW / Audi</div>
+            <div class="alumni-logo">Lufthansa</div>
+            <div class="alumni-logo">Allianz</div>
+            <div class="alumni-logo">Thyssen</div>
+            <div class="alumni-logo">Commerzbank</div>
+            <div class="alumni-logo">Mannesmann</div>
+            <div class="alumni-logo">Krupp</div>
+            <div class="alumni-logo">Metro</div>
+            <div class="alumni-logo">Oetker</div>
+            <div class="alumni-logo">Heidelberger Cement</div>
+          </div>
+          <div class="alumni-note">
+            „Tausende von deutschen Kaufleuten verdanken Dr. Karl Braunschweig ihre Staatsexamen. Einige machte er zu Multimillionären."
+            <cite>Kölner Stadt-Anzeiger</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABSCHLUSS -->
+    <section class="section" id="abschluss">
+      <div class="wrap">
+        <div class="abschluss">
+          <div>
+            <span class="tag">Dein Abschluss</span>
+            <h2 style="margin-top:12px;">Zertifizierter<br /><em>Betriebsökonom.</em></h2>
+          </div>
+          <div class="abschluss-body">
+            <p>Der Abschluss <strong>„Zertifizierter Betriebsökonom"</strong> wird mit kultusministerieller Zustimmung erteilt — kein Online-Kurs-Zertifikat, sondern ein offiziell anerkannter Nachweis.</p>
+            <p>Das Programm ist mehrfach staatlich ausgezeichnet und anerkannt. Damit ist dein Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
+            <div class="akk-list">
+              <div class="akk-item">Gütesiegel der BfA</div>
+              <div class="akk-item">ZFU-Siegel — Staatliche Zentralstelle für Fernunterricht</div>
+              <div class="akk-item">Bundesinstitut für Berufsbildungsforschung</div>
+              <div class="akk-item">Vertrag mit dem Institut der Wirtschaftsprüfer</div>
+              <div class="akk-item">Bundeswehr-Berufsförderungsdienst (BFD)</div>
+              <div class="akk-item">TQ Cert / Deutsche Akkreditierungsstelle DAkkS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Was andere<br /><em>sagen.</em></h2>
+          <span class="tag">Stimmen</span>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testi">
+            <div class="testi-quote">
+              „Ich bin Meister, kein Akademiker. Nach dem Abschluss spreche ich mit meinem Steuerberater und meiner Bank auf Augenhöhe. Das allein hat sich mehr als gelohnt."
+            </div>
+            <div class="testi-footer">
+              <div class="testi-name">M. Hoffmann</div>
+              <div class="testi-role">Handwerksmeister, 41 Jahre · Elektrobetrieb</div>
+            </div>
+          </div>
+          <div class="testi">
+            <div class="testi-quote">
+              „Nach 12 Jahren als Teamleiterin hat mir die fehlende BWL immer wieder die Beförderung gekostet. Mit dem Zertifikat war das Gespräch beim nächsten Mal eine andere."
+            </div>
+            <div class="testi-footer">
+              <div class="testi-name">S. Kaufmann</div>
+              <div class="testi-role">Teamleiterin Logistik, 38 Jahre</div>
+            </div>
+          </div>
+          <div class="testi">
+            <div class="testi-quote">
+              „Acht Jahre in der akademischen Welt sind zu lang. Das Lehrwerk vermittelt betriebswirtschaftliches Wissen an diejenigen, denen ein ganzes Studium zu lang ist."
+            </div>
+            <div class="testi-footer">
+              <div class="testi-name">Handelsblatt</div>
+              <div class="testi-role">Presse-Stimme</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINALE CTA -->
+    <section class="final-cta">
+      <div class="wrap">
+        <h2 class="serif" style="font-family:'Instrument Serif',serif;font-weight:400;">
+          Bereit für den<br /><em style="font-style:italic;color:var(--accent);">nächsten Schritt?</em>
+        </h2>
+        <p>Fordere jetzt kostenlos und unverbindlich deine persönlichen Kursinfos an. Kein Verkaufsgespräch — nur die Fakten, die du brauchst.</p>
+        <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary" style="font-size:13px;padding:18px 48px;">
+          Kostenlose Infos anfordern →
+        </a>
+        <div class="foerder-hint">
+          Bis zu 75 % deiner Ausbildungskosten können staatlich gefördert werden — frag uns wie.
+        </div>
+        <div class="final-note" style="margin-top:24px;">Unverbindlich · Kostenlos · Kein Verkaufsgespräch</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="logo">KO<span style="color:var(--accent);">·</span>WI<span style="color:var(--accent);">·</span>BI <span style="color:var(--muted);font-weight:400;">seit 1948</span></div>
+      <div class="copy">
+        Diese Seite enthält Affiliate-Links. ·
+        <a href="https://www.ko-wi-bi.de/datenschutzerklaerung/" target="_blank" rel="noopener" style="color:var(--muted);">Datenschutz &amp; Impressum</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
