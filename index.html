@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BWL-Fernstudium berufsbegleitend | KO·WI·BI seit 1948</title>
-    <meta name="description" content="Das kompakte BWL-Fernstudium für Führungskräfte und Unternehmer — berufsbegleitend, staatlich anerkannt, seit 1948. Bis zu 75 % staatlich förderbar." />
+    <title>BWL-Fernlehrgang berufsbegleitend | seit 1948</title>
+    <meta name="description" content="Das kompakte BWL-Fernlehrgang für Führungskräfte und Unternehmer — berufsbegleitend, staatlich anerkannt, seit 1948. Bis zu 75 % staatlich förderbar." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -19,7 +19,6 @@
         --accent: #c8a96e;
         --accent-dark: #a0813e;
         --green: #2f7d3e;
-        --red: #c73838;
         --chip: #efeadc;
         --border: #d8d4c7;
       }
@@ -32,7 +31,6 @@
       }
       a { color: inherit; text-decoration: none; }
 
-      /* ── UTILITY ── */
       .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
       .tag {
         font-family: "JetBrains Mono", monospace;
@@ -54,20 +52,30 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 28px;
+        padding: 14px 28px;
         max-width: 1100px;
         margin: 0 auto;
         gap: 16px;
         flex-wrap: wrap;
       }
-      .logo {
-        font-family: "JetBrains Mono", monospace;
+      .logo-block { display: flex; flex-direction: column; gap: 2px; }
+      .logo-main {
+        font-family: "Inter", sans-serif;
         font-size: 13px;
-        font-weight: 500;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        line-height: 1.2;
+      }
+      .logo-sub {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9.5px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
+        color: var(--muted);
+        line-height: 1;
       }
-      .logo span { color: var(--accent); }
+      .logo-sub span { color: var(--accent); font-weight: 500; }
       .nav-links {
         display: flex;
         gap: 28px;
@@ -227,12 +235,7 @@
         color: #6b6d63;
         white-space: nowrap;
       }
-      .press-quotes {
-        display: flex;
-        gap: 32px;
-        flex-wrap: wrap;
-        flex: 1;
-      }
+      .press-quotes { display: flex; gap: 32px; flex-wrap: wrap; flex: 1; }
       .press-q {
         font-family: "Instrument Serif", serif;
         font-style: italic;
@@ -291,11 +294,7 @@
       .pain p { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
 
       /* ── FOR WHOM ── */
-      .for-whom-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
+      .for-whom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
       .audience {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -305,17 +304,7 @@
         transition: transform 0.2s, box-shadow 0.2s;
       }
       .audience:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--line); }
-      .audience::after {
-        content: attr(data-num);
-        position: absolute;
-        right: -10px; bottom: -20px;
-        font-family: "Instrument Serif", serif;
-        font-size: 120px;
-        color: var(--border);
-        opacity: 0.4;
-        line-height: 1;
-        pointer-events: none;
-      }
+      .audience::after { content: none; }
       .audience .tag { margin-bottom: 12px; display: block; }
       .audience h3 {
         font-family: "Instrument Serif", serif;
@@ -329,7 +318,7 @@
       .audience ul li { font-size: 14px; color: var(--ink-2); padding-left: 20px; position: relative; line-height: 1.5; }
       .audience ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
 
-      /* ── ROI SECTION ── */
+      /* ── ROI ── */
       .roi-section {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -341,16 +330,8 @@
       }
       .roi-left h2 { margin-bottom: 16px; }
       .roi-left p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-top: 16px; }
-      .roi-stats {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .roi-stat {
-        border-left: 3px solid var(--accent);
-        padding: 16px 20px;
-        background: var(--bg);
-      }
+      .roi-stats { display: flex; flex-direction: column; gap: 20px; }
+      .roi-stat { border-left: 3px solid var(--accent); padding: 16px 20px; background: var(--bg); }
       .roi-stat .num {
         font-family: "Instrument Serif", serif;
         font-size: 48px;
@@ -363,12 +344,7 @@
       .roi-stat .desc strong { color: var(--ink); }
 
       /* ── FÖRDERUNG ── */
-      .foerder-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-top: 0;
-      }
+      .foerder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .foerder {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -400,11 +376,7 @@
       }
 
       /* ── BENEFITS ── */
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
+      .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .benefit {
         display: grid;
         grid-template-columns: 48px 1fr;
@@ -416,12 +388,7 @@
         transition: border-color 0.2s, box-shadow 0.2s;
       }
       .benefit:hover { border-color: var(--line); box-shadow: 4px 4px 0 var(--line); }
-      .benefit-num {
-        font-family: "Instrument Serif", serif;
-        font-size: 38px;
-        line-height: 1;
-        color: var(--accent);
-      }
+      .benefit-num { font-family: "Instrument Serif", serif; font-size: 38px; line-height: 1; color: var(--accent); }
       .benefit h3 { font-size: 15px; font-weight: 700; margin-bottom: 7px; line-height: 1.3; }
       .benefit p { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
 
@@ -454,12 +421,7 @@
       .alumni-head h2 { color: var(--card); }
       .alumni-head h2 em { color: var(--accent); }
       .alumni-head p { font-size: 15px; color: #c2beb2; line-height: 1.7; margin-top: 16px; }
-      .alumni-logos {
-        display: flex;
-        gap: 0;
-        flex-wrap: wrap;
-        border: 1px solid #2a2c25;
-      }
+      .alumni-logos { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid #2a2c25; }
       .alumni-logo {
         padding: 18px 24px;
         border-right: 1px solid #2a2c25;
@@ -506,7 +468,6 @@
         align-items: start;
       }
       .abschluss .tag { display: block; margin-bottom: 12px; }
-      .abschluss h2 { margin-bottom: 0; }
       .abschluss-body p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
       .abschluss-body p strong { color: var(--ink); }
       .akk-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
@@ -523,11 +484,7 @@
       .akk-item::before { content: "✓"; color: var(--green); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
       /* ── TESTIMONIALS ── */
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
+      .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .testi {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -554,32 +511,10 @@
       .testi-role { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
       /* ── FINAL CTA ── */
-      .final-cta {
-        padding: 100px 0 80px;
-        text-align: center;
-        border-bottom: 1.5px solid var(--line);
-      }
-      .final-cta h2 {
-        font-size: clamp(44px, 6vw, 80px);
-        max-width: 680px;
-        margin: 0 auto 20px;
-        line-height: 0.95;
-      }
-      .final-cta p {
-        font-size: 17px;
-        color: var(--ink-2);
-        max-width: 480px;
-        margin: 0 auto 40px;
-        line-height: 1.65;
-      }
-      .final-note {
-        margin-top: 20px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
+      .final-cta { padding: 100px 0 80px; text-align: center; border-bottom: 1.5px solid var(--line); }
+      .final-cta h2 { font-size: clamp(44px, 6vw, 80px); max-width: 680px; margin: 0 auto 20px; line-height: 0.95; }
+      .final-cta p { font-size: 17px; color: var(--ink-2); max-width: 480px; margin: 0 auto 40px; line-height: 1.65; }
+      .final-note { margin-top: 20px; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
       .foerder-hint {
         margin-top: 32px;
         display: inline-flex;
@@ -605,13 +540,7 @@
         max-width: 1100px;
         margin: 0 auto;
       }
-      footer .logo { font-size: 12px; }
-      footer .copy {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10.5px;
-        letter-spacing: 0.1em;
-        color: var(--muted);
-      }
+      footer .copy { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--muted); }
       footer a { text-decoration: underline; text-underline-offset: 3px; }
       footer a:hover { color: var(--ink); }
 
@@ -641,7 +570,10 @@
     <!-- NAV -->
     <nav>
       <div class="nav-inner">
-        <div class="logo">KO<span>·</span>WI<span>·</span>BI <span style="color:var(--muted);font-weight:400;">seit 1948</span></div>
+        <div class="logo-block">
+          <div class="logo-main">Kölner Wirtschaftsprüfer Ausbildung</div>
+          <div class="logo-sub">seit 1948</div>
+        </div>
         <div class="nav-links">
           <a href="#fuer-wen">Für wen?</a>
           <a href="#foerderung">Förderung</a>
@@ -657,21 +589,21 @@
       <div class="hero-inner">
         <div class="hero-eyebrow">
           <div class="dot"></div>
-          <span class="tag">Berufsbegleitendes Fernstudium · Seit 1948 · Staatlich anerkannt</span>
+          <span class="tag">Berufsbegleitender Fernlehrgang · Seit 1948 · Staatlich anerkannt</span>
         </div>
-        <h1>Für Führungskräfte,<br />denen das Studium<br /><em>fehlte.</em></h1>
+        <h1>Für Führungskräfte,<br />denen das Studium<br /><em>fehlt.</em></h1>
         <p class="hero-sub">
-          Du führst Mitarbeiter oder ein Unternehmen — aber niemand hat dir je beigebracht,
+          Sie führen Mitarbeiter oder ein Unternehmen — aber niemand hat Ihnen je beigebracht,
           wie Finanzen, Unternehmensführung und Strategie wirklich zusammenhängen.
           <strong>Das ändert sich jetzt.</strong>
         </p>
         <div class="cta-group">
           <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary">Kostenlose Infos anfordern →</a>
-          <a href="#fuer-wen" class="btn-ghost">Ist das was für mich?</a>
+          <a href="#fuer-wen" class="btn-ghost">Programm entdecken →</a>
         </div>
         <div class="hero-badges">
           <span class="badge">✓ Berufsbegleitend</span>
-          <span class="badge">✓ Fernstudium — 100 % flexibel</span>
+          <span class="badge">✓ Fernlehrgang — 100 % flexibel</span>
           <span class="badge">✓ Staatlich anerkannter Abschluss</span>
           <span class="badge">✓ Persönlicher Betreuer</span>
           <span class="badge highlight">★ Bis zu 75 % förderbar</span>
@@ -687,7 +619,7 @@
           <div class="press-q">„Kaderschmiede der deutschen Wirtschaft."<cite>WDR</cite></div>
           <div class="press-q">„Eine praktisch-betriebswirtschaftliche Vollausbildung."<cite>FAZ</cite></div>
           <div class="press-q">„Praxisorientiert. Für Unternehmer gemacht."<cite>Impulse</cite></div>
-          <div class="press-q">„Berufsbegleitendes Intensivstudium — ohne Praxisverlust."<cite>Welt am Sonntag</cite></div>
+          <div class="press-q">„Berufsbegleitender Intensivlehrgang — ohne Praxisverlust."<cite>Welt am Sonntag</cite></div>
         </div>
       </div>
     </div>
@@ -696,19 +628,19 @@
     <section class="section">
       <div class="wrap">
         <div class="section-head">
-          <h2>Kennst du<br />das <em>Gefühl?</em></h2>
+          <h2>Kennen Sie<br />das <em>Gefühl?</em></h2>
           <span class="tag">Das Problem</span>
         </div>
         <div class="pain-grid">
           <div class="pain">
             <div class="icon">📈</div>
-            <h3>Du triffst täglich Entscheidungen ohne solides Fundament</h3>
+            <h3>Sie treffen täglich Entscheidungen ohne solides Fundament</h3>
             <p>Investitionen, Personalkosten, Margen — viele Führungskräfte und Unternehmer agieren aus dem Bauchgefühl heraus, weil niemand ihnen je die Grundlagen erklärt hat.</p>
           </div>
           <div class="pain">
             <div class="icon">🎓</div>
-            <h3>Ein Vollstudium kommt nicht infrage</h3>
-            <p>4–6 Jahre neben dem Beruf? Nicht realistisch. Du brauchst Wissen, das du sofort anwenden kannst — nicht in fünf Jahren, wenn dein Unternehmen andere Probleme hat.</p>
+            <h3>Ein vollständiger Hochschullehrgang kommt nicht infrage</h3>
+            <p>4–6 Jahre neben dem Beruf? Nicht realistisch. Sie brauchen Wissen, das Sie sofort anwenden können — nicht in fünf Jahren.</p>
           </div>
           <div class="pain">
             <div class="icon">📚</div>
@@ -723,27 +655,25 @@
     <section class="section" id="fuer-wen">
       <div class="wrap">
         <div class="section-head">
-          <h2>Für wen ist<br />das <em>richtig?</em></h2>
+          <h2>Ideal <em>für:</em></h2>
           <span class="tag">Zielgruppen</span>
         </div>
         <div class="for-whom-grid">
-          <div class="audience" data-num="01">
-            <span class="tag">Zielgruppe 01</span>
+          <div class="audience">
             <h3>Berufstätige<br /><em>Aufsteiger</em></h3>
             <ul>
-              <li>Fach- oder Führungskraft ohne BWL-Studium</li>
+              <li>Fach- oder Führungskraft ohne BWL-Lehrgang</li>
               <li>Teamleiter, Projektleiter, Abteilungsleiter ab ~30 Jahren</li>
-              <li>Du steckst bei Beförderungen fest, weil dir der formale Nachweis fehlt</li>
+              <li>Sie stecken bei Beförderungen fest, weil Ihnen der formale Nachweis fehlt</li>
               <li>Branchen: Finanzen, Logistik, Produktion, IT, Gesundheitswesen</li>
-              <li>Viele Arbeitgeber übernehmen einen Teil der Kosten — frag einfach nach</li>
+              <li>Viele Arbeitgeber übernehmen einen Teil der Kosten</li>
             </ul>
           </div>
-          <div class="audience" data-num="02">
-            <span class="tag">Zielgruppe 02</span>
+          <div class="audience">
             <h3>Selbstständige &amp;<br /><em>Unternehmer</em></h3>
             <ul>
               <li>Handwerksmeister, Gründer, Mittelständler (ab ~3 Jahren im Markt)</li>
-              <li>Du führst ein Unternehmen, aber Zahlen, Finanzen und Strategie fühlen sich fremd an</li>
+              <li>Sie führen ein Unternehmen, aber Zahlen, Finanzen und Strategie fühlen sich fremd an</li>
               <li>Jede falsche Entscheidung kostet mehr als die Ausbildung</li>
               <li>Als Betriebsausgabe steuerlich absetzbar — die realen Kosten sinken erheblich</li>
               <li>Praxis schlägt Theorie — immer und überall</li>
@@ -758,10 +688,10 @@
       <div class="wrap">
         <div class="roi-section">
           <div class="roi-left">
-            <span class="tag" style="display:block;margin-bottom:12px;">Dein Return on Investment</span>
+            <span class="tag" style="display:block;margin-bottom:12px;">Ihr Return on Investment</span>
             <h2>Was dieses<br />Wissen <em>wert</em> ist.</h2>
-            <p>Eine Ausbildung ist keine Ausgabe — sie ist eine Investition in deine Entscheidungsqualität. Wer die falschen Zahlen liest, verliert. Wer versteht, wie BWL wirklich funktioniert, gewinnt — im Gehalt, im Unternehmen, im Leben.</p>
-            <p>Und das Beste: Du musst nicht den vollen Betrag tragen. Förderungen, Steuervorteile und Arbeitgeberzuschüsse machen die reale Belastung deutlich kleiner als du denkst.</p>
+            <p>Eine Ausbildung ist keine Ausgabe — sie ist eine Investition in Ihre Entscheidungsqualität. Wer die falschen Zahlen liest, verliert. Wer versteht, wie BWL wirklich funktioniert, gewinnt — im Gehalt, im Unternehmen, im Leben.</p>
+            <p>Und das Beste: Sie müssen nicht den vollen Betrag tragen. Förderungen, Steuervorteile und Arbeitgeberzuschüsse machen die reale Belastung deutlich kleiner als Sie denken.</p>
           </div>
           <div class="roi-stats">
             <div class="roi-stat">
@@ -785,7 +715,7 @@
     <section class="section" id="foerderung">
       <div class="wrap">
         <div class="section-head">
-          <h2>So wird deine<br />Ausbildung <em>gefördert.</em></h2>
+          <h2>So wird Ihre<br />Ausbildung <em>gefördert.</em></h2>
           <span class="tag">Förderoptionen</span>
         </div>
         <div class="foerder-grid">
@@ -804,7 +734,7 @@
           <div class="foerder">
             <div class="pct">100%</div>
             <h3>Arbeitgeber-Förderung</h3>
-            <p>Viele Unternehmen übernehmen Weiterbildungskosten vollständig, wenn die Qualifikation dem Betrieb nützt. Frag einfach nach — die Antwort überrascht oft positiv.</p>
+            <p>Viele Unternehmen übernehmen Weiterbildungskosten vollständig, wenn die Qualifikation dem Betrieb nützt. Fragen Sie einfach nach — die Antwort überrascht oft positiv.</p>
             <span class="chip">Für Angestellte &amp; Führungskräfte</span>
           </div>
         </div>
@@ -816,7 +746,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Wie das<br /><em>Programm</em> funktioniert</h2>
-          <span class="tag">Dein Weg</span>
+          <span class="tag">Ihr Weg</span>
         </div>
         <div class="benefits-grid">
           <div class="benefit">
@@ -830,21 +760,21 @@
             <div class="benefit-num">02</div>
             <div>
               <h3>100 % berufsbegleitend &amp; ortsunabhängig</h3>
-              <p>Du lernst wann und wo du willst — abends, am Wochenende, im Zug. Kein Präsenztermin, kein starrer Stundenplan. Dein Leben bleibt wie es ist.</p>
+              <p>Sie lernen, wann und wo Sie möchten — abends, am Wochenende, im Zug. Kein Präsenztermin, kein starrer Stundenplan. Ihr Leben bleibt, wie es ist.</p>
             </div>
           </div>
           <div class="benefit">
             <div class="benefit-num">03</div>
             <div>
               <h3>Persönlicher Ausbildungsbegleiter</h3>
-              <p>Du bekommst einen festen Ansprechpartner, der deinen Ablauf individuell mit dir plant. Keine anonyme Lernplattform — echte Begleitung.</p>
+              <p>Sie bekommen einen festen Ansprechpartner, der Ihren Ablauf individuell mit Ihnen plant. Keine anonyme Lernplattform — echte Begleitung.</p>
             </div>
           </div>
           <div class="benefit">
             <div class="benefit-num">04</div>
             <div>
               <h3>Sofort messbarer Lernerfolg</h3>
-              <p>Jedes Modul endet mit einem Lernkontrollteil. Du siehst auf Anhieb, wieviel du beherrschst — und kannst Teilklausuren beliebig oft wiederholen.</p>
+              <p>Jedes Modul endet mit einem Lernkontrollteil. Sie sehen auf Anhieb, wieviel Sie beherrschen — und können Teilklausuren beliebig oft wiederholen.</p>
             </div>
           </div>
           <div class="benefit">
@@ -875,7 +805,7 @@
               <h2 style="margin-top:12px;">Wo unsere<br /><em>Alumni</em> heute sind.</h2>
             </div>
             <div>
-              <p>Die Presse nennt KO·WI·BI die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft"</strong> (WDR). Die Absolventenliste liest sich wie das Who is Who der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, Bundes- und Landesminister, EU-Kommissare und mehrere Mitglieder des Sachverständigenrates (die „Fünf Weisen").</p>
+              <p>Die Presse nennt die Kölner Wirtschaftsprüfer Ausbildung die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft"</strong> (WDR). Die Absolventenliste liest sich wie das „Who is Who", der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, Bundes- und Landesminister, EU-Kommissare und mehrere Mitglieder des Sachverständigenrates (die „Fünf Weisen").</p>
             </div>
           </div>
           <div class="alumni-logos">
@@ -905,12 +835,12 @@
       <div class="wrap">
         <div class="abschluss">
           <div>
-            <span class="tag">Dein Abschluss</span>
+            <span class="tag">Ihr Abschluss</span>
             <h2 style="margin-top:12px;">Zertifizierter<br /><em>Betriebsökonom.</em></h2>
           </div>
           <div class="abschluss-body">
             <p>Der Abschluss <strong>„Zertifizierter Betriebsökonom"</strong> wird mit kultusministerieller Zustimmung erteilt — kein Online-Kurs-Zertifikat, sondern ein offiziell anerkannter Nachweis.</p>
-            <p>Das Programm ist mehrfach staatlich ausgezeichnet und anerkannt. Damit ist dein Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
+            <p>Das Programm ist mehrfach staatlich ausgezeichnet und anerkannt. Damit ist Ihr Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
             <div class="akk-list">
               <div class="akk-item">Gütesiegel der BfA</div>
               <div class="akk-item">ZFU-Siegel — Staatliche Zentralstelle für Fernunterricht</div>
@@ -928,32 +858,26 @@
     <section class="section">
       <div class="wrap">
         <div class="section-head">
-          <h2>Was andere<br /><em>sagen.</em></h2>
-          <span class="tag">Stimmen</span>
+          <h2><em>Referenzen</em></h2><p style="font-size:17px;color:var(--ink-2);margin-top:12px;line-height:1.5;">Meinungen.</p>
+          
         </div>
         <div class="testimonials-grid">
           <div class="testi">
-            <div class="testi-quote">
-              „Ich bin Meister, kein Akademiker. Nach dem Abschluss spreche ich mit meinem Steuerberater und meiner Bank auf Augenhöhe. Das allein hat sich mehr als gelohnt."
-            </div>
+            <div class="testi-quote">„Ich bin Meister, kein Akademiker. Nach dem Abschluss spreche ich mit meinem Steuerberater und meiner Bank auf Augenhöhe. Das allein hat sich mehr als gelohnt."</div>
             <div class="testi-footer">
               <div class="testi-name">M. Hoffmann</div>
               <div class="testi-role">Handwerksmeister, 41 Jahre · Elektrobetrieb</div>
             </div>
           </div>
           <div class="testi">
-            <div class="testi-quote">
-              „Nach 12 Jahren als Teamleiterin hat mir die fehlende BWL immer wieder die Beförderung gekostet. Mit dem Zertifikat war das Gespräch beim nächsten Mal eine andere."
-            </div>
+            <div class="testi-quote">„Nach 12 Jahren als Teamleiterin hat mir die fehlende BWL immer wieder die Beförderung gekostet. Mit dem Zertifikat war das Gespräch beim nächsten Mal ein anderes."</div>
             <div class="testi-footer">
               <div class="testi-name">S. Kaufmann</div>
               <div class="testi-role">Teamleiterin Logistik, 38 Jahre</div>
             </div>
           </div>
           <div class="testi">
-            <div class="testi-quote">
-              „Acht Jahre in der akademischen Welt sind zu lang. Das Lehrwerk vermittelt betriebswirtschaftliches Wissen an diejenigen, denen ein ganzes Studium zu lang ist."
-            </div>
+            <div class="testi-quote">„Acht Jahre in der akademischen Welt sind zu lang. Das Lehrwerk vermittelt betriebswirtschaftliches Wissen an diejenigen, denen ein kompletter Hochschullehrgang zu lang ist."</div>
             <div class="testi-footer">
               <div class="testi-name">Handelsblatt</div>
               <div class="testi-role">Presse-Stimme</div>
@@ -966,23 +890,20 @@
     <!-- FINALE CTA -->
     <section class="final-cta">
       <div class="wrap">
-        <h2 class="serif" style="font-family:'Instrument Serif',serif;font-weight:400;">
-          Bereit für den<br /><em style="font-style:italic;color:var(--accent);">nächsten Schritt?</em>
-        </h2>
-        <p>Fordere jetzt kostenlos und unverbindlich deine persönlichen Kursinfos an. Kein Verkaufsgespräch — nur die Fakten, die du brauchst.</p>
-        <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary" style="font-size:13px;padding:18px 48px;">
-          Kostenlose Infos anfordern →
-        </a>
-        <div class="foerder-hint">
-          Bis zu 75 % deiner Ausbildungskosten können staatlich gefördert werden — frag uns wie.
-        </div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;">Bereit für den<br /><em style="font-style:italic;color:var(--accent);">nächsten Schritt?</em></h2>
+        <p>Fordern Sie jetzt kostenlos und unverbindlich Ihre persönlichen Kursinfos an. Kein Verkaufsgespräch — nur die Fakten, die Sie brauchen.</p>
+        <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary" style="font-size:13px;padding:18px 48px;">Kostenlose Infos anfordern →</a>
+        <div class="foerder-hint">Bis zu 75 % Ihrer Ausbildungskosten können staatlich gefördert werden — fragen Sie uns.</div>
         <div class="final-note" style="margin-top:24px;">Unverbindlich · Kostenlos · Kein Verkaufsgespräch</div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <div class="logo">KO<span style="color:var(--accent);">·</span>WI<span style="color:var(--accent);">·</span>BI <span style="color:var(--muted);font-weight:400;">seit 1948</span></div>
+      <div class="logo-block">
+        <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer Ausbildung</div>
+        <div class="logo-sub">seit 1948</div>
+      </div>
       <div class="copy">
         Diese Seite enthält Affiliate-Links. ·
         <a href="https://www.ko-wi-bi.de/datenschutzerklaerung/" target="_blank" rel="noopener" style="color:var(--muted);">Datenschutz &amp; Impressum</a>
