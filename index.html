@@ -983,22 +983,38 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModal();
     });
-    function sendForm(e) {
+    async function sendForm(e) {
       e.preventDefault();
-      const name  = document.getElementById('f-name').value;
-      const email = document.getElementById('f-email').value;
-      const tel   = document.getElementById('f-tel').value;
-      const msg   = document.getElementById('f-msg').value;
-      const body  = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'E-Mail: ' + email + '\n' +
-        (tel ? 'Telefon: ' + tel + '\n' : '') +
-        (msg ? '\nNachricht:\n' + msg : '')
-      );
-      const subject = encodeURIComponent('Anfrage über Landing Page – ' + name);
-      window.location.href = 'mailto:information@ko-wi-bi.de?subject=' + subject + '&body=' + body;
-      document.getElementById('form-success').style.display = 'block';
-      document.getElementById('submit-btn').disabled = true;
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet …';
+
+      const data = {
+        name:     document.getElementById('f-name').value,
+        email:    document.getElementById('f-email').value,
+        telefon:  document.getElementById('f-tel').value,
+        nachricht: document.getElementById('f-msg').value
+      };
+
+      try {
+        const res = await fetch('https://formspree.io/f/mnjyvzpp', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          document.getElementById('kontakt-form').reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Anfrage senden →';
+          alert('Es gab einen Fehler. Bitte versuchen Sie es erneut.');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Anfrage senden →';
+        alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');
+      }
     }
   </script>
   </body>
