@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BWL-Fernlehrgang berufsbegleitend | seit 1948</title>
-    <meta name="description" content="Das kompakte BWL-Fernlehrgang für Führungskräfte und Unternehmer — berufsbegleitend, staatlich anerkannt, seit 1948. Bis zu 75 % staatlich förderbar." />
+    <meta name="description" content="Das kompakte BWL-Fernlehrgang für Führungskräfte und Unternehmer — berufsbegleitend, seit 1948. Bis zu 75 % förderbar." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -294,7 +294,7 @@
       .pain p { font-size: 14px; color: var(--ink-2); line-height: 1.65; }
 
       /* ── FOR WHOM ── */
-      .for-whom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .for-whom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .audience {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -484,7 +484,7 @@
       .akk-item::before { content: "✓"; color: var(--green); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
       /* ── TESTIMONIALS ── */
-      .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .testi {
         background: var(--card);
         border: 1.5px solid var(--line);
@@ -571,15 +571,15 @@
     <nav>
       <div class="nav-inner">
         <div class="logo-block">
-          <div class="logo-main">Kölner Wirtschaftsprüfer Ausbildung</div>
+          <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+          <div class="logo-sub">Kölner WiSo-Repetitorium</div>
           <div class="logo-sub">seit 1948</div>
         </div>
         <div class="nav-links">
           <a href="#fuer-wen">Für wen?</a>
-          <a href="#foerderung">Förderung</a>
           <a href="#abschluss">Abschluss</a>
           <a href="#alumni">Alumni</a>
-          <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="nav-cta">Jetzt informieren →</a>
+          <a href="#" class="nav-cta" onclick="openModal();return false;">Jetzt informieren →</a>
         </div>
       </div>
     </nav>
@@ -589,7 +589,7 @@
       <div class="hero-inner">
         <div class="hero-eyebrow">
           <div class="dot"></div>
-          <span class="tag">Berufsbegleitender Fernlehrgang · Seit 1948 · Staatlich anerkannt</span>
+          <span class="tag">Berufsbegleitender zertifizierter Fernlehrgang · Seit 1948 </span>
         </div>
         <h1>Für Führungskräfte,<br />denen das Studium<br /><em>fehlt.</em></h1>
         <p class="hero-sub">
@@ -598,15 +598,13 @@
           <strong>Das ändert sich jetzt.</strong>
         </p>
         <div class="cta-group">
-          <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary">Kostenlose Infos anfordern →</a>
+          <a href="#" class="btn-primary" onclick="openModal();return false;">Kostenlose Infos anfordern →</a>
           <a href="#fuer-wen" class="btn-ghost">Programm entdecken →</a>
         </div>
         <div class="hero-badges">
           <span class="badge">✓ Berufsbegleitend</span>
           <span class="badge">✓ Fernlehrgang — 100 % flexibel</span>
-          <span class="badge">✓ Staatlich anerkannter Abschluss</span>
-          <span class="badge">✓ Persönlicher Betreuer</span>
-          <span class="badge highlight">★ Bis zu 75 % förderbar</span>
+          <span class="badge">✓ Persönlicher Lehrgangsbegleiter</span>
         </div>
       </div>
     </section>
@@ -679,6 +677,16 @@
               <li>Praxis schlägt Theorie — immer und überall</li>
             </ul>
           </div>
+          <div class="audience">
+            <h3>Berufssoldaten &amp;<br /><em>Zeitsoldaten</em></h3>
+            <ul>
+              <li>Aktive Soldaten und Zeitsoldaten kurz vor oder nach dem Ausscheiden</li>
+              <li>Sie möchten sich zivil neu orientieren und brauchen einen anerkannten Abschluss</li>
+              <li>Der Lehrgang kann ggf. über den Berufsförderungsdienst der Bundeswehr (BFD) gefördert werden — bitte direkt im Kontaktformular anfragen</li>
+              <li>Berufsbegleitend — ideal auch während aktiver Dienstzeit</li>
+              <li>Praxisorientiertes Wissen für Führung, Planung und Unternehmensleitung</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -691,21 +699,18 @@
             <span class="tag" style="display:block;margin-bottom:12px;">Ihr Return on Investment</span>
             <h2>Was dieses<br />Wissen <em>wert</em> ist.</h2>
             <p>Eine Ausbildung ist keine Ausgabe — sie ist eine Investition in Ihre Entscheidungsqualität. Wer die falschen Zahlen liest, verliert. Wer versteht, wie BWL wirklich funktioniert, gewinnt — im Gehalt, im Unternehmen, im Leben.</p>
-            <p>Und das Beste: Sie müssen nicht den vollen Betrag tragen. Förderungen, Steuervorteile und Arbeitgeberzuschüsse machen die reale Belastung deutlich kleiner als Sie denken.</p>
+            <p>Und das Beste: Unter Umständen können Steuervorteile oder eine Beteiligung des Arbeitgebers die reale Belastung reduzieren — sprechen Sie dazu Ihren Steuerberater an.</p>
           </div>
           <div class="roi-stats">
             <div class="roi-stat">
-              <div class="num">+15<em>–30%</em></div>
-              <div class="desc"><strong>Gehaltssprung</strong> nach Abschluss — Führungskräfte mit anerkanntem BWL-Nachweis verhandeln signifikant besser.</div>
+              
+              <div class="desc"><strong>Möglicher Gehaltssprung</strong> nach Abschluss — Führungskräfte mit anerkanntem BWL-Nachweis verhandeln signifikant besser.</div>
             </div>
             <div class="roi-stat">
-              <div class="num">bis 40<em>%</em></div>
-              <div class="desc"><strong>Steuerersparnis</strong> für Selbstständige &amp; Unternehmer — als Betriebsausgabe absetzbar reduziert sich die reale Investition erheblich.</div>
+              
+              <div class="desc"><strong>Mögliche Steuerersparnis</strong> — Ausbildungskosten können unter Umständen als Betriebsausgabe geltend gemacht werden. Bitte prüfen Sie dies mit Ihrem Steuerberater.</div>
             </div>
-            <div class="roi-stat">
-              <div class="num">bis 75<em>%</em></div>
-              <div class="desc"><strong>Staatliche Förderung</strong> — über Aufstiegs-BAföG, Bildungsprämie oder betriebliche Weiterbildungsbudgets förderbar.</div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -715,26 +720,18 @@
     <section class="section" id="foerderung">
       <div class="wrap">
         <div class="section-head">
-          <h2>So wird Ihre<br />Ausbildung <em>gefördert.</em></h2>
-          <span class="tag">Förderoptionen</span>
+          <h2>Ihre Ausbildung<br /><em>finanzieren.</em></h2>
+          <span class="tag">Finanzierungsoptionen</span>
         </div>
         <div class="foerder-grid">
           <div class="foerder">
-            <div class="pct">75%</div>
-            <h3>Aufstiegs-BAföG</h3>
-            <p>Wer sich beruflich weiterqualifiziert, kann über das Aufstiegs-BAföG bis zu 75 % der Lehrgangskosten vom Staat zurückbekommen — unabhängig vom Einkommen.</p>
-            <span class="chip">Für Angestellte &amp; Selbstständige</span>
-          </div>
-          <div class="foerder">
-            <div class="pct">40%</div>
             <h3>Steuerliche Absetzbarkeit</h3>
-            <p>Selbstständige und Unternehmer können die Ausbildungskosten als Betriebsausgabe vollständig absetzen. Je nach Steuersatz sinkt die reale Investition um bis zu 40 %.</p>
+            <p>Ausbildungskosten können unter Umständen als Betriebsausgabe steuerlich geltend gemacht werden. Bitte lassen Sie dies individuell von Ihrem Steuerberater prüfen.</p>
             <span class="chip">Für Selbstständige &amp; GmbH-Inhaber</span>
           </div>
           <div class="foerder">
-            <div class="pct">100%</div>
-            <h3>Arbeitgeber-Förderung</h3>
-            <p>Viele Unternehmen übernehmen Weiterbildungskosten vollständig, wenn die Qualifikation dem Betrieb nützt. Fragen Sie einfach nach — die Antwort überrascht oft positiv.</p>
+            <h3>Arbeitgeber-Beteiligung</h3>
+            <p>In manchen Fällen beteiligen sich Arbeitgeber an Weiterbildungskosten, wenn die Qualifikation dem Betrieb zugutekommt. Eine Anfrage beim Arbeitgeber kann sich lohnen.</p>
             <span class="chip">Für Angestellte &amp; Führungskräfte</span>
           </div>
         </div>
@@ -802,10 +799,10 @@
           <div class="alumni-head">
             <div>
               <span class="tag">Absolventenliste</span>
-              <h2 style="margin-top:12px;">Wo unsere<br /><em>Alumni</em> heute sind.</h2>
+              <h2 style="margin-top:12px;">Unsere<br /><em style="display:block;margin-left:0.68em;">Alumni</em></h2>
             </div>
             <div>
-              <p>Die Presse nennt die Kölner Wirtschaftsprüfer Ausbildung die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft"</strong> (WDR). Die Absolventenliste liest sich wie das „Who is Who", der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, Bundes- und Landesminister, EU-Kommissare und mehrere Mitglieder des Sachverständigenrates (die „Fünf Weisen").</p>
+              <p>Die Presse nennt die Kölner Wirtschaftsprüfer-Ausbildung die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft"</strong> (WDR). Die Absolventenliste liest sich wie das „Who is Who", der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, Bundes- und Landesminister, EU-Kommissare und mehrere Mitglieder des Sachverständigenrates (die „Fünf Weisen").</p>
             </div>
           </div>
           <div class="alumni-logos">
@@ -840,10 +837,12 @@
           </div>
           <div class="abschluss-body">
             <p>Der Abschluss <strong>„Zertifizierter Betriebsökonom"</strong> wird mit kultusministerieller Zustimmung erteilt — kein Online-Kurs-Zertifikat, sondern ein offiziell anerkannter Nachweis.</p>
-            <p>Das Programm ist mehrfach staatlich ausgezeichnet und anerkannt. Damit ist Ihr Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
+            <p>Durch intensive Lehrgangsbetreuung führen wir Sie sicher zum Erfolg.</p>
+            <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+            <p>Das Braunschweig-Lehrwerk / WiSo-Repetitorium ist mehrfach ausgezeichnet und anerkannt. Damit ist Ihr Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
             <div class="akk-list">
               <div class="akk-item">Gütesiegel der BfA</div>
-              <div class="akk-item">ZFU-Siegel — Staatliche Zentralstelle für Fernunterricht</div>
+              <div class="akk-item">ZFU-Siegel — Zentralstelle für Fernunterricht</div>
               <div class="akk-item">Bundesinstitut für Berufsbildungsforschung</div>
               <div class="akk-item">Vertrag mit dem Institut der Wirtschaftsprüfer</div>
               <div class="akk-item">Bundeswehr-Berufsförderungsdienst (BFD)</div>
@@ -863,24 +862,31 @@
         </div>
         <div class="testimonials-grid">
           <div class="testi">
-            <div class="testi-quote">„Ich bin Meister, kein Akademiker. Nach dem Abschluss spreche ich mit meinem Steuerberater und meiner Bank auf Augenhöhe. Das allein hat sich mehr als gelohnt."</div>
+            <div class="testi-quote">„Als Grafiker suchte ich eine qualifizierte Zusatzausbildung in BWL, um meine berufliche Entwicklung zu steigern. Jahrelange, theoriebefrachtete Hochschule schied für mich von vorneherein aus. Aber ein BWL/VWL-Zertifikat von einer Wirtschaftsprüfer-Ausbildungs-Institution — das hat mich überzeugt."</div>
             <div class="testi-footer">
-              <div class="testi-name">M. Hoffmann</div>
-              <div class="testi-role">Handwerksmeister, 41 Jahre · Elektrobetrieb</div>
+              <div class="testi-name">Michael Zorzi</div>
+              <div class="testi-role">Grafiker · Köln</div>
             </div>
           </div>
           <div class="testi">
-            <div class="testi-quote">„Nach 12 Jahren als Teamleiterin hat mir die fehlende BWL immer wieder die Beförderung gekostet. Mit dem Zertifikat war das Gespräch beim nächsten Mal ein anderes."</div>
+            <div class="testi-quote">„Als damaliger Flüchtling konnte ich in Deutschland zunächst eine qualifizierte Berufsausbildung absolvieren und gründete dann erfolgreich einen Betrieb. Die betriebswirtschaftliche Ausbildung der Kölner Wirtschaftsprüfer-Ausbildung führte ich zu Ende. Heute bin ich in leitender Stellung bei einer Stadtverwaltung tätig."</div>
             <div class="testi-footer">
-              <div class="testi-name">S. Kaufmann</div>
-              <div class="testi-role">Teamleiterin Logistik, 38 Jahre</div>
+              <div class="testi-name">Anwar Haji</div>
+              <div class="testi-role">Leitende Stelle · Stadtverwaltung · Ahrtal</div>
             </div>
           </div>
           <div class="testi">
-            <div class="testi-quote">„Acht Jahre in der akademischen Welt sind zu lang. Das Lehrwerk vermittelt betriebswirtschaftliches Wissen an diejenigen, denen ein kompletter Hochschullehrgang zu lang ist."</div>
+            <div class="testi-quote">„Ein Abschluss bei den Kölner WP-Lehrgängen in BWL/VWL steht bekanntermaßen für Praxisrelevanz sowie Führungskompetenz. Die zeitliche Flexibilität und individuelle Betreuung waren für mich als spezialisierten Berater für Familienunternehmer die entscheidenden Auswahlkriterien."</div>
             <div class="testi-footer">
-              <div class="testi-name">Handelsblatt</div>
-              <div class="testi-role">Presse-Stimme</div>
+              <div class="testi-name">Prinz zu Leiningen</div>
+              <div class="testi-role">Berater für Familienunternehmen · Brüsewitz</div>
+            </div>
+          </div>
+          <div class="testi">
+            <div class="testi-quote">„Ich habe bereits gut die Hälfte des Lehrgangs zum Zertifizierten Betriebsökonom absolviert. Es läuft reibungslos und vor allem die zeitliche Flexibilität ist für meine Situation super."</div>
+            <div class="testi-footer">
+              <div class="testi-name">Kilian Maier</div>
+              <div class="testi-role">22 Jahre · Salzburg</div>
             </div>
           </div>
         </div>
@@ -892,8 +898,7 @@
       <div class="wrap">
         <h2 style="font-family:'Instrument Serif',serif;font-weight:400;">Bereit für den<br /><em style="font-style:italic;color:var(--accent);">nächsten Schritt?</em></h2>
         <p>Fordern Sie jetzt kostenlos und unverbindlich Ihre persönlichen Kursinfos an. Kein Verkaufsgespräch — nur die Fakten, die Sie brauchen.</p>
-        <a href="AFFILIATE_LINK_HIER_EINFÜGEN" class="btn-primary" style="font-size:13px;padding:18px 48px;">Kostenlose Infos anfordern →</a>
-        <div class="foerder-hint">Bis zu 75 % Ihrer Ausbildungskosten können staatlich gefördert werden — fragen Sie uns.</div>
+        <a href="#" class="btn-primary" style="font-size:13px;padding:18px 48px;" onclick="openModal();return false;">Kostenlose Infos anfordern →</a>
         <div class="final-note" style="margin-top:24px;">Unverbindlich · Kostenlos · Kein Verkaufsgespräch</div>
       </div>
     </section>
@@ -901,14 +906,100 @@
     <!-- FOOTER -->
     <footer>
       <div class="logo-block">
-        <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer Ausbildung</div>
+        <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
+        <div class="logo-sub">Kölner WiSo-Repetitorium</div>
         <div class="logo-sub">seit 1948</div>
       </div>
       <div class="copy">
-        Diese Seite enthält Affiliate-Links. ·
         <a href="https://www.ko-wi-bi.de/datenschutzerklaerung/" target="_blank" rel="noopener" style="color:var(--muted);">Datenschutz &amp; Impressum</a>
       </div>
     </footer>
 
+
+  <!-- Kontaktformular Modal -->
+  <div id="kontakt-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(17,19,15,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:var(--card);border:1px solid var(--border);box-shadow:6px 6px 0 var(--line);max-width:520px;width:100%;padding:48px 40px 40px;position:relative;max-height:90vh;overflow-y:auto;">
+      <!-- Schließen -->
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;" aria-label="Schließen">×</button>
+
+      <!-- Kopf -->
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Kostenlose Infos</p>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:8px;">Jetzt unverbindlich<br /><em style="color:var(--accent);font-style:italic;">anfragen.</em></h2>
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:32px;line-height:1.6;">Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
+
+      <!-- Formular -->
+      <form id="kontakt-form" onsubmit="sendForm(event)">
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Name *</label>
+          <input type="text" id="f-name" required placeholder="Vor- und Nachname"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">E-Mail *</label>
+          <input type="email" id="f-email" required placeholder="ihre@email.de"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Telefon <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <input type="tel" id="f-tel" placeholder="+43 / +49 ..."
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:28px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Nachricht <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea id="f-msg" rows="3" placeholder="Ihre Fragen oder Anmerkungen …"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;resize:vertical;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button type="submit" id="submit-btn"
+          style="width:100%;padding:16px;background:var(--accent);color:#fff;border:2px solid var(--accent);font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;transition:background 0.2s;">
+          Anfrage senden →
+        </button>
+        <div id="form-success" style="display:none;margin-top:20px;padding:16px;background:#f0f7f1;border:1px solid #2f7d3e;color:#2f7d3e;font-size:14px;text-align:center;">
+          ✓ Vielen Dank! Wir melden uns bald bei Ihnen.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    // Close on backdrop click
+    document.getElementById('kontakt-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+    function sendForm(e) {
+      e.preventDefault();
+      const name  = document.getElementById('f-name').value;
+      const email = document.getElementById('f-email').value;
+      const tel   = document.getElementById('f-tel').value;
+      const msg   = document.getElementById('f-msg').value;
+      const body  = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'E-Mail: ' + email + '\n' +
+        (tel ? 'Telefon: ' + tel + '\n' : '') +
+        (msg ? '\nNachricht:\n' + msg : '')
+      );
+      const subject = encodeURIComponent('Anfrage über Landing Page – ' + name);
+      window.location.href = 'mailto:info@ko-wi-bi.de?subject=' + subject + '&body=' + body;
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('submit-btn').disabled = true;
+    }
+  </script>
   </body>
 </html>
