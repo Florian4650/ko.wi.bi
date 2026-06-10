@@ -1003,14 +1003,34 @@
       btn.textContent = 'Wird gesendet …';
 
       const data = {
+        access_key: '301c5c18-a5fb-465d-ad2b-f996eb5b132a',
         name:     document.getElementById('f-name').value,
         email:    document.getElementById('f-email').value,
         telefon:  document.getElementById('f-tel').value,
-        nachricht: document.getElementById('f-msg').value
+        message: document.getElementById('f-msg').value,
+        subject: 'Neue Kursanfrage – Kölner Wirtschaftsprüfer-Ausbildung',
+        from_name: 'KO·WI·BI Kontaktformular',
+        replyto: document.getElementById('f-email').value,
+        botcheck: '',
+        autoresponse_message: `Sehr geehrte Damen und Herren,
+
+vielen Dank für Ihre Anfrage bei der Kölner Wirtschaftsprüfer-Ausbildung (KO·WI·BI).
+
+Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden persönlich bei Ihnen melden.
+
+Falls Sie in der Zwischenzeit Fragen haben, können Sie uns jederzeit unter info@campushumanitas.com erreichen.
+
+Mit freundlichen Grüßen
+Ihr Team der Kölner Wirtschaftsprüfer-Ausbildung
+
+---
+Kölner WiSo-Repetitorium · seit 1948
+Wirtschaftsprüfer-Ausbildung · seit 1971
+ko-wi-bi.de`
       };
 
       try {
-        const res = await fetch('https://formspree.io/f/mnjyvzpp', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
