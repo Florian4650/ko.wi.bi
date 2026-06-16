@@ -583,6 +583,49 @@
         .alumni-logos { flex-direction: column; }
         .alumni-logo { border-right: none; }
       }
+
+      /* ── FAQ ── */
+      .faq-grid { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--line); background: var(--card); }
+      .faq-item { border-bottom: 1px solid var(--border); }
+      .faq-item:last-child { border-bottom: none; }
+      .faq-q {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 24px 28px;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        line-height: 1.4;
+      }
+      .faq-q:hover { color: var(--accent-dark); }
+      .faq-q .faq-icon {
+        font-family: "Instrument Serif", serif;
+        font-size: 28px;
+        color: var(--accent);
+        flex-shrink: 0;
+        transition: transform 0.2s;
+        line-height: 1;
+      }
+      .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .faq-a-inner {
+        padding: 0 28px 24px;
+        font-size: 14.5px;
+        color: var(--ink-2);
+        line-height: 1.7;
+      }
     </style>
 
     <!-- ============================================================
@@ -604,7 +647,45 @@
           "foundingDate": "1948",
           "email": "info@campushumanitas.com",
           "slogan": "BWL-Kompaktwissen. Kein jahrelanges Studium.",
-          "knowsLanguage": "de"
+          "knowsLanguage": "de",
+          "knowsAbout": [
+            "Betriebswirtschaftslehre",
+            "Volkswirtschaftslehre",
+            "Unternehmensführung",
+            "Berufsbegleitende Weiterbildung",
+            "Fernlehrgang"
+          ],
+          "areaServed": ["DE", "AT", "CH"],
+          "employee": {
+            "@type": "Person",
+            "name": "Dr. Karl Braunschweig",
+            "jobTitle": "Ausbildungsleiter"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Breinberg West 24/1",
+            "addressLocality": "Neumarkt am Wallersee",
+            "addressRegion": "Salzburg",
+            "addressCountry": "AT"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bwl-kompakt.com/#website",
+          "url": "https://bwl-kompakt.com/",
+          "name": "Kölner Wirtschaftsprüfer-Ausbildung",
+          "inLanguage": "de",
+          "publisher": { "@id": "https://bwl-kompakt.com/#organisation" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://bwl-kompakt.com/#webpage",
+          "url": "https://bwl-kompakt.com/",
+          "name": "BWL-Fernlehrgang berufsbegleitend | seit 1948",
+          "description": "Das kompakte BWL-Fernlehrgang für Führungskräfte und Unternehmer — berufsbegleitend, seit 1948.",
+          "inLanguage": "de",
+          "isPartOf": { "@id": "https://bwl-kompakt.com/#website" },
+          "about": { "@id": "https://bwl-kompakt.com/#kurs" }
         },
         {
           "@type": "Course",
@@ -614,6 +695,11 @@
           "provider": { "@id": "https://bwl-kompakt.com/#organisation" },
           "educationalCredentialAwarded": "Zertifizierter Betriebsökonom (mit kultusministerieller Zustimmung)",
           "inLanguage": "de",
+          "educationalLevel": "Berufliche Weiterbildung / Erwachsenenbildung",
+          "about": [
+            { "@type": "Thing", "name": "Betriebswirtschaftslehre" },
+            { "@type": "Thing", "name": "Unternehmensführung" }
+          ],
           "teaches": [
             "Betriebswirtschaftslehre (BWL)",
             "Entscheidungsorientierte Unternehmensführung",
@@ -642,23 +728,23 @@
               "name": "Brauche ich wirtschaftliche Vorkenntnisse für den Lehrgang?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Nein. Trotz des anspruchsvollen Niveaus erfordert eine Lehrgangsteilnahme aufgrund der Didaktik sowie der Lehrgangsbetreuung keinerlei wirtschaftliche Vorkenntnisse."
+                "text": "Nein. Trotz des anspruchsvollen Niveaus erfordert eine Lehrgangsteilnahme aufgrund der Didaktik sowie der persönlichen Lehrgangsbetreuung keinerlei wirtschaftliche Vorkenntnisse. Der Lehrgang ist so aufgebaut, dass auch Einsteiger ohne BWL-Hintergrund sicher zum Abschluss geführt werden."
               }
             },
             {
               "@type": "Question",
-              "name": "Ist der Lehrgang berufsbegleitend?",
+              "name": "Ist der Lehrgang wirklich zu 100 % berufsbegleitend?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ja. Der Lehrgang ist zu 100 % berufsbegleitend und ortsunabhängig. Sie lernen, wann und wo Sie möchten – als Fern- bzw. Online-Lehrgang, optional mit Präsenzphasen, ohne starren Stundenplan."
+                "text": "Ja. Sie lernen ortsunabhängig und in Ihrem eigenen Tempo – als Fern- bzw. Online-Lehrgang, optional mit Präsenzphasen (semivirtuell). Es gibt keinen starren Stundenplan und keinen Präsenzzwang."
               }
             },
             {
               "@type": "Question",
-              "name": "Welchen Abschluss erhalte ich?",
+              "name": "Welchen Abschluss erhalte ich und ist er anerkannt?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sie erhalten den Abschluss „Zertifizierter Betriebsökonom“, der mit kultusministerieller Zustimmung erteilt wird – kein Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt anerkannter Nachweis."
+                "text": "Sie erhalten den Abschluss „Zertifizierter Betriebsökonom“, der mit kultusministerieller Zustimmung erteilt wird – kein bloßes Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt anerkannter Nachweis. Das Lehrwerk des WiSo-Repetitoriums wurde mehrfach ausgezeichnet."
               }
             },
             {
@@ -675,6 +761,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Ausbildungskosten können unter Umständen als Betriebsausgabe steuerlich geltend gemacht werden; bitte mit dem Steuerberater prüfen. Teilweise beteiligen sich Arbeitgeber an den Kosten, und für Soldaten kommt ggf. eine Förderung über den Berufsförderungsdienst der Bundeswehr (BFD) in Betracht."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie lange dauert der Lehrgang?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen."
               }
             },
             {
@@ -704,7 +798,9 @@
         <div class="nav-links">
           <a href="#fuer-wen">Für wen?</a>
           <a href="#abschluss">Abschluss</a>
+          <a href="historie.html">Historie</a>
           <a href="#alumni">Alumni</a>
+          <a href="#faq">FAQ</a>
           <a href="#" class="nav-cta" onclick="openModal();return false;">Jetzt informieren →</a>
         </div>
       </div>
@@ -1085,6 +1181,81 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Häufige Fragen zum BWL-Fernlehrgang">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Häufige<br /><em>Fragen</em></h2>
+          <span class="tag">FAQ</span>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Brauche ich wirtschaftliche Vorkenntnisse für den Lehrgang?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Nein. Trotz des anspruchsvollen Niveaus erfordert eine Lehrgangsteilnahme aufgrund der Didaktik sowie der persönlichen Lehrgangsbetreuung keinerlei wirtschaftliche Vorkenntnisse. Der Lehrgang ist so aufgebaut, dass auch Einsteiger ohne BWL-Hintergrund sicher zum Abschluss geführt werden.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Ist der Lehrgang wirklich zu 100 % berufsbegleitend?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Ja. Sie lernen ortsunabhängig und in Ihrem eigenen Tempo — als Fern- bzw. Online-Lehrgang, optional mit Präsenzphasen (semivirtuell). Es gibt keinen starren Stundenplan und keinen Präsenzzwang. So lässt sich die Ausbildung neben Beruf, Familie oder aktiver Dienstzeit absolvieren.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Welchen Abschluss erhalte ich und ist er anerkannt?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Sie erhalten den Abschluss „Zertifizierter Betriebsökonom“, der mit kultusministerieller Zustimmung erteilt wird — kein bloßes Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt anerkannter Nachweis. Das Lehrwerk des WiSo-Repetitoriums wurde mehrfach ausgezeichnet.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Für wen ist der Lehrgang geeignet?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Für berufstätige Aufsteiger und Führungskräfte, Selbstständige und Unternehmer, Berufs- und Zeitsoldaten sowie Berufseinsteiger, die fundiertes BWL-Wissen ohne mehrjähriges Studium erwerben möchten. Keine wirtschaftlichen Vorkenntnisse nötig.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Kann ich die Ausbildung finanzieren oder steuerlich absetzen?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Ausbildungskosten können unter Umständen als Betriebsausgabe steuerlich geltend gemacht werden; bitte mit Ihrem Steuerberater prüfen. Teilweise beteiligen sich Arbeitgeber an den Kosten, und für Soldaten kommt ggf. eine Förderung über den Berufsförderungsdienst der Bundeswehr (BFD) in Betracht. Sprechen Sie uns dazu im Anfrageformular an.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Wie lange dauert der Lehrgang?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Seit wann gibt es die Kölner Wirtschaftsprüfer-Ausbildung?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Das Kölner WiSo-Repetitorium besteht seit 1948, die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert und am Puls der Zeit gehalten.
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FINALE CTA -->
     <section class="final-cta">
       <div class="wrap">
@@ -1166,6 +1337,21 @@
       const m = document.getElementById('kontakt-modal');
       m.style.display = 'none';
       document.body.style.overflow = '';
+    }
+    // FAQ Akkordeon
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
     }
     // Close on backdrop click
     document.getElementById('kontakt-modal').addEventListener('click', function(e) {

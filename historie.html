@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historie & Tradition seit 1948 | Kölner Wirtschaftsprüfer-Ausbildung</title>
+  <meta name="description" content="Die Geschichte der Kölner Wirtschaftsprüfer-Ausbildung / Kölner WiSo-Repetitorium seit 1948 — von der Gründung durch Dr. Braunschweig bis heute." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://bwl-kompakt.com/historie.html" />
+  <meta name="theme-color" content="#11130f" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Kölner Wirtschaftsprüfer-Ausbildung" />
+  <meta property="og:title" content="Historie & Tradition seit 1948" />
+  <meta property="og:description" content="Die Geschichte der Kölner Wirtschaftsprüfer-Ausbildung / Kölner WiSo-Repetitorium seit 1948." />
+  <meta property="og:url" content="https://bwl-kompakt.com/historie.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --ink: #11130f;
+      --ink-2: #3c3f37;
+      --muted: #7a7c72;
+      --line: #1b1d17;
+      --card: #fffdf7;
+      --accent: #c8a96e;
+      --accent-dark: #a0813e;
+      --green: #2f7d3e;
+      --chip: #efeadc;
+      --border: #d8d4c7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--line); color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 60px;
+    }
+    .logo-block { display: flex; flex-direction: column; gap: 1px; }
+    .logo-main { font-family: 'Instrument Serif', serif; font-size: 14px; font-weight: 400; color: #fff; line-height: 1.2; }
+    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .nav-back { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; letter-spacing: 0.03em; }
+    .nav-back:hover { color: #fff; }
+
+    /* HERO */
+    .page-hero {
+      border-bottom: 1.5px solid var(--line);
+      padding: 72px 0 56px;
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+    }
+    .page-hero::before {
+      content: "1948";
+      position: absolute;
+      right: -10px; top: 0;
+      font-family: "Instrument Serif", serif;
+      font-size: 200px;
+      line-height: 1;
+      color: var(--border);
+      opacity: 0.4;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; position: relative; }
+    .page-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 400; line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 17px; color: var(--ink-2); line-height: 1.65; margin-top: 24px; max-width: 620px; }
+
+    /* TIMELINE */
+    .timeline-section { padding: 72px 0 88px; }
+    .timeline-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+    .timeline {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 0;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 92px; top: 8px; bottom: 8px;
+      width: 1.5px;
+      background: var(--border);
+    }
+    .tl-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 28px;
+      padding: 14px 0;
+      align-items: baseline;
+    }
+    .tl-year {
+      font-family: 'Instrument Serif', serif;
+      font-size: 24px;
+      color: var(--accent-dark);
+      text-align: right;
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+    .tl-dot {
+      position: absolute;
+      left: 86px; top: 22px;
+      width: 13px; height: 13px;
+      background: var(--card);
+      border: 2.5px solid var(--accent);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .tl-item.highlight .tl-dot { background: var(--accent); }
+    .tl-body {
+      padding-left: 22px;
+      font-size: 15.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+    .tl-body strong { color: var(--ink); font-weight: 600; }
+    .tl-optional {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .hist-cta {
+      max-width: 860px; margin: 0 auto; padding: 40px 32px 0;
+    }
+    .hist-cta-box {
+      background: var(--ink);
+      color: var(--card);
+      padding: 40px 36px;
+      text-align: center;
+    }
+    .hist-cta-box h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hist-cta-box h2 em { font-style: italic; color: var(--accent); }
+    .hist-cta-box p { font-size: 15px; color: #c2beb2; line-height: 1.6; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border: 1.5px solid var(--accent);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--line); color: rgba(255,255,255,0.5);
+      padding: 28px 40px;
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero-wrap, .timeline-wrap, .hist-cta { padding-left: 20px; padding-right: 20px; }
+      .page-hero::before { font-size: 120px; opacity: 0.3; }
+      .timeline::before { left: 64px; }
+      .tl-item { grid-template-columns: 54px 1fr; gap: 18px; }
+      .tl-dot { left: 58px; }
+      .tl-year { font-size: 19px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+    }
+  </style>
+
+  <!-- Strukturierte Daten: Historie als zeitliche Ereignisliste -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Historie der Kölner Wirtschaftsprüfer-Ausbildung",
+    "url": "https://bwl-kompakt.com/historie.html",
+    "inLanguage": "de",
+    "about": {
+      "@type": "EducationalOrganization",
+      "name": "Kölner Wirtschaftsprüfer-Ausbildung",
+      "alternateName": ["Kölner WiSo-Repetitorium", "Kölner Schule"],
+      "foundingDate": "1948",
+      "url": "https://bwl-kompakt.com/",
+      "employee": {
+        "@type": "Person",
+        "name": "Dr. Karl Braunschweig",
+        "jobTitle": "Ausbildungsleiter"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-block">
+      <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+    </div>
+    <a href="index.html" class="nav-back">← Zurück zur Hauptseite</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-wrap">
+      <p class="page-eyebrow">Tradition · seit 1948</p>
+      <h1>Historie &amp;<br /><em>Tradition.</em></h1>
+      <p class="hero-sub">
+        Die Geschichte der „Kölner Schule" reicht über 75 Jahre zurück. Von der Gründung des
+        Kölner WiSo-Repetitoriums durch Dr. Braunschweig bis heute — eine Chronik
+        gewachsener Anerkennung und kontinuierlicher Weiterentwicklung.
+      </p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="timeline-wrap">
+      <div class="timeline">
+
+        <div class="tl-item highlight">
+          <div class="tl-year">1948</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body"><strong>Gründung des Kölner WiSo-Repetitoriums Dr. Braunschweig</strong> (BWL / VWL).</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1955</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Größtes Wirtschafts-Repetitorium Deutschlands.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1972</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Begutachtung des Lehrmaterials durch die Wirtschaftsprüferkammer.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1973</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Erteilung des Gütezeichens des Staatlichen Bundesinstitutes für Berufsbildungsforschung.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1974</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Anerkennung durch den Regierungspräsidenten Köln.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1975</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Anerkennung als Bildungsveranstaltung im Sinne des Bildungsurlaubsgesetzes.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1977</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Vertrag mit dem Institut der Wirtschaftsprüfer in Deutschland e.V.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1978</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Start der Publikationsreihe des Lehrwerkes (WiSo-Lernbücher), Gabler Verlag, Wiesbaden, durch Dr. K. Braunschweig.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1980</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Erteilung des Siegels der Staatlichen Zentralstelle für Fernunterricht.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1986</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Vertrag über die Zusammenarbeit mit dem Bundesverband der vereidigten Buchprüfer.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1998</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Eintragung der Markenrechte (Bundespatentamt).</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2002</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Anerkennung im Rahmen der ärztlichen Fortbildung durch die Ärztekammer.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2005</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Kooperation mit der Staatlichen Wirtschaftsuniversität (deutsche Sektion) Jekaterinburg.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2016</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Studienanbieter im Rahmen des Bundesamtes für Personalmanagement der Bundeswehr.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2017</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">BWL-Schulungsangebot für die Ökumenische Flüchtlingshilfe Rhein-Ahr e.V.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2017</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Zulassung als Weiterbildungsmaßnahme für die Förderung der beruflichen Weiterbildung nach AZAV.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2018</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Notif. Accreditation: AQ Austria – Agency for Quality Assurance and Accreditation Austria.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Erweiterung des BWL/VWL-Lehrwerkes um die Quantenphilosophie <span class="tl-optional">(optional)</span>.</div>
+        </div>
+
+        <div class="tl-item highlight">
+          <div class="tl-year">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">Kooperation mit <strong>CAMPUS HUMANITAS</strong>, Mag. Sonja Maier – Innovative Bildung.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="hist-cta">
+      <div class="hist-cta-box">
+        <h2>Werden Sie Teil dieser<br /><em>Tradition.</em></h2>
+        <p>Fordern Sie kostenlos und unverbindlich Ihre persönlichen Lehrgangsinfos an.</p>
+        <a href="index.html#fuer-wen" class="btn-primary">Zum Lehrgang →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logo-block">
+      <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
+      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+    </div>
+    <div><a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
+  </footer>
+
+  <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->
+  <script src="cookie-consent.js" defer></script>
+
+</body>
+</html>
