@@ -626,6 +626,16 @@
         color: var(--ink-2);
         line-height: 1.7;
       }
+      .faq-group-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: var(--chip);
+        padding: 14px 28px;
+        border-bottom: 1px solid var(--border);
+      }
     </style>
 
     <!-- ============================================================
@@ -645,7 +655,7 @@
           "description": "Berufsbegleitende, betriebswirtschaftliche Kompaktausbildung als Fernlehrgang. Das Kölner WiSo-Repetitorium besteht seit 1948, die Wirtschaftsprüfer-Ausbildung seit 1971.",
           "url": "https://bwl-kompakt.com/",
           "foundingDate": "1948",
-          "email": "info@campushumanitas.com",
+          "email": "info@bwl-kompakt.com",
           "slogan": "BWL-Kompaktwissen. Kein jahrelanges Studium.",
           "knowsLanguage": "de",
           "knowsAbout": [
@@ -725,6 +735,22 @@
           "mainEntity": [
             {
               "@type": "Question",
+              "name": "Für wen ist der Lehrgang geeignet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Für berufstätige Aufsteiger und Führungskräfte, Selbstständige und Unternehmer, Berufs- und Zeitsoldaten sowie Berufseinsteiger, die fundiertes BWL-Wissen ohne mehrjähriges Studium erwerben möchten. Keine wirtschaftlichen Vorkenntnisse nötig."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ist diese Wirtschafts-Ausbildung für Juristen, Techniker/Ingenieure und andere Akademiker geeignet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Für Akademiker, für die eine explizit ökonomische Ausbildung bzw. Zusatzausbildung sinnvoll ist, die aber deshalb kein weiteres langes (und dabei theorieüberfrachtetes) Hochschulstudium absolvieren wollen oder können, ist diese Ausbildung ideal. Sie lernen auf den Punkt die Dinge, welche in der Wirtschaftspraxis gefragt sind, sparen Zeit und sind beruflich bzw. zeitlich völlig flexibel."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Brauche ich wirtschaftliche Vorkenntnisse für den Lehrgang?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -736,7 +762,7 @@
               "name": "Ist der Lehrgang wirklich zu 100 % berufsbegleitend?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ja. Sie lernen ortsunabhängig und in Ihrem eigenen Tempo – als Fern- bzw. Online-Lehrgang, optional mit Präsenzphasen (semivirtuell). Es gibt keinen starren Stundenplan und keinen Präsenzzwang."
+                "text": "Ja. Sie lernen ortsunabhängig und in Ihrem eigenen Tempo — als Fern- bzw. Online-Lehrgang, optional mit Präsenzphasen (semivirtuell). Es gibt keinen starren Stundenplan und keinen Präsenzzwang. So lässt sich die Ausbildung neben Beruf, Familie oder aktiver Dienstzeit absolvieren."
               }
             },
             {
@@ -744,23 +770,7 @@
               "name": "Welchen Abschluss erhalte ich und ist er anerkannt?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sie erhalten den Abschluss „Zertifizierter Betriebsökonom“, der mit kultusministerieller Zustimmung erteilt wird – kein bloßes Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt anerkannter Nachweis. Das Lehrwerk des WiSo-Repetitoriums wurde mehrfach ausgezeichnet."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Für wen ist der Lehrgang geeignet?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Für berufstätige Aufsteiger und Führungskräfte, Selbstständige und Unternehmer, Berufs- und Zeitsoldaten sowie Berufseinsteiger, die fundiertes BWL-Wissen ohne mehrjähriges Studium erwerben möchten."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Kann ich die Ausbildung finanzieren oder steuerlich absetzen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ausbildungskosten können unter Umständen als Betriebsausgabe steuerlich geltend gemacht werden; bitte mit dem Steuerberater prüfen. Teilweise beteiligen sich Arbeitgeber an den Kosten, und für Soldaten kommt ggf. eine Förderung über den Berufsförderungsdienst der Bundeswehr (BFD) in Betracht."
+                "text": "Sie erhalten den Abschluss „Zertifizierter Betriebsökonom“, der mit kultusministerieller Zustimmung erteilt wird — kein bloßes Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt anerkannter Nachweis. Das Lehrwerk des WiSo-Repetitoriums wurde mehrfach ausgezeichnet."
               }
             },
             {
@@ -768,7 +778,31 @@
               "name": "Wie lange dauert der Lehrgang?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen."
+                "text": "Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Im statistischen Mittel beträgt die Ausbildungsdauer 2 Jahre. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kann ich die Ausbildung finanzieren oder steuerlich absetzen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ausbildungskosten können unter Umständen als Betriebsausgabe steuerlich geltend gemacht werden; bitte mit Ihrem Steuerberater prüfen. Teilweise beteiligen sich Arbeitgeber an den Kosten, und für Soldaten kommt ggf. eine Förderung über den Berufsförderungsdienst der Bundeswehr (BFD) in Betracht. Sprechen Sie uns dazu im Anfrageformular an."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Was ist mit Interessenten, für die nur gewisse Ausbildungsmodule in Frage kommen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Selbstverständlich kann sich jeder Interessent auf gewisse Module beschränken und sich diese nach entsprechender Prüfung zertifizieren lassen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Was geschieht, wenn ein Teilnehmer (aus welchen Gründen auch immer) seine Ausbildung abbricht oder abbrechen muss?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Über die bisher absolvierten Fächer wird selbstverständlich ein entsprechendes Zertifikat ausgestellt, eine spätere Fortführung kann jederzeit erfolgen. Kostenmäßig entsteht kein Risiko."
               }
             },
             {
@@ -776,7 +810,31 @@
               "name": "Seit wann gibt es die Kölner Wirtschaftsprüfer-Ausbildung?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Das Kölner WiSo-Repetitorium besteht seit 1948, die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert."
+                "text": "Das Kölner WiSo-Repetitorium besteht seit 1948, die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert und am Puls der Zeit gehalten."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Warum ein Lehrgang/Ausbildung hier?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die Wirtschaftsprüfer-Ausbildung ist die höchste Ausbildung in der Wirtschaft: I.d.R. kommt nach einem Master-Abschluss die Steuerberaterausbildung und dann erst folgt das Wirtschaftsprüferexamen (Wirtschaftsprüfer-Kammer). Insofern hat automatisch auch eine reine BWL/VWL-Ausbildung bei einem solchen Institut den entsprechenden Namen in der Wirtschaft. Die einzigartige Liste der Ehemaligen trägt ebenfalls dazu bei – ebenso der Name des Wirtschaftsnobelpreisträgers F. A. von Hayek, der Lehrer unseres Akademischen Leiters war. Daher wird die reine BWL bewusst um die wirklich wichtigen VWL-Teile ergänzt – im Sinne einer ganzheitlichen (holistischen) Sichtweise!"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Was bedeutet ganzheitliche (holistische) Sichtweise?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ganz im Gegensatz zur heute allgemein üblichen „BWL-Fachidiotie“ ist das Lehrwerk auf das ausgerichtet, was in der Wirtschaft (vor allem im Mittelstand) tatsächlich gefragt ist: Einsatz auf den verschiedensten Gebieten durch Vermittlung einer ganzheitlichen (holistischen) Sichtweise. Deshalb ist das Lehrwerk bausteinförmig aufgebaut und didaktisch aufgrund der jahrzehntelangen Erfahrung optimiert. Unsere ganzheitliche Sichtweise wird durch die Betonung der VWL in Richtung „Österreichische Schule der Nationalökonomie“ (F. A. von Hayek) deutlich. Kein Zufall, dass unser Akademischer Leiter selbst Student des Wirtschaftsnobelpreisträgers F. A. von Hayek war."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Was bedeutet klassische BWL?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die klassische BWL ist die entscheidungsorientierte BWL. Sie bezieht sich in erster Linie auf Führungsfunktionen in einem Unternehmen und unterstützt in erster Linie die Entscheidungsfindung der Unternehmensführung. Demgegenüber steht die sog. Moderne BWL, wie sie von den meisten Hochschulen gelehrt wird. Hier findet eine frühzeitige Aufsplitterung in sehr viele Unterbereiche statt. Das wird dabei fälschlicherweise als „ganzheitlich“ fehlinterpretiert. In Wahrheit werden frühere „Assistenten-Stellen“ bzw. gehobene Sachbearbeiter-Stellen auf akademisches Niveau angehoben."
               }
             }
           ]
@@ -1189,6 +1247,25 @@
           <span class="tag">FAQ</span>
         </div>
         <div class="faq-grid">
+          <div class="faq-group-label">Zum Lehrgang</div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Für wen ist der Lehrgang geeignet?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Für berufstätige Aufsteiger und Führungskräfte, Selbstständige und Unternehmer, Berufs- und Zeitsoldaten sowie Berufseinsteiger, die fundiertes BWL-Wissen ohne mehrjähriges Studium erwerben möchten. Keine wirtschaftlichen Vorkenntnisse nötig.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Ist diese Wirtschafts-Ausbildung für Juristen, Techniker/Ingenieure und andere Akademiker geeignet?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Für Akademiker, für die eine explizit ökonomische Ausbildung bzw. Zusatzausbildung sinnvoll ist, die aber deshalb kein weiteres langes (und dabei theorieüberfrachtetes) Hochschulstudium absolvieren wollen oder können, ist diese Ausbildung ideal. Sie lernen auf den Punkt die Dinge, welche in der Wirtschaftspraxis gefragt sind, sparen Zeit und sind beruflich bzw. zeitlich völlig flexibel.
+            </div></div>
+          </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
               Brauche ich wirtschaftliche Vorkenntnisse für den Lehrgang?
@@ -1218,11 +1295,11 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-              Für wen ist der Lehrgang geeignet?
+              Wie lange dauert der Lehrgang?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a"><div class="faq-a-inner">
-              Für berufstätige Aufsteiger und Führungskräfte, Selbstständige und Unternehmer, Berufs- und Zeitsoldaten sowie Berufseinsteiger, die fundiertes BWL-Wissen ohne mehrjähriges Studium erwerben möchten. Keine wirtschaftlichen Vorkenntnisse nötig.
+              Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Im statistischen Mittel beträgt die Ausbildungsdauer 2 Jahre. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage.
             </div></div>
           </div>
           <div class="faq-item">
@@ -1236,13 +1313,23 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-              Wie lange dauert der Lehrgang?
+              Was ist mit Interessenten, für die nur gewisse Ausbildungsmodule in Frage kommen?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a"><div class="faq-a-inner">
-              Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage.
+              Selbstverständlich kann sich jeder Interessent auf gewisse Module beschränken und sich diese nach entsprechender Prüfung zertifizieren lassen.
             </div></div>
           </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Was geschieht, wenn ein Teilnehmer (aus welchen Gründen auch immer) seine Ausbildung abbricht oder abbrechen muss?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Über die bisher absolvierten Fächer wird selbstverständlich ein entsprechendes Zertifikat ausgestellt, eine spätere Fortführung kann jederzeit erfolgen. Kostenmäßig entsteht kein Risiko.
+            </div></div>
+          </div>
+          <div class="faq-group-label">Zu unserem Ansatz &amp; Tradition</div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
               Seit wann gibt es die Kölner Wirtschaftsprüfer-Ausbildung?
@@ -1250,6 +1337,33 @@
             </button>
             <div class="faq-a"><div class="faq-a-inner">
               Das Kölner WiSo-Repetitorium besteht seit 1948, die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert und am Puls der Zeit gehalten.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Warum ein Lehrgang/Ausbildung hier?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Die Wirtschaftsprüfer-Ausbildung ist die höchste Ausbildung in der Wirtschaft: I.d.R. kommt nach einem Master-Abschluss die Steuerberaterausbildung und dann erst folgt das Wirtschaftsprüferexamen (Wirtschaftsprüfer-Kammer). Insofern hat automatisch auch eine reine BWL/VWL-Ausbildung bei einem solchen Institut den entsprechenden Namen in der Wirtschaft. Die einzigartige Liste der Ehemaligen trägt ebenfalls dazu bei – ebenso der Name des Wirtschaftsnobelpreisträgers F. A. von Hayek, der Lehrer unseres Akademischen Leiters war. Daher wird die reine BWL bewusst um die wirklich wichtigen VWL-Teile ergänzt – im Sinne einer ganzheitlichen (holistischen) Sichtweise!
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Was bedeutet ganzheitliche (holistische) Sichtweise?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Ganz im Gegensatz zur heute allgemein üblichen „BWL-Fachidiotie“ ist das Lehrwerk auf das ausgerichtet, was in der Wirtschaft (vor allem im Mittelstand) tatsächlich gefragt ist: Einsatz auf den verschiedensten Gebieten durch Vermittlung einer ganzheitlichen (holistischen) Sichtweise. Deshalb ist das Lehrwerk bausteinförmig aufgebaut und didaktisch aufgrund der jahrzehntelangen Erfahrung optimiert. Unsere ganzheitliche Sichtweise wird durch die Betonung der VWL in Richtung „Österreichische Schule der Nationalökonomie“ (F. A. von Hayek) deutlich. Kein Zufall, dass unser Akademischer Leiter selbst Student des Wirtschaftsnobelpreisträgers F. A. von Hayek war.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Was bedeutet klassische BWL?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Die klassische BWL ist die entscheidungsorientierte BWL. Sie bezieht sich in erster Linie auf Führungsfunktionen in einem Unternehmen und unterstützt in erster Linie die Entscheidungsfindung der Unternehmensführung. Demgegenüber steht die sog. Moderne BWL, wie sie von den meisten Hochschulen gelehrt wird. Hier findet eine frühzeitige Aufsplitterung in sehr viele Unterbereiche statt. Das wird dabei fälschlicherweise als „ganzheitlich“ fehlinterpretiert. In Wahrheit werden frühere „Assistenten-Stellen“ bzw. gehobene Sachbearbeiter-Stellen auf akademisches Niveau angehoben.
             </div></div>
           </div>
         </div>
