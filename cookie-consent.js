@@ -1,15 +1,23 @@
 /* =========================================================================
    COOKIE-CONSENT für bwl-kompakt.com
    -------------------------------------------------------------------------
-   DSGVO-konformes Opt-in-Banner. Lädt Google Analytics & Google Ads ERST
-   nach aktiver Zustimmung. Ohne Zustimmung wird NICHTS getrackt.
+   DSGVO-konformes Opt-in-Banner. Lädt Google Tag Manager (und darüber
+   Analytics & Ads) ERST nach aktiver Zustimmung. Ohne Zustimmung wird
+   NICHTS getrackt.
 
    EINBINDUNG: Eine einzige Zeile vor </body> in jede HTML-Seite:
        <script src="cookie-consent.js" defer></script>
 
-   KONFIGURATION: Trage unten bei CONFIG deine echten IDs ein, sobald du
-   Analytics und Ads eingerichtet hast. Vorher einfach leer lassen ("") –
-   dann zeigt das Banner sich trotzdem korrekt, lädt aber nichts.
+   --- WICHTIG: STRATEGIE "ALLES ÜBER GOOGLE TAG MANAGER" -------------------
+   Es wird hier NUR der Google Tag Manager (gtmId) geladen.
+   Google Analytics 4 und Google Ads werden NICHT hier eingetragen, sondern
+   INNERHALB des Tag Managers konfiguriert. Das verhindert doppeltes Laden.
+
+   Deine IDs (zur Eintragung INNERHALB von GTM, NICHT hier):
+       GA4-Mess-ID:        G-0F2Y48XTGP
+       Google-Ads-ID:      AW-XXXXXXXXXX   (kommt später, sobald Ads-Konto da)
+
+   Die Felder ga4Id und googleAdsId unten bleiben deshalb absichtlich leer.
    ========================================================================= */
 
 (function () {
@@ -17,9 +25,9 @@
 
   // ----------------------- CONFIG (hier deine IDs eintragen) ---------------
   var CONFIG = {
-    ga4Id:        "",   // z.B. "G-XXXXXXXXXX"  (Google Analytics 4 Mess-ID)
-    googleAdsId:  "",   // z.B. "AW-XXXXXXXXXX" (Google Ads Conversion-ID)
-    gtmId:        "",   // z.B. "GTM-XXXXXXX"   (Google Tag Manager – falls genutzt)
+    gtmId:        "GTM-M6GHFJ67",   // Google Tag Manager Container-ID
+    ga4Id:        "",   // LEER LASSEN – GA4 wird über GTM geladen
+    googleAdsId:  "",   // LEER LASSEN – Google Ads wird über GTM geladen
     consentName:  "kowibi_consent",  // Name des Einwilligungs-Cookies
     consentDays:  180                // Gültigkeit der Entscheidung in Tagen
   };
@@ -37,37 +45,39 @@
     return match ? match.pop() : "";
   }
 
-  // --- Tracking-Skripte laden (erst nach Zustimmung aufgerufen) ---
+  // --- Tracking laden (erst nach Zustimmung aufgerufen) ---
+  // Lädt ausschließlich den Google Tag Manager. GA4 & Ads laufen über GTM.
   function loadTracking() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
+    if (!CONFIG.gtmId) { return; }
 
-    // Google Tag Manager
-    if (CONFIG.gtmId) {
-      var gtm = document.createElement("script");
-      gtm.async = true;
-      gtm.src = "https://www.googletagmanager.com/gtm.js?id=" + CONFIG.gtmId;
-      document.head.appendChild(gtm);
-    }
-    // Google Analytics 4
-    if (CONFIG.ga4Id) {
-      var ga = document.createElement("script");
-      ga.async = true;
-      ga.src = "https://www.googletagmanager.com/gtag/js?id=" + CONFIG.ga4Id;
-      document.head.appendChild(ga);
-      gtag("config", CONFIG.ga4Id, { anonymize_ip: true });
-    }
-    // Google Ads
-    if (CONFIG.googleAdsId) {
-      if (!CONFIG.ga4Id) {
-        var aw = document.createElement("script");
-        aw.async = true;
-        aw.src = "https://www.googletagmanager.com/gtag/js?id=" + CONFIG.googleAdsId;
-        document.head.appendChild(aw);
+    // dataLayer initialisieren und gtm.start setzen (Standard-GTM-Bootstrap)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js"
+    });
+
+    // GTM-Skript laden
+    var gtm = document.createElement("script");
+    gtm.async = true;
+    gtm.src = "https://www.googletagmanager.com/gtm.js?id=" + CONFIG.gtmId;
+    document.head.appendChild(gtm);
+
+    // Fallback (optional): Direktes Laden von GA4 / Ads, falls jemand bewusst
+    // OHNE GTM arbeiten möchte. Standardmäßig leer und daher inaktiv.
+    if (!CONFIG.gtmId && (CONFIG.ga4Id || CONFIG.googleAdsId)) {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      if (CONFIG.ga4Id) {
+        var ga = document.createElement("script");
+        ga.async = true;
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=" + CONFIG.ga4Id;
+        document.head.appendChild(ga);
+        window.gtag("config", CONFIG.ga4Id, { anonymize_ip: true });
       }
-      gtag("config", CONFIG.googleAdsId);
+      if (CONFIG.googleAdsId) {
+        window.gtag("config", CONFIG.googleAdsId);
+      }
     }
   }
 
