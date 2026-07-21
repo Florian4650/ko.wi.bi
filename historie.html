@@ -43,45 +43,64 @@
       position: sticky; top: 0; z-index: 100;
       background: var(--line); color: #fff;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 60px;
+      padding: 0 40px; height: 64px;
     }
     .logo-block { display: flex; flex-direction: column; gap: 1px; }
-    .logo-main { font-family: 'Instrument Serif', serif; font-size: 14px; font-weight: 400; color: #fff; line-height: 1.2; }
+    .logo-main { font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400; color: #fff; line-height: 1.2; }
     .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .nav-back { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; letter-spacing: 0.03em; }
-    .nav-back:hover { color: #fff; }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); }
+
+    /* HAMBURGER */
+    .nav-burger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 42px; height: 42px; background: none; border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer; padding: 0 9px; flex-shrink: 0;
+    }
+    .nav-burger span { display: block; height: 2px; width: 100%; background: #fff; transition: transform 0.25s, opacity 0.25s; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 200; background: var(--ink);
+      flex-direction: column; padding: 88px 28px 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--card);
+      padding: 16px 0; border-bottom: 1px solid #2a2c25; text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu-close {
+      position: absolute; top: 22px; right: 24px; width: 44px; height: 44px;
+      background: none; border: 1.5px solid #2a2c25; color: var(--card);
+      font-size: 26px; line-height: 1; cursor: pointer;
+    }
 
     /* HERO */
     .page-hero {
       border-bottom: 1.5px solid var(--line);
-      padding: 72px 0 56px;
-      position: relative;
-      overflow: hidden;
-      background: var(--card);
+      padding: 72px 0 56px; position: relative; overflow: hidden; background: var(--card);
     }
     .page-hero::before {
-      content: "1948";
-      position: absolute;
-      right: -10px; top: 0;
-      font-family: "Instrument Serif", serif;
-      font-size: 200px;
-      line-height: 1;
-      color: var(--border);
-      opacity: 0.4;
-      pointer-events: none;
-      user-select: none;
+      content: "1948"; position: absolute; right: -10px; top: 0;
+      font-family: "Instrument Serif", serif; font-size: 200px; line-height: 1;
+      color: var(--border); opacity: 0.4; pointer-events: none; user-select: none;
     }
     .hero-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; position: relative; }
     .page-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
     }
     h1 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 400; line-height: 1.05;
-      letter-spacing: -0.02em;
+      font-family: 'Instrument Serif', serif; font-size: clamp(36px, 6vw, 64px);
+      font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
     }
     h1 em { font-style: italic; color: var(--accent); }
     .hero-sub { font-size: 17px; color: var(--ink-2); line-height: 1.65; margin-top: 24px; max-width: 620px; }
@@ -89,105 +108,63 @@
     /* TIMELINE */
     .timeline-section { padding: 72px 0 88px; }
     .timeline-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
-    .timeline {
-      position: relative;
-      margin-top: 8px;
-      padding-left: 0;
-    }
+    .timeline { position: relative; margin-top: 8px; padding-left: 0; }
     .timeline::before {
-      content: "";
-      position: absolute;
-      left: 92px; top: 8px; bottom: 8px;
-      width: 1.5px;
-      background: var(--border);
+      content: ""; position: absolute; left: 92px; top: 8px; bottom: 8px;
+      width: 1.5px; background: var(--border);
     }
     .tl-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 76px 1fr;
-      gap: 28px;
-      padding: 14px 0;
-      align-items: baseline;
+      position: relative; display: grid; grid-template-columns: 76px 1fr;
+      gap: 28px; padding: 14px 0; align-items: baseline;
     }
     .tl-year {
-      font-family: 'Instrument Serif', serif;
-      font-size: 24px;
-      color: var(--accent-dark);
-      text-align: right;
-      line-height: 1.2;
-      font-variant-numeric: tabular-nums;
+      font-family: 'Instrument Serif', serif; font-size: 24px; color: var(--accent-dark);
+      text-align: right; line-height: 1.2; font-variant-numeric: tabular-nums;
     }
     .tl-dot {
-      position: absolute;
-      left: 86px; top: 22px;
-      width: 13px; height: 13px;
-      background: var(--card);
-      border: 2.5px solid var(--accent);
-      border-radius: 50%;
-      z-index: 1;
+      position: absolute; left: 86px; top: 22px; width: 13px; height: 13px;
+      background: var(--card); border: 2.5px solid var(--accent); border-radius: 50%; z-index: 1;
     }
     .tl-item.highlight .tl-dot { background: var(--accent); }
-    .tl-body {
-      padding-left: 22px;
-      font-size: 15.5px;
-      color: var(--ink-2);
-      line-height: 1.6;
-    }
+    .tl-body { padding-left: 22px; font-size: 15.5px; color: var(--ink-2); line-height: 1.6; }
     .tl-body strong { color: var(--ink); font-weight: 600; }
     .tl-optional {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
     }
 
     /* CTA */
-    .hist-cta {
-      max-width: 860px; margin: 0 auto; padding: 40px 32px 0;
-    }
-    .hist-cta-box {
-      background: var(--ink);
-      color: var(--card);
-      padding: 40px 36px;
-      text-align: center;
-    }
+    .hist-cta { max-width: 860px; margin: 0 auto; padding: 40px 32px 0; }
+    .hist-cta-box { background: var(--ink); color: var(--card); padding: 40px 36px; text-align: center; }
     .hist-cta-box h2 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(26px, 4vw, 36px);
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 14px;
+      font-family: 'Instrument Serif', serif; font-size: clamp(26px, 4vw, 36px);
+      font-weight: 400; line-height: 1.1; margin-bottom: 14px;
     }
     .hist-cta-box h2 em { font-style: italic; color: var(--accent); }
     .hist-cta-box p { font-size: 15px; color: #c2beb2; line-height: 1.6; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
     .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 15px 36px;
-      border: 1.5px solid var(--accent);
-      transition: background 0.2s, transform 0.2s;
+      display: inline-block; background: var(--accent); color: #fff;
+      font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; padding: 15px 36px; border: 1.5px solid var(--accent);
+      transition: background 0.2s, transform 0.2s; text-decoration: none;
     }
     .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
 
     /* FOOTER */
     footer {
-      background: var(--line); color: rgba(255,255,255,0.5);
-      padding: 28px 40px;
-      font-size: 12px;
-      display: flex; align-items: center; justify-content: space-between;
+      background: var(--line); color: rgba(255,255,255,0.5); padding: 28px 40px;
+      font-size: 12px; display: flex; align-items: center; justify-content: space-between;
       gap: 20px; flex-wrap: wrap;
     }
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
-    @media (max-width: 600px) {
+    @media (max-width: 760px) {
       nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+    @media (max-width: 600px) {
       .hero-wrap, .timeline-wrap, .hist-cta { padding-left: 20px; padding-right: 20px; }
       .page-hero::before { font-size: 120px; opacity: 0.3; }
       .timeline::before { left: 64px; }
@@ -228,8 +205,29 @@
       <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
       <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
     </div>
-    <a href="index.html" class="nav-back">← Zurück zur Hauptseite</a>
+    <div class="nav-links">
+      <a href="index.html#fuer-wen">Für wen?</a>
+      <a href="index.html#abschluss">Abschluss</a>
+      <a href="historie.html" class="active">Historie</a>
+      <a href="index.html#alumni">Alumni</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html">← Startseite</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILES MENÜ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Menü schließen" onclick="toggleMobileMenu()">×</button>
+    <a href="index.html#fuer-wen">Für wen?</a>
+    <a href="index.html#abschluss">Abschluss</a>
+    <a href="historie.html" class="active">Historie</a>
+    <a href="index.html#alumni">Alumni</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html">← Startseite</a>
+  </div>
 
   <!-- HERO -->
   <section class="page-hero">
@@ -360,7 +358,7 @@
         <div class="tl-item highlight">
           <div class="tl-year">2025</div>
           <div class="tl-dot"></div>
-          <div class="tl-body">Kooperation mit <strong>Campus Humanitas-Innovative Bildung<sup>&reg;</sup></strong> <span style="font-size:13px;color:var(--muted);">Vertreten durch: Mag. Sonja Maier</span></div>
+          <div class="tl-body">Kooperation mit <strong>CAMPUS HUMANITAS</strong>, Mag. Sonja Maier – Innovative Bildung.</div>
         </div>
 
       </div>
@@ -383,6 +381,23 @@
     </div>
     <div><a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
   </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      const isOpen = menu.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.getElementById('nav-burger').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
   <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->
   <script src="cookie-consent.js" defer></script>
