@@ -125,6 +125,76 @@
       }
       .nav-cta:hover { background: var(--accent-dark) !important; border-color: var(--accent-dark); }
 
+      /* ── HAMBURGER (nur mobil sichtbar) ── */
+      .nav-burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: 1.5px solid var(--line);
+        cursor: pointer;
+        padding: 0 10px;
+        flex-shrink: 0;
+      }
+      .nav-burger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: var(--ink);
+        transition: transform 0.25s, opacity 0.25s;
+      }
+      .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-burger.open span:nth-child(2) { opacity: 0; }
+      .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* Mobiles Overlay-Menü */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        background: var(--ink);
+        flex-direction: column;
+        padding: 88px 28px 40px;
+      }
+      .mobile-menu.open { display: flex; }
+      .mobile-menu a {
+        font-family: "Instrument Serif", serif;
+        font-size: 30px;
+        color: var(--card);
+        padding: 16px 0;
+        border-bottom: 1px solid #2a2c25;
+        transition: color 0.2s;
+      }
+      .mobile-menu a:hover { color: var(--accent); }
+      .mobile-menu a.mm-cta {
+        margin-top: 28px;
+        border-bottom: none;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink);
+        background: var(--accent);
+        text-align: center;
+        padding: 18px;
+      }
+      .mobile-menu-close {
+        position: absolute;
+        top: 22px;
+        right: 24px;
+        width: 44px; height: 44px;
+        background: none;
+        border: 1.5px solid #2a2c25;
+        color: var(--card);
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
       /* ── HERO ── */
       .hero {
         border-bottom: 1.5px solid var(--line);
@@ -576,6 +646,7 @@
         h1 { font-size: clamp(42px, 10vw, 72px); }
         .hero::before { font-size: 150px; opacity: 0.3; }
         .nav-links { display: none; }
+        .nav-burger { display: flex; }
       }
       @media (max-width: 560px) {
         .wrap, .nav-inner, .press-inner, footer { padding-left: 18px; padding-right: 18px; }
@@ -640,8 +711,6 @@
 
     <!-- ============================================================
          STRUKTURIERTE DATEN (Schema.org / JSON-LD)
-         Maschinenlesbare Fakten für Google & KI-Systeme.
-         Alle Angaben spiegeln ausschließlich sichtbare Seiteninhalte.
          ============================================================ -->
     <script type="application/ld+json">
     {
@@ -861,8 +930,22 @@
           <a href="#faq">FAQ</a>
           <a href="#" class="nav-cta" onclick="openModal();return false;">Jetzt informieren →</a>
         </div>
+        <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
+
+    <!-- MOBILES MENÜ -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-menu-close" aria-label="Menü schließen" onclick="toggleMobileMenu()">×</button>
+      <a href="#fuer-wen" onclick="closeMobileMenu()">Für wen?</a>
+      <a href="#abschluss" onclick="closeMobileMenu()">Abschluss</a>
+      <a href="historie.html">Historie</a>
+      <a href="#alumni" onclick="closeMobileMenu()">Alumni</a>
+      <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+      <a href="#" class="mm-cta" onclick="closeMobileMenu();openModal();return false;">Jetzt informieren →</a>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -1006,14 +1089,11 @@
           </div>
           <div class="roi-stats">
             <div class="roi-stat">
-              
               <div class="desc"><strong>Möglicher Gehaltssprung</strong> nach Abschluss — Führungskräfte mit anerkanntem BWL-Nachweis verhandeln signifikant besser.</div>
             </div>
             <div class="roi-stat">
-              
               <div class="desc"><strong>Mögliche Steuerersparnis</strong> — Ausbildungskosten können unter Umständen als Betriebsausgabe geltend gemacht werden. Bitte prüfen Sie dies mit Ihrem Steuerberater.</div>
             </div>
-
           </div>
         </div>
       </div>
@@ -1204,7 +1284,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><em>Referenzen</em></h2><p style="font-size:17px;color:var(--ink-2);margin-top:12px;line-height:1.5;">Meinungen.</p>
-          
         </div>
         <div class="testimonials-grid">
           <div class="testi">
@@ -1452,6 +1531,21 @@
       m.style.display = 'none';
       document.body.style.overflow = '';
     }
+    // Mobiles Menü
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      const isOpen = menu.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
     // FAQ Akkordeon
     function toggleFaq(btn) {
       const item = btn.parentElement;
@@ -1473,7 +1567,7 @@
     });
     // Close on Escape
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') { closeModal(); closeMobileMenu(); }
     });
     async function sendForm(e) {
       e.preventDefault();
