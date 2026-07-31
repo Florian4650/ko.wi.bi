@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Publikationen von Dr. Braunschweig | Kölner Wirtschaftsprüfer-Ausbildung</title>
-  <meta name="description" content="Fachbücher und Publikationen des Ausbildungsleiters Dr. Braunschweig — WiSo Lehr- und Handbücher zu BWL, Management, Finanzierung, Marketing und mehr. Mit ISBN und Bestellmöglichkeit." />
+  <title>Publikationen | Kölner Wirtschaftsprüfer-Ausbildung</title>
+  <meta name="description" content="Das Lehrwerk des Kölner WiSo-Repetitoriums und die Publikationen von Prof. Christoph Braunschweig — Fachbücher zu BWL, Management, Finanzierung und mehr, erschienen bei Oldenbourg, De Gruyter und Springer." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://bwl-kompakt.com/publikationen.html" />
   <meta name="theme-color" content="#11130f" />
@@ -13,8 +13,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="Kölner Wirtschaftsprüfer-Ausbildung" />
-  <meta property="og:title" content="Publikationen von Dr. Braunschweig" />
-  <meta property="og:description" content="Fachbücher und Publikationen des Ausbildungsleiters — WiSo Lehr- und Handbücher zu BWL, Management, Finanzierung und mehr." />
+  <meta property="og:title" content="Publikationen | Kölner Wirtschaftsprüfer-Ausbildung" />
+  <meta property="og:description" content="Das Lehrwerk des Kölner WiSo-Repetitoriums und die Werke von Prof. Christoph Braunschweig — erschienen bei renommierten Fachverlagen." />
   <meta property="og:url" content="https://bwl-kompakt.com/publikationen.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,10 +45,14 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 64px;
     }
-    .logo-block { display: flex; flex-direction: column; gap: 1px; }
+    /* Logo-Bereich: aktuell Text, vorbereitet für späteres Bild-Logo.
+       Zum Einsetzen des Logos: <img src="logo.svg" class="logo-img" alt="..."> als erstes Kind in .logo-block einfügen. */
+    .logo-block { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 34px; width: auto; display: block; }
+    .logo-text { display: flex; flex-direction: column; gap: 1px; }
     .logo-main { font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400; color: #fff; line-height: 1.2; }
     .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a {
       font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
       text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
@@ -108,12 +112,12 @@
     .books-section { padding: 64px 0 40px; }
     .books-wrap { max-width: 980px; margin: 0 auto; padding: 0 32px; }
     .group-head {
-      display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;
+      display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;
       padding-bottom: 16px; border-bottom: 1.5px solid var(--line);
     }
     .group-head h2 {
       font-family: 'Instrument Serif', serif; font-weight: 400;
-      font-size: clamp(26px, 4vw, 40px); line-height: 1; letter-spacing: -0.02em;
+      font-size: clamp(26px, 4vw, 40px); line-height: 1.05; letter-spacing: -0.02em;
     }
     .group-head h2 em { font-style: italic; color: var(--accent); }
     .group-head .count {
@@ -139,39 +143,20 @@
       display: flex; align-items: center; justify-content: center;
     }
     .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .book-cover.no-img {
-      flex-direction: column; padding: 24px; text-align: center; gap: 12px;
-    }
-    .book-cover.no-img .ni-title {
-      font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--ink); line-height: 1.2;
-    }
-    .book-cover.no-img .ni-label {
-      font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--muted);
-    }
     .book-body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
-    .book-series {
-      font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent-dark); margin-bottom: 8px;
-    }
     .book-title {
       font-family: 'Instrument Serif', serif; font-size: 20px; font-weight: 400;
       color: var(--ink); line-height: 1.2; margin-bottom: 8px;
     }
-    .book-authors { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; margin-bottom: 14px; }
+    .book-authors { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; margin-bottom: 16px; }
     .book-meta { margin-top: auto; }
-    .book-isbn {
-      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--muted);
-      letter-spacing: 0.04em; margin-bottom: 12px; word-break: break-all;
+    .book-publisher {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-dark);
+      background: var(--chip); border: 1px solid var(--border);
+      padding: 7px 12px;
     }
-    .book-btn {
-      display: inline-block; width: 100%; text-align: center;
-      background: var(--ink); color: var(--card); text-decoration: none;
-      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 12px; border: 1.5px solid var(--line);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .book-btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
 
     /* CONTEXT NOTE */
     .context-note {
@@ -232,18 +217,14 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Publikationen von Dr. Braunschweig",
+    "name": "Publikationen",
     "url": "https://bwl-kompakt.com/publikationen.html",
     "inLanguage": "de",
     "about": {
-      "@type": "Person",
-      "name": "Dr. Karl Braunschweig",
-      "jobTitle": "Ausbildungsleiter",
-      "affiliation": {
-        "@type": "EducationalOrganization",
-        "name": "Kölner Wirtschaftsprüfer-Ausbildung",
-        "url": "https://bwl-kompakt.com/"
-      }
+      "@type": "EducationalOrganization",
+      "name": "Kölner Wirtschaftsprüfer-Ausbildung",
+      "alternateName": "Kölner WiSo-Repetitorium",
+      "url": "https://bwl-kompakt.com/"
     }
   }
   </script>
@@ -252,8 +233,11 @@
 
   <nav>
     <div class="logo-block">
-      <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
-      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+      <!-- Logo-Bild später hier einsetzen: <img src="logo.svg" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung" /> -->
+      <div class="logo-text">
+        <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+        <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+      </div>
     </div>
     <div class="nav-links">
       <a href="index.html#fuer-wen">Für wen?</a>
@@ -282,26 +266,25 @@
   <!-- HERO -->
   <section class="page-hero">
     <div class="hero-wrap">
-      <p class="page-eyebrow">Werke des Ausbildungsleiters</p>
-      <h1>Publikationen von<br /><em>Dr. Braunschweig.</em></h1>
+      <p class="page-eyebrow">Das Lehrwerk &amp; die Werke</p>
+      <h1><em>Publikationen.</em></h1>
       <p class="hero-sub">
-        Das Fundament der Ausbildung: die Fachbücher und Werke des Ausbildungsleiters.
-        Von den renommierten WiSo Lehr- und Handbüchern zu Betriebswirtschaft, Management und
-        Finanzierung bis zu gesellschaftspolitischen Sachbüchern — hier finden Sie die
-        Originalwerke mit Bestellmöglichkeit.
+        Das wissenschaftliche Fundament der Ausbildung: das Lehrwerk des Kölner WiSo-Repetitoriums
+        sowie die Werke von Prof. Christoph Braunschweig — erschienen bei renommierten Fachverlagen
+        wie Oldenbourg, De Gruyter und Springer.
       </p>
     </div>
   </section>
 
-  <!-- FACHBÜCHER -->
+  <!-- KÖLNER WISO-REPETITORIUM -->
   <section class="books-section">
     <div class="books-wrap">
       <div class="group-head">
-        <h2>Fachbücher &amp; <em>Lehrbücher</em></h2>
-        <span class="count">WiSo Lehr- und Handbücher</span>
+        <h2>Kölner <em>WiSo-Repetitorium</em></h2>
+        <span class="count">Lehr- und Handbücher</span>
       </div>
       <p class="group-intro">
-        Die wissenschaftliche Grundlage des Lehrgangs. Diese Standardwerke erscheinen bei renommierten
+        Die wissenschaftliche Grundlage des Lehrgangs. Diese Standardwerke erschienen bei renommierten
         Fachverlagen wie Oldenbourg, De Gruyter und Springer und bilden das Rückgrat der
         betriebswirtschaftlichen Ausbildung.
       </p>
@@ -310,15 +293,11 @@
 
         <!-- Unternehmensführung -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/unternehmensfuehrung.jpg" alt="Cover: Unternehmensführung von Braunschweig" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/unternehmensfuehrung.jpg" alt="Cover: Unternehmensführung" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">WiSo Lehr- und Handbücher · Oldenbourg</div>
             <div class="book-title">Unternehmensführung</div>
             <div class="book-authors">Christoph Braunschweig</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486245998</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486245998" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Oldenbourg</span></div>
           </div>
         </div>
 
@@ -326,13 +305,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/managementlehre.png" alt="Cover: Grundlagen der Managementlehre" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">WiSo Lehr- und Handbücher · Oldenbourg</div>
             <div class="book-title">Grundlagen der Managementlehre</div>
             <div class="book-authors">Christoph Braunschweig u.a.</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486256437</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486256437" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Oldenbourg</span></div>
           </div>
         </div>
 
@@ -340,27 +315,19 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/strategisches-management.png" alt="Cover: Grundlagen des Strategischen Managements" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">De Gruyter</div>
             <div class="book-title">Grundlagen des Strategischen Managements</div>
             <div class="book-authors">Christoph Braunschweig, Kathrin Reinhold</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486254143</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486254143" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">De Gruyter</span></div>
           </div>
         </div>
 
         <!-- Marketing -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/marketing.jpg" alt="Cover: Marketing von Braunschweig" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/marketing.jpg" alt="Cover: Marketing" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">WiSo Lehr- und Handbücher · Oldenbourg</div>
             <div class="book-title">Marketing</div>
             <div class="book-authors">Christoph Braunschweig</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486246070</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486246070" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Oldenbourg</span></div>
           </div>
         </div>
 
@@ -368,13 +335,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/investitionsrechnung.jpg" alt="Cover: Investitionsrechnung mit Unternehmensbewertung" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">WiSo Lehr- und Handbücher · Oldenbourg</div>
             <div class="book-title">Investitionsrechnung</div>
             <div class="book-authors">Christoph Braunschweig — Einführung mit einer Darstellung der Unternehmensbewertung</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486242188</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486242188" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Oldenbourg</span></div>
           </div>
         </div>
 
@@ -382,13 +345,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/unternehmensfinanzierung-degruyter.png" alt="Cover: Unternehmensfinanzierung" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">WiSo Lehr- und Handbücher · De Gruyter</div>
             <div class="book-title">Unternehmensfinanzierung</div>
             <div class="book-authors">Christoph Braunschweig</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3486245905</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783486245905" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">De Gruyter</span></div>
           </div>
         </div>
 
@@ -396,27 +355,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/unternehmensfinanzierung-springer.png" alt="Cover: Grundlagen der Unternehmungsfinanzierung" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">Dr. Gablers WiSo-Lernbücher · Springer</div>
             <div class="book-title">Grundlagen der Unternehmungsfinanzierung</div>
             <div class="book-authors">Dr. K. E. Braunschweig</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3663052104</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783663052104" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Die Kreditgeldwirtschaft -->
-        <div class="book">
-          <div class="book-cover"><img src="buecher/kreditgeldwirtschaft.png" alt="Cover: Die Kreditgeldwirtschaft" loading="lazy" /></div>
-          <div class="book-body">
-            <div class="book-series">Springer Gabler</div>
-            <div class="book-title">Die Kreditgeldwirtschaft</div>
-            <div class="book-authors">Christoph Braunschweig, Bernhard Pichler — Hintergründe und Irrtümer der Geld- und Finanzwirtschaft</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3658312763</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783658312763" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Springer / Gabler</span></div>
           </div>
         </div>
 
@@ -427,35 +368,41 @@
   <!-- CONTEXT NOTE -->
   <div class="context-note">
     <div class="context-note-inner">
-      <p><strong>Warum das für Ihre Ausbildung zählt:</strong> Die Lehrgangsinhalte basieren auf genau diesen wissenschaftlich fundierten Standardwerken. Sie lernen nicht aus anonymem Material, sondern aus einem über Jahrzehnte gewachsenen, mehrfach verlegten Lehrwerk eines anerkannten Autors.</p>
+      <p><strong>Warum das für Ihre Ausbildung zählt:</strong> Die Lehrgangsinhalte basieren auf genau diesen wissenschaftlich fundierten Standardwerken. Sie lernen nicht aus anonymem Material, sondern aus einem über Jahrzehnte gewachsenen, bei renommierten Fachverlagen verlegten Lehrwerk.</p>
     </div>
   </div>
 
-  <!-- SACHBÜCHER -->
+  <!-- PUBLIKATIONEN PROF. CHRISTOPH BRAUNSCHWEIG -->
   <section class="books-section" style="padding-top:24px;">
     <div class="books-wrap">
       <div class="group-head">
-        <h2>Weitere <em>Werke</em></h2>
+        <h2>Publikationen von<br /><em>Prof. Christoph Braunschweig</em></h2>
         <span class="count">Sachbücher</span>
       </div>
       <p class="group-intro">
-        Über die Fachliteratur hinaus hat Dr. Braunschweig zahlreiche gesellschaftspolitische und
-        wirtschaftliche Sachbücher veröffentlicht.
+        Über die Fachliteratur hinaus hat Prof. Christoph Braunschweig zahlreiche gesellschaftspolitische
+        und wirtschaftliche Sachbücher veröffentlicht.
       </p>
 
       <div class="book-grid">
+
+        <!-- Die Kreditgeldwirtschaft -->
+        <div class="book">
+          <div class="book-cover"><img src="buecher/kreditgeldwirtschaft.png" alt="Cover: Die Kreditgeldwirtschaft" loading="lazy" /></div>
+          <div class="book-body">
+            <div class="book-title">Die Kreditgeldwirtschaft</div>
+            <div class="book-authors">Christoph Braunschweig, Bernhard Pichler — Hintergründe und Irrtümer der Geld- und Finanzwirtschaft</div>
+            <div class="book-meta"><span class="book-publisher">Springer Gabler</span></div>
+          </div>
+        </div>
 
         <!-- Kluge Geldanlage -->
         <div class="book">
           <div class="book-cover"><img src="buecher/kluge-geldanlage.png" alt="Cover: Kluge Geldanlage in der Schuldenkrise" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">Austrian Investing</div>
             <div class="book-title">Kluge Geldanlage in der Schuldenkrise</div>
-            <div class="book-authors">Christoph Braunschweig, Susanne Kablitz</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3945822005</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783945822005" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-authors">Christoph Braunschweig, Susanne Kablitz — Austrian Investing</div>
+            <div class="book-meta"><span class="book-publisher">Sachbuch</span></div>
           </div>
         </div>
 
@@ -463,13 +410,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/demokratische-krankheit.png" alt="Cover: Die demokratische Krankheit" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">Olzog Verlag</div>
             <div class="book-title">Die demokratische Krankheit</div>
             <div class="book-authors">Christoph Braunschweig — Der fatale Teufelskreis aus Politikerversprechen und Wähleranspruch</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3789283437</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783789283437" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Olzog Verlag</span></div>
           </div>
         </div>
 
@@ -477,13 +420,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/zukunft-verspielen.png" alt="Cover: Wie wir unsere Zukunft verspielen" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">Sachbuch</div>
             <div class="book-title">Wie wir unsere Zukunft verspielen</div>
             <div class="book-authors">Bernhard Pichler, Christoph Braunschweig, Michael Asanger — Die fatalen Illusionen unserer Wohlfahrtsgesellschaft</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3900052331</div>
-              <a class="book-btn" href="https://www.amazon.de/Wie-unsere-Zukunft-verspielen-Wohlfahrtsgesellschaft/dp/3900052336/" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">Sachbuch</span></div>
           </div>
         </div>
 
@@ -491,13 +430,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/wohlfahrtsstaat.png" alt="Cover: Wohlfahrtsstaat – leb wohl!" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">LIT Verlag · Politikwissenschaft</div>
             <div class="book-title">Wohlfahrtsstaat – leb wohl!</div>
             <div class="book-authors">Christoph Braunschweig — Der wirtschaftliche und moralische Zerfall des Wohlfahrtsstaates</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3-643-12112-7</div>
-              <a class="book-btn" href="https://lit-verlag.de/isbn/978-3-643-12112-7/" target="_blank" rel="noopener">Beim Verlag ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">LIT Verlag</span></div>
           </div>
         </div>
 
@@ -505,13 +440,9 @@
         <div class="book">
           <div class="book-cover"><img src="buecher/narrenschiff.png" alt="Cover: Das deutsche Narrenschiff" loading="lazy" /></div>
           <div class="book-body">
-            <div class="book-series">FBV · Edition Lichtschlag</div>
             <div class="book-title">Das deutsche Narrenschiff</div>
             <div class="book-authors">Christoph Braunschweig — Wie feige Karrieristen, selbsternannte Intellektuelle und politisch korrekte Gutmenschen unser Land ruinieren</div>
-            <div class="book-meta">
-              <div class="book-isbn">ISBN 978-3862487295</div>
-              <a class="book-btn" href="https://www.amazon.de/s?k=9783862487295" target="_blank" rel="noopener">Bei Amazon ansehen →</a>
-            </div>
+            <div class="book-meta"><span class="book-publisher">FBV · Edition Lichtschlag</span></div>
           </div>
         </div>
 
@@ -529,7 +460,7 @@
   </div>
 
   <footer>
-    <div class="logo-block">
+    <div class="logo-text">
       <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
       <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
     </div>
