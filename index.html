@@ -573,7 +573,30 @@
         color: var(--ink-2);
         line-height: 1.5;
       }
-      .akk-item::before { content: "✓"; color: var(--green); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+      .akk-item::before { content: "★"; color: var(--accent); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+      .modul-list { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+      .modul-item {
+        display: flex; align-items: flex-start; gap: 10px;
+        font-family: "JetBrains Mono", monospace; font-size: 11px;
+        letter-spacing: 0.06em; color: var(--ink-2); line-height: 1.5;
+      }
+      .modul-item::before { content: "→"; color: var(--accent); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+      /* Nach-oben-Button */
+      .to-top {
+        position: fixed; bottom: 28px; right: 28px; z-index: 300;
+        width: 48px; height: 48px; border-radius: 50%;
+        background: var(--ink); color: var(--card); border: 1.5px solid var(--line);
+        cursor: pointer; display: flex; align-items: center; justify-content: center;
+        font-size: 20px; line-height: 1; opacity: 0; visibility: hidden;
+        transition: opacity 0.25s, visibility 0.25s, background 0.2s, transform 0.2s;
+        box-shadow: 3px 3px 0 var(--line);
+      }
+      .to-top.show { opacity: 1; visibility: visible; }
+      .to-top:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
+      @media (max-width: 560px) {
+        .to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+      }
 
       /* ── TESTIMONIALS ── */
       .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -1335,6 +1358,19 @@
             <p>Der Abschluss <strong>„Zertifizierter Betriebsökonom"</strong> wird mit kultusministerieller Zustimmung erteilt — kein Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt sehr anerkannter Nachweis.</p>
             <p>Durch intensive Lehrgangsbetreuung führen wir Sie sicher zum Erfolg.</p>
             <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+            <p style="font-size:13px;color:var(--muted);line-height:1.6;letter-spacing:0.04em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Module</p>
+            <div class="modul-list">
+              <div class="modul-item">Allgemeine BWL</div>
+              <div class="modul-item">Rechnungswesen</div>
+              <div class="modul-item">Unternehmensführung</div>
+              <div class="modul-item">Marketing</div>
+              <div class="modul-item">Investitionsrechnung</div>
+              <div class="modul-item">Finanzierung</div>
+              <div class="modul-item">Controlling</div>
+              <div class="modul-item">VWL / Österreichische Schule / Wirtschaftspolitik</div>
+              <div class="modul-item">Verfassen einer Abschlussarbeit</div>
+            </div>
+            <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
             <p>Das Braunschweig-Lehrwerk / WiSo-Repetitorium wurde mehrfach ausgezeichnet. Damit ist Ihr Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
             <p style="font-size:13px;color:var(--muted);line-height:1.6;">Das Kölner WiSo-Repetitorium besteht seit 1948 — die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert und am Puls der Zeit gehalten.</p>
             <div class="akk-list">
@@ -1359,12 +1395,12 @@
             <p style="color:var(--accent-dark);line-height:1.5;font-style:italic;font-family:'Instrument Serif',serif;font-size:17px;">Einzig ausgebildet an einer Wirtschaftsprüfer-Ausbildungsinstitution.</p>
             <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
             <p style="font-size:13px;color:var(--muted);line-height:1.6;letter-spacing:0.04em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Fächer</p>
-            <div class="akk-list">
-              <div class="akk-item">Allgemeine BWL</div>
-              <div class="akk-item">Rechnungswesen</div>
-              <div class="akk-item">Finanzierung</div>
-              <div class="akk-item">Investitionsrechnung</div>
-              <div class="akk-item">Controlling</div>
+            <div class="modul-list">
+              <div class="modul-item">Allgemeine BWL</div>
+              <div class="modul-item">Rechnungswesen</div>
+              <div class="modul-item">Finanzierung</div>
+              <div class="modul-item">Investitionsrechnung</div>
+              <div class="modul-item">Controlling</div>
             </div>
             <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
             <p><strong>Prüfung:</strong> Schriftliche Abschlussklausur pro Fachgebiet.</p>
@@ -1616,6 +1652,17 @@
   </div>
 
   <script>
+    // Nach-oben-Button
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    window.addEventListener('scroll', function() {
+      var btn = document.getElementById('to-top');
+      if (btn) {
+        if (window.scrollY > 500) { btn.classList.add('show'); }
+        else { btn.classList.remove('show'); }
+      }
+    });
     function openModal() {
       const m = document.getElementById('kontakt-modal');
       m.style.display = 'flex';
@@ -1718,6 +1765,9 @@ ko-wi-bi.de`
       }
     }
   </script>
+
+  <!-- Nach-oben-Button -->
+  <button class="to-top" id="to-top" aria-label="Nach oben" onclick="scrollToTop()">↑</button>
 
   <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->
   <script src="cookie-consent.js" defer></script>
