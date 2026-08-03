@@ -580,7 +580,8 @@
         font-family: "JetBrains Mono", monospace; font-size: 11px;
         letter-spacing: 0.06em; color: var(--ink-2); line-height: 1.5;
       }
-      .modul-item::before { content: "→"; color: var(--accent); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+      .modul-item::before { content: "✓"; color: var(--green); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+      .modul-item { overflow-wrap: anywhere; }
 
       /* Nach-oben-Button */
       .to-top {
@@ -596,6 +597,7 @@
       .to-top:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
       @media (max-width: 560px) {
         .to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+        .modul-list { grid-template-columns: 1fr !important; }
       }
 
       /* ── TESTIMONIALS ── */
@@ -873,10 +875,18 @@
             },
             {
               "@type": "Question",
-              "name": "Wie lange dauert der Lehrgang?",
+              "name": "Wie lange dauert die Ausbildung zum Zertifizierten Betriebsökonom?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Im statistischen Mittel beträgt die Ausbildungsdauer 2 Jahre. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie lange dauert die Ausbildung zum Zertifizierten Finanz-Controller?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die Ausbildung zum Zertifizierten Finanz-Controller ist kompakter angelegt und dauert im Schnitt etwa 6 bis 9 Monate — ebenfalls abhängig von Ihrem persönlichen Lerntempo. Sie umfasst die Fächer Allgemeine BWL, Rechnungswesen, Finanzierung, Investitionsrechnung und Controlling; jedes Fachgebiet schließt mit einer schriftlichen Abschlussklausur ab. Details zum Ablauf erhalten Sie auf Anfrage."
               }
             },
             {
@@ -1356,7 +1366,7 @@
           </div>
           <div class="abschluss-body">
             <p>Der Abschluss <strong>„Zertifizierter Betriebsökonom"</strong> wird mit kultusministerieller Zustimmung erteilt — kein Online-Kurs-Zertifikat, sondern ein in der Wirtschaftswelt sehr anerkannter Nachweis.</p>
-            <p>Durch intensive Lehrgangsbetreuung führen wir Sie sicher zum Erfolg.</p>
+            <p style="color:var(--accent-dark);line-height:1.5;font-style:italic;font-family:'Instrument Serif',serif;font-size:17px;">Durch intensive Lehrgangsbetreuung führen wir Sie sicher zum Erfolg.</p>
             <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
             <p style="font-size:13px;color:var(--muted);line-height:1.6;letter-spacing:0.04em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Module</p>
             <div class="modul-list">
@@ -1367,9 +1377,12 @@
               <div class="modul-item">Investitionsrechnung</div>
               <div class="modul-item">Finanzierung</div>
               <div class="modul-item">Controlling</div>
-              <div class="modul-item">VWL / Österreichische Schule / Wirtschaftspolitik</div>
-              <div class="modul-item">Verfassen einer Abschlussarbeit</div>
+              <div class="modul-item" style="grid-column:1 / -1;">VWL / Österreichische Schule / Wirtschaftspolitik</div>
             </div>
+            <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+            <p><strong>Prüfung:</strong> Schriftliche Abschlussklausur pro Modul.</p>
+            <p><strong>Abschluss:</strong> Verfassen einer Abschlussarbeit.</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.6;">Ungefähre Dauer: im statistischen Mittel 2 Jahre — abhängig von Ihrem Lerntempo. Weitere Details erhalten Sie auf Anfrage.</p>
             <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
             <p>Das Braunschweig-Lehrwerk / WiSo-Repetitorium wurde mehrfach ausgezeichnet. Damit ist Ihr Abschluss nicht nur intern verwertbar, sondern öffnet echte Türen auf dem Arbeitsmarkt.</p>
             <p style="font-size:13px;color:var(--muted);line-height:1.6;">Das Kölner WiSo-Repetitorium besteht seit 1948 — die Kölner Wirtschaftsprüfer-Ausbildung seit 1971. Das Lehrwerk wird laufend aktualisiert und am Puls der Zeit gehalten.</p>
@@ -1505,11 +1518,20 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-              Wie lange dauert der Lehrgang?
+              Wie lange dauert die Ausbildung zum Zertifizierten Betriebsökonom?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a"><div class="faq-a-inner">
               Da Sie in Ihrem eigenen Tempo lernen, richtet sich die Dauer nach Ihrer verfügbaren Zeit. Im statistischen Mittel beträgt die Ausbildungsdauer 2 Jahre. Jedes Modul endet mit einem Lernkontrollteil, und Teilklausuren können beliebig oft wiederholt werden. Ihr persönlicher Ausbildungsbegleiter plant den Ablauf individuell mit Ihnen. Details zur typischen Dauer erhalten Sie auf Anfrage.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Wie lange dauert die Ausbildung zum Zertifizierten Finanz-Controller?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Die Ausbildung zum Zertifizierten Finanz-Controller ist kompakter angelegt und dauert im Schnitt etwa 6 bis 9 Monate — ebenfalls abhängig von Ihrem persönlichen Lerntempo. Sie umfasst die Fächer Allgemeine BWL, Rechnungswesen, Finanzierung, Investitionsrechnung und Controlling; jedes Fachgebiet schließt mit einer schriftlichen Abschlussklausur ab. Details zum Ablauf erhalten Sie auf Anfrage.
             </div></div>
           </div>
           <div class="faq-item">
