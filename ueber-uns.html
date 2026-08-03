@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns | Kölner Wirtschaftsprüfer-Ausbildung</title>
+  <meta name="description" content="Über die Kölner Wirtschaftsprüfer-Ausbildung — Ausbildungsleiter Christoph Braunschweig, Schüler von F. A. von Hayek, und die Kooperation mit Campus Humanitas." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://bwl-kompakt.com/ueber-uns.html" />
+  <meta name="theme-color" content="#11130f" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Kölner Wirtschaftsprüfer-Ausbildung" />
+  <meta property="og:title" content="Über uns | Kölner Wirtschaftsprüfer-Ausbildung" />
+  <meta property="og:description" content="Ausbildungsleiter Christoph Braunschweig und die Kooperation mit Campus Humanitas." />
+  <meta property="og:url" content="https://bwl-kompakt.com/ueber-uns.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --ink: #11130f;
+      --ink-2: #3c3f37;
+      --muted: #7a7c72;
+      --line: #1b1d17;
+      --card: #fffdf7;
+      --accent: #c8a96e;
+      --accent-dark: #a0813e;
+      --green: #2f7d3e;
+      --chip: #efeadc;
+      --border: #d8d4c7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.7; overflow-x: hidden; max-width: 100%; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--line); color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+    }
+    /* Logo-Bereich: aktuell Text, vorbereitet für späteres Bild-Logo.
+       Zum Einsetzen des Logos: <img src="logo.svg" class="logo-img" alt="..."> als erstes Kind in .logo-block einfügen. */
+    .logo-block { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 34px; width: auto; display: block; }
+    .logo-text { display: flex; flex-direction: column; gap: 1px; }
+    .logo-main { font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400; color: #fff; line-height: 1.2; }
+    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* HAMBURGER */
+    .nav-burger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 42px; height: 42px; background: none; border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer; padding: 0 9px; flex-shrink: 0;
+    }
+    .nav-burger span { display: block; height: 2px; width: 100%; background: #fff; transition: transform 0.25s, opacity 0.25s; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 200; background: var(--ink);
+      flex-direction: column; padding: 88px 28px 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--card);
+      padding: 16px 0; border-bottom: 1px solid #2a2c25; text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu-close {
+      position: absolute; top: 22px; right: 24px; width: 44px; height: 44px;
+      background: none; border: 1.5px solid #2a2c25; color: var(--card);
+      font-size: 26px; line-height: 1; cursor: pointer;
+    }
+
+    /* HERO */
+    .page-hero {
+      border-bottom: 1.5px solid var(--line);
+      padding: 72px 0 56px; position: relative; overflow: hidden; background: var(--card);
+    }
+    .hero-wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; position: relative; }
+    .page-eyebrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Instrument Serif', serif; font-size: clamp(36px, 6vw, 64px);
+      font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 17px; color: var(--ink-2); line-height: 1.65; margin-top: 24px; max-width: 640px; }
+
+    /* SECTIONS */
+    .section { padding: 72px 0; border-bottom: 1.5px solid var(--line); }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    .section .tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 16px;
+    }
+    .section h2 {
+      font-family: 'Instrument Serif', serif; font-weight: 400;
+      font-size: clamp(28px, 4.5vw, 44px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 28px;
+    }
+    .section h2 em { font-style: italic; color: var(--accent); }
+    .section p { font-size: 16px; color: var(--ink-2); line-height: 1.75; margin-bottom: 18px; }
+    .section p strong { color: var(--ink); }
+
+    /* LEITER (Foto + Text) */
+    .leiter-grid {
+      display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start;
+    }
+    .leiter-photo {
+      width: 100%; overflow: hidden;
+      border: 1.5px solid var(--line); background: var(--chip);
+      box-shadow: 6px 6px 0 var(--line);
+    }
+    .leiter-photo img { width: 100%; height: auto; display: block; }
+    .leiter-name {
+      font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 30px;
+      line-height: 1.1; color: var(--ink); margin-top: 20px;
+    }
+    .leiter-role {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent-dark); margin-top: 8px;
+    }
+
+    /* KOOPERATION */
+    .koop { background: var(--card); }
+    .koop-box {
+      border-left: 4px solid var(--accent); padding-left: 28px;
+    }
+    .btn-primary {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; padding: 14px 30px; border: 1.5px solid var(--accent);
+      transition: background 0.2s, transform 0.2s; text-decoration: none; margin-top: 12px;
+    }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
+    .btn-note {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-top: 10px;
+    }
+
+    /* CTA */
+    .final-cta { padding: 80px 0; text-align: center; }
+    .final-cta h2 {
+      font-family: 'Instrument Serif', serif; font-weight: 400;
+      font-size: clamp(28px, 4.5vw, 44px); line-height: 1.1; margin-bottom: 16px;
+    }
+    .final-cta h2 em { font-style: italic; color: var(--accent); }
+    .final-cta p { font-size: 16px; color: var(--ink-2); max-width: 480px; margin: 0 auto 32px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--line); color: rgba(255,255,255,0.5); padding: 28px 40px;
+      font-size: 12px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 760px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .leiter-grid { grid-template-columns: 1fr; gap: 28px; }
+      .leiter-photo { max-width: 280px; }
+    }
+    @media (max-width: 560px) {
+      .hero-wrap, .wrap { padding-left: 20px; padding-right: 20px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+    }
+  </style>
+
+  <!-- Strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Über uns — Kölner Wirtschaftsprüfer-Ausbildung",
+    "url": "https://bwl-kompakt.com/ueber-uns.html",
+    "inLanguage": "de",
+    "about": {
+      "@type": "EducationalOrganization",
+      "name": "Kölner Wirtschaftsprüfer-Ausbildung",
+      "alternateName": "Kölner WiSo-Repetitorium",
+      "url": "https://bwl-kompakt.com/",
+      "employee": {
+        "@type": "Person",
+        "name": "Christoph Braunschweig",
+        "jobTitle": "Ausbildungsleiter"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-block">
+      <!-- Logo-Bild später hier einsetzen: <img src="logo.svg" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung" /> -->
+      <div class="logo-text">
+        <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+        <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#fuer-wen">Für wen?</a>
+      <a href="index.html#abschluss">Ausbildungen</a>
+      <a href="historie.html">Historie</a>
+      <a href="publikationen.html">Publikationen</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="index.html">← Startseite</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILES MENÜ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Menü schließen" onclick="toggleMobileMenu()">×</button>
+    <a href="index.html#fuer-wen">Für wen?</a>
+    <a href="index.html#abschluss">Ausbildungen</a>
+    <a href="historie.html">Historie</a>
+    <a href="publikationen.html">Publikationen</a>
+    <a href="ueber-uns.html" class="active">Über uns</a>
+    <a href="index.html">← Startseite</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-wrap">
+      <p class="page-eyebrow">Wir über uns</p>
+      <h1>Wir über <em>uns.</em></h1>
+      <p class="hero-sub">
+        Tradition, Kompetenz und ein klarer Blick nach vorn — die Menschen und die Idee
+        hinter der Kölner Wirtschaftsprüfer-Ausbildung.
+      </p>
+    </div>
+  </section>
+
+  <!-- AUSBILDUNGSLEITER -->
+  <section class="section">
+    <div class="wrap">
+      <span class="tag">Der Ausbildungsleiter</span>
+      <div class="leiter-grid">
+        <div>
+          <div class="leiter-photo">
+            <img src="bilder/christoph-braunschweig.jpg" alt="Christoph Braunschweig, Ausbildungsleiter der Kölner Wirtschaftsprüfer-Ausbildung" loading="lazy" />
+          </div>
+          <div class="leiter-name">Christoph Braunschweig</div>
+          <div class="leiter-role">Ausbildungsleiter</div>
+        </div>
+        <div>
+          <p>
+            Als ehemaliger Schüler des Wirtschaftsnobelpreisträgers Friedrich August von Hayek
+            (Universität Freiburg i.&nbsp;Br.) gehört Dipl.&nbsp;Kfm. Christoph Braunschweig heute
+            — u.&nbsp;a. durch zahlreiche eigene Veröffentlichungen — zu den Vertretern seines
+            umfassenden Werkes und der sogenannten Österreichischen Schule der Nationalökonomie.
+            Seit Mitte der 90er Jahre führt er das Institut der Kölner Wirtschaftsprüfer-Ausbildung
+            in Nachfolge seines Vaters Dr. Karl Braunschweig.
+          </p>
+          <p style="margin-top:24px;">
+            <a href="publikationen.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);text-decoration:underline;text-underline-offset:4px;">Zu den Publikationen →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KOOPERATION CAMPUS HUMANITAS -->
+  <section class="section koop">
+    <div class="wrap">
+      <span class="tag">Kooperation</span>
+      <h2>Campus <em>Humanitas.</em></h2>
+      <div class="koop-box">
+        <p>
+          Um der wachsenden Bedeutung der Quantenlehre wegweisend zu begegnen, haben sich die
+          Kölner Wirtschaftsprüfer-Ausbildung/Kölner WiSo-Repetitorium und Campus Humanitas
+          zusammengeschlossen, um ihre Kompetenzen in einem gemeinsamen Quanten-Center zu bündeln,
+          das einzigartige Synergien für die Bildung von morgen schafft.
+        </p>
+        <p>
+          Während die Kölner Wirtschaftsprüfer-Ausbildung mit dem zukunftsweisenden Lehrgang zum
+          Holistik Management schwerpunktmäßig Erwachsene ausbildet und die traditionellen
+          Denkmuster der Unternehmensführung aufbricht, fokussiert sich Campus Humanitas mit der
+          Neuro-Quantenpädagogik auf Kinder und Jugendliche.
+        </p>
+      </div>
+      <div style="margin-top:8px;">
+        <a href="#" class="btn-primary" onclick="return false;">Zur Campus Humanitas →</a>
+        <div class="btn-note">Webseite in Vorbereitung</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Werden Sie Teil dieser<br /><em>Tradition.</em></h2>
+      <p>Fordern Sie kostenlos und unverbindlich Ihre persönlichen Lehrgangsinfos an.</p>
+      <a href="index.html#fuer-wen" class="btn-primary">Zum Lehrgang →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logo-text">
+      <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
+      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+    </div>
+    <div><a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="publikationen.html">Publikationen</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      const isOpen = menu.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.getElementById('nav-burger').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->
+  <script src="cookie-consent.js" defer></script>
+
+</body>
+</html>
