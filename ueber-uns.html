@@ -7,7 +7,7 @@
   <meta name="description" content="Über die Kölner Wirtschaftsprüfer-Ausbildung — Ausbildungsleiter Prof. Christoph Braunschweig, Schüler von F. A. von Hayek, und die Kooperation mit Campus Humanitas." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://bwl-kompakt.com/ueber-uns.html" />
-  <meta name="theme-color" content="#11130f" />
+  <meta name="theme-color" content="#001848" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/bilder/favicon-16.png" />
@@ -27,16 +27,16 @@
   <style>
     :root {
       --bg: #f6f4ef;
-      --ink: #11130f;
-      --ink-2: #3c3f37;
-      --muted: #7a7c72;
-      --line: #1b1d17;
+      --ink: #001848;
+      --ink-2: #2a3a52;
+      --muted: #6b7688;
+      --line: #001848;
       --card: #fffdf7;
       --accent: #c8a96e;
       --accent-dark: #a0813e;
       --green: #2f7d3e;
       --chip: #efeadc;
-      --border: #d8d4c7;
+      --border: #d3d0cc;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
@@ -81,12 +81,12 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--card);
-      padding: 16px 0; border-bottom: 1px solid #2a2c25; text-decoration: none; transition: color 0.2s;
+      padding: 16px 0; border-bottom: 1px solid #1a2c48; text-decoration: none; transition: color 0.2s;
     }
     .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); }
     .mobile-menu-close {
       position: absolute; top: 22px; right: 24px; width: 44px; height: 44px;
-      background: none; border: 1.5px solid #2a2c25; color: var(--card);
+      background: none; border: 1.5px solid #1a2c48; color: var(--card);
       font-size: 26px; line-height: 1; cursor: pointer;
     }
 
@@ -124,7 +124,7 @@
 
     /* LEITER (Foto + Text) */
     .leiter-grid {
-      display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start;
+      display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start;
     }
     .leiter-photo {
       width: 100%; overflow: hidden;
@@ -181,6 +181,7 @@
       .nav-links { display: none; }
       .nav-burger { display: flex; }
       .leiter-grid { grid-template-columns: 1fr; gap: 28px; }
+      .leiter-grid > div:last-child { order: -1; }
       .leiter-photo { max-width: 280px; }
     }
     @media (max-width: 560px) {
@@ -263,13 +264,6 @@
       <span class="tag">Der Ausbildungsleiter</span>
       <div class="leiter-grid">
         <div>
-          <div class="leiter-photo">
-            <img src="bilder/christoph-braunschweig.jpg" alt="Prof. Christoph Braunschweig, Ausbildungsleiter der Kölner Wirtschaftsprüfer-Ausbildung" loading="lazy" />
-          </div>
-          <div class="leiter-name">Prof. Christoph Braunschweig</div>
-          <div class="leiter-role">Ausbildungsleiter</div>
-        </div>
-        <div>
           <p>
             Als ehemaliger Schüler des Wirtschaftsnobelpreisträgers Friedrich August von Hayek
             (Universität Freiburg i.&nbsp;Br.) gehört Dipl.&nbsp;Kfm. Prof. Christoph Braunschweig heute
@@ -281,6 +275,13 @@
           <p style="margin-top:24px;">
             <a href="publikationen.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);text-decoration:underline;text-underline-offset:4px;">Zu den Publikationen →</a>
           </p>
+        </div>
+        <div>
+          <div class="leiter-photo">
+            <img src="bilder/christoph-braunschweig.jpg" alt="Prof. Christoph Braunschweig, Ausbildungsleiter der Kölner Wirtschaftsprüfer-Ausbildung" loading="lazy" />
+          </div>
+          <div class="leiter-name">Prof. Christoph Braunschweig</div>
+          <div class="leiter-role">Ausbildungsleiter</div>
         </div>
       </div>
     </div>
