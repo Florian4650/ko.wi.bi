@@ -11,6 +11,10 @@
     <link rel="canonical" href="https://bwl-kompakt.com/" />
     <meta name="author" content="Kölner Wirtschaftsprüfer-Ausbildung / Kölner WiSo-Repetitorium" />
     <meta name="theme-color" content="#11130f" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/bilder/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png" />
 
     <!-- Open Graph (Vorschau beim Teilen in Social Media & Messengern) -->
     <meta property="og:type" content="website" />
@@ -80,7 +84,9 @@
         gap: 16px;
         flex-wrap: wrap;
       }
-      .logo-block { display: flex; flex-direction: column; gap: 2px; }
+      .logo-block { display: flex; flex-direction: row; align-items: center; gap: 12px; }
+      .logo-img { height: 40px; width: auto; display: block; flex-shrink: 0; }
+      .logo-text { display: flex; flex-direction: column; gap: 2px; }
       .logo-main {
         font-family: "Inter", sans-serif;
         font-size: 13px;
@@ -958,9 +964,12 @@
     <nav>
       <div class="nav-inner">
         <div class="logo-block">
-          <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
-          <div class="logo-sub">Kölner WiSo-Repetitorium</div>
-          <div class="logo-sub">seit 1948</div>
+          <img src="bilder/logo.png" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung Logo" />
+          <div class="logo-text">
+            <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+            <div class="logo-sub">Kölner WiSo-Repetitorium</div>
+            <div class="logo-sub">seit 1948</div>
+          </div>
         </div>
         <div class="nav-links">
           <a href="#fuer-wen">Für wen?</a>
