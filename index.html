@@ -352,12 +352,21 @@
         grid-template-columns: 1fr 1fr;
         gap: 48px;
         align-items: start;
-        margin-bottom: 48px;
+        margin-bottom: 44px;
       }
       .alumni-head .tag { color: var(--accent); margin-bottom: 12px; display: block; }
       .alumni-head h2 { color: var(--card); }
       .alumni-head h2 em { color: var(--accent); }
       .alumni-head p { font-size: 15px; color: var(--muted-on-ink); line-height: 1.7; margin-top: 16px; }
+      .alumni-head p.alumni-tagline {
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-size: clamp(27px, 3vw, 34px);
+        color: var(--accent);
+        line-height: 1.4;
+        margin-top: 22px;
+        letter-spacing: 0.003em;
+      }
       .alumni-logos { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--line-soft); }
       .alumni-logo {
         padding: 18px 24px;
@@ -491,6 +500,7 @@
         .roi-section, .abschluss { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
         .alumni-section { padding: 40px 28px; }
         .alumni-head { grid-template-columns: 1fr; gap: 24px; }
+        .alumni-head p.alumni-tagline { margin-top: 14px; }
         h1 { font-size: clamp(42px, 10vw, 72px); }
         .hero::before { font-size: 150px; opacity: 0.3; }
       }
@@ -951,17 +961,17 @@
         <div class="pain-grid">
           <div class="pain">
             <div class="icon">📈</div>
-            <h3>Sie treffen täglich Entscheidungen ohne solides Fundament</h3>
+            <h3>Sie treffen täglich Entscheidungen ohne solides Fundament.</h3>
             <p>Investitionen, Personalkosten, Margen — viele Führungskräfte und Unternehmer agieren aus dem Bauchgefühl heraus, weil niemand ihnen je die Grundlagen erklärt hat.</p>
           </div>
           <div class="pain">
             <div class="icon">🎓</div>
-            <h3>Ein vollständiger Hochschullehrgang kommt nicht infrage</h3>
+            <h3>Ein vollständiger Hochschullehrgang kommt nicht infrage.</h3>
             <p>4–6 Jahre neben dem Beruf? Nicht realistisch. Sie brauchen Wissen, das Sie sofort anwenden können — nicht in fünf Jahren.</p>
           </div>
           <div class="pain">
             <div class="icon">📚</div>
-            <h3>Seminare kratzen nur an der Oberfläche</h3>
+            <h3>Seminare kratzen nur an der Oberfläche.</h3>
             <p>Zwei-Tages-Workshops geben Impulse, aber kein System. Was fehlt, ist zusammenhängendes Wissen — das bleibt und sich im Alltag anwenden lässt.</p>
           </div>
         </div>
@@ -1169,7 +1179,7 @@
             <div>
               <span class="tag">Absolventenliste</span>
               <h2 style="margin-top:12px;">Unsere<br /><em style="display:block;margin-left:0.68em;">Alumni</em></h2>
-              <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:var(--accent);margin-top:16px;line-height:1.4;">– einzigartiger und unvergleichlicher Kreis.</p>
+              <p class="alumni-tagline">– einzigartiger und<br />unvergleichlicher Kreis.</p>
             </div>
             <div>
               <p>Die Presse nennt die Kölner Wirtschaftsprüfer-Ausbildung die <strong style="color:var(--card);">„Kaderschmiede der deutschen Wirtschaft“</strong> (WDR). Die Absolventenliste liest sich wie das „Who is Who“ der deutschen Industrie — Vorstandsmitglieder fast aller großen deutschen Konzerne, viele Chefs bekannter deutscher Familienunternehmen, Angehörige mehrerer europäischer und außereuropäischer Königshäuser sowie bekannte Namen wie <strong style="color:var(--accent);">Flick, Herrhausen, Lambsdorff, Rürup</strong>.</p>
