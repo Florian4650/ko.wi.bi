@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Über uns | Kölner Wirtschaftsprüfer-Ausbildung</title>
-  <meta name="description" content="Über die Kölner Wirtschaftsprüfer-Ausbildung — Ausbildungsleiter Prof. Christoph Braunschweig, Schüler von F. A. von Hayek, und die Kooperation mit Campus Humanitas." />
+  <meta name="description" content="Über die Kölner Wirtschaftsprüfer-Ausbildung: Ausbildungsleiter Prof. Christoph Braunschweig, Hayek-Schüler, und die Kooperation mit Campus Humanitas." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://bwl-kompakt.com/ueber-uns.html" />
   <meta name="theme-color" content="#001848" />
@@ -24,71 +24,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root {
-      --bg: #f6f4ef;
-      --ink: #001848;
-      --ink-2: #2a3a52;
-      --muted: #6b7688;
-      --line: #001848;
-      --card: #fffdf7;
-      --accent: #c8a96e;
-      --accent-dark: #a0813e;
-      --green: #2f7d3e;
-      --chip: #efeadc;
-      --border: #d3d0cc;
-    }
+    /* :root, Nav, Hamburger & Mobile-Menü kommen aus styles.css */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
     body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.7; overflow-x: hidden; max-width: 100%; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--line); color: #fff;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 64px;
-    }
-    /* Logo-Bereich: aktuell Text, vorbereitet für späteres Bild-Logo.
-       Zum Einsetzen des Logos: <img src="logo.svg" class="logo-img" alt="..."> als erstes Kind in .logo-block einfügen. */
-    .logo-block { display: flex; align-items: center; gap: 12px; }
-    .logo-img { height: 40px; width: auto; display: block; }
-    .logo-text { display: flex; flex-direction: column; gap: 1px; }
-    .logo-main { font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400; color: #fff; line-height: 1.2; }
-    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a {
-      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-    /* HAMBURGER */
-    .nav-burger {
-      display: none; flex-direction: column; justify-content: center; gap: 5px;
-      width: 42px; height: 42px; background: none; border: 1.5px solid rgba(255,255,255,0.3);
-      cursor: pointer; padding: 0 9px; flex-shrink: 0;
-    }
-    .nav-burger span { display: block; height: 2px; width: 100%; background: #fff; transition: transform 0.25s, opacity 0.25s; }
-    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-burger.open span:nth-child(2) { opacity: 0; }
-    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 200; background: var(--ink);
-      flex-direction: column; padding: 88px 28px 40px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--card);
-      padding: 16px 0; border-bottom: 1px solid #1a2c48; text-decoration: none; transition: color 0.2s;
-    }
-    .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); }
-    .mobile-menu-close {
-      position: absolute; top: 22px; right: 24px; width: 44px; height: 44px;
-      background: none; border: 1.5px solid #1a2c48; color: var(--card);
-      font-size: 26px; line-height: 1; cursor: pointer;
-    }
 
     /* HERO */
     .page-hero {
@@ -104,7 +45,7 @@
       font-family: 'Instrument Serif', serif; font-size: clamp(36px, 6vw, 64px);
       font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
     }
-    h1 em { font-style: italic; color: var(--accent); }
+    h1 em { font-style: italic; color: var(--accent-text); }
     .hero-sub { font-size: 17px; color: var(--ink-2); line-height: 1.65; margin-top: 24px; max-width: 640px; }
 
     /* SECTIONS */
@@ -118,7 +59,7 @@
       font-family: 'Instrument Serif', serif; font-weight: 400;
       font-size: clamp(28px, 4.5vw, 44px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 28px;
     }
-    .section h2 em { font-style: italic; color: var(--accent); }
+    .section h2 em { font-style: italic; color: var(--accent-text); }
     .section p { font-size: 16px; color: var(--ink-2); line-height: 1.75; margin-bottom: 18px; }
     .section p strong { color: var(--ink); }
 
@@ -138,7 +79,7 @@
     }
     .leiter-role {
       font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--accent-dark); margin-top: 8px;
+      text-transform: uppercase; color: var(--accent-text); margin-top: 8px;
     }
 
     /* KOOPERATION */
@@ -147,7 +88,7 @@
       border-left: 4px solid var(--accent); padding-left: 28px;
     }
     .btn-primary {
-      display: inline-block; background: var(--accent); color: #fff;
+      display: inline-block; background: var(--accent); color: var(--ink); font-weight: 700;
       font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.14em;
       text-transform: uppercase; padding: 14px 30px; border: 1.5px solid var(--accent);
       transition: background 0.2s, transform 0.2s; text-decoration: none; margin-top: 12px;
@@ -164,29 +105,18 @@
       font-family: 'Instrument Serif', serif; font-weight: 400;
       font-size: clamp(28px, 4.5vw, 44px); line-height: 1.1; margin-bottom: 16px;
     }
-    .final-cta h2 em { font-style: italic; color: var(--accent); }
+    .final-cta h2 em { font-style: italic; color: var(--accent-text); }
     .final-cta p { font-size: 16px; color: var(--ink-2); max-width: 480px; margin: 0 auto 32px; }
 
-    /* FOOTER */
-    footer {
-      background: var(--line); color: rgba(255,255,255,0.5); padding: 28px 40px;
-      font-size: 12px; display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; flex-wrap: wrap;
-    }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    /* Footer kommt aus styles.css */
 
     @media (max-width: 760px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .nav-burger { display: flex; }
       .leiter-grid { grid-template-columns: 1fr; gap: 28px; }
       .leiter-grid > div:last-child { order: -1; }
       .leiter-photo { max-width: 280px; }
     }
     @media (max-width: 560px) {
       .hero-wrap, .wrap { padding-left: 20px; padding-right: 20px; }
-      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
     }
   </style>
 
@@ -215,39 +145,42 @@
 <body>
 
   <nav>
-    <div class="logo-block">
-      <img src="bilder/logo.png" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung Logo" />
-      <div class="logo-text">
-        <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
-        <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+    <div class="nav-inner">
+      <div class="logo-block">
+        <img src="bilder/logo.png" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung Logo" />
+        <div class="logo-text">
+          <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+          <div class="logo-sub">Kölner WiSo-Repetitorium</div>
+          <div class="logo-sub">seit 1948</div>
+        </div>
       </div>
+      <div class="nav-links">
+        <a href="index.html#fuer-wen">Für wen</a>
+        <a href="index.html#abschluss">Ausbildungen</a>
+        <a href="historie.html">Historie</a>
+        <a href="publikationen.html">Publikationen</a>
+        <a href="ueber-uns.html" class="active">Über uns</a>
+        <a href="index.html#alumni">Alumni</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="nav-cta" onclick="openModal();return false;">Jetzt informieren →</a>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="nav-links">
-      <a href="index.html#fuer-wen">Für wen</a>
-      <a href="index.html#abschluss">Ausbildungen</a>
-      <a href="historie.html">Historie</a>
-      <a href="publikationen.html">Publikationen</a>
-      <a href="ueber-uns.html" class="active">Über uns</a>
-      <a href="index.html#alumni">Alumni</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html">← Startseite</a>
-    </div>
-    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- MOBILES MENÜ -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu-close" aria-label="Menü schließen" onclick="toggleMobileMenu()">×</button>
-    <a href="index.html#fuer-wen">Für wen</a>
-    <a href="index.html#abschluss">Ausbildungen</a>
+    <a href="index.html#fuer-wen" onclick="closeMobileMenu()">Für wen</a>
+    <a href="index.html#abschluss" onclick="closeMobileMenu()">Ausbildungen</a>
     <a href="historie.html">Historie</a>
     <a href="publikationen.html">Publikationen</a>
     <a href="ueber-uns.html" class="active">Über uns</a>
-    <a href="index.html#alumni">Alumni</a>
-    <a href="index.html#faq">FAQ</a>
-    <a href="index.html">← Startseite</a>
+    <a href="index.html#alumni" onclick="closeMobileMenu()">Alumni</a>
+    <a href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#" class="mm-cta" onclick="closeMobileMenu();openModal();return false;">Jetzt informieren →</a>
   </div>
 
   <!-- HERO -->
@@ -277,7 +210,7 @@
             in Nachfolge seines Vaters Dr. Karl Braunschweig.
           </p>
           <p style="margin-top:24px;">
-            <a href="publikationen.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);text-decoration:underline;text-underline-offset:4px;">Zu den Publikationen →</a>
+            <a href="publikationen.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-text);font-weight:700;text-decoration:underline;text-underline-offset:4px;">Zu den Publikationen →</a>
           </p>
         </div>
         <div>
@@ -327,14 +260,72 @@
   </section>
 
   <footer>
-    <div class="logo-text">
+    <div class="logo-block">
       <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
-      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+      <div class="logo-sub">Kölner WiSo-Repetitorium</div>
+      <div class="logo-sub">seit 1948</div>
     </div>
-    <div><a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="publikationen.html">Publikationen</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
+    <div class="copy">
+      <a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="publikationen.html">Publikationen</a> · <a href="ueber-uns.html">Über uns</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a>
+    </div>
   </footer>
 
+  <!-- Kontaktformular Modal -->
+  <div id="kontakt-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,24,72,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:var(--card);border:1px solid var(--border);box-shadow:6px 6px 0 var(--line);max-width:520px;width:100%;padding:48px 40px 40px;position:relative;max-height:90vh;overflow-y:auto;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;" aria-label="Schließen">×</button>
+
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Kostenlose Infos</p>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:8px;">Jetzt unverbindlich<br /><em style="color:var(--accent-text);font-style:italic;">anfragen.</em></h2>
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:32px;line-height:1.6;">Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
+
+      <form id="kontakt-form" onsubmit="sendForm(event)">
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Name *</label>
+          <input type="text" id="f-name" required placeholder="Vor- und Nachname"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">E-Mail *</label>
+          <input type="email" id="f-email" required placeholder="ihre@email.de"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Telefon <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <input type="tel" id="f-tel" placeholder="+43 / +49 ..."
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:28px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Nachricht <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea id="f-msg" rows="3" placeholder="Ihre Fragen oder Anmerkungen …"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;resize:vertical;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button type="submit" id="submit-btn"
+          style="width:100%;padding:16px;background:var(--accent);color:var(--ink);border:2px solid var(--accent);font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;transition:background 0.2s;">
+          Anfrage senden →
+        </button>
+        <div id="form-success" style="display:none;margin-top:20px;padding:16px;background:var(--success-bg);border:1px solid #2f7d3e;color:#2f7d3e;font-size:14px;text-align:center;">
+          ✓ Vielen Dank! Wir melden uns bald bei Ihnen.
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script>
+    function openModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const burger = document.getElementById('nav-burger');
@@ -342,13 +333,72 @@
       burger.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.getElementById('mobile-menu').classList.remove('open');
-        document.getElementById('nav-burger').classList.remove('open');
-        document.body.style.overflow = '';
-      }
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('kontakt-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
     });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeMobileMenu(); }
+    });
+    async function sendForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet …';
+
+      const data = {
+        access_key: '301c5c18-a5fb-465d-ad2b-f996eb5b132a',
+        name:     document.getElementById('f-name').value,
+        email:    document.getElementById('f-email').value,
+        telefon:  document.getElementById('f-tel').value,
+        message: document.getElementById('f-msg').value,
+        subject: 'Neue Kursanfrage – Kölner Wirtschaftsprüfer-Ausbildung',
+        from_name: 'KO·WI·BI Kontaktformular',
+        replyto: document.getElementById('f-email').value,
+        botcheck: '',
+        autoresponse_message: `Sehr geehrte Damen und Herren,
+
+vielen Dank für Ihre Anfrage bei der Kölner Wirtschaftsprüfer-Ausbildung (KO·WI·BI).
+
+Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden persönlich bei Ihnen melden.
+
+Falls Sie in der Zwischenzeit Fragen haben, können Sie uns jederzeit unter info@campushumanitas.com erreichen.
+
+Mit freundlichen Grüßen
+Ihr Team der Kölner Wirtschaftsprüfer-Ausbildung
+
+---
+Kölner WiSo-Repetitorium · seit 1948
+Wirtschaftsprüfer-Ausbildung · seit 1971
+ko-wi-bi.de`
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          document.getElementById('kontakt-form').reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Anfrage senden →';
+          alert('Es gab einen Fehler. Bitte versuchen Sie es erneut.');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Anfrage senden →';
+        alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');
+      }
+    }
   </script>
 
   <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->

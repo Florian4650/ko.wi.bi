@@ -131,6 +131,7 @@
     reopen.className = "cc-reopen";
     reopen.id = "cc-reopen";
     reopen.title = "Cookie-Einstellungen";
+    reopen.setAttribute("aria-label", "Cookie-Einstellungen");
     reopen.innerHTML = "&#9881;";
 
     document.body.appendChild(overlay);

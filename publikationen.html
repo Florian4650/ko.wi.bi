@@ -24,71 +24,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root {
-      --bg: #f6f4ef;
-      --ink: #001848;
-      --ink-2: #2a3a52;
-      --muted: #6b7688;
-      --line: #001848;
-      --card: #fffdf7;
-      --accent: #c8a96e;
-      --accent-dark: #a0813e;
-      --green: #2f7d3e;
-      --chip: #efeadc;
-      --border: #d3d0cc;
-    }
+    /* :root, Nav, Hamburger & Mobile-Menü kommen aus styles.css */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
     body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.7; overflow-x: hidden; max-width: 100%; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--line); color: #fff;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 64px;
-    }
-    /* Logo-Bereich: aktuell Text, vorbereitet für späteres Bild-Logo.
-       Zum Einsetzen des Logos: <img src="logo.svg" class="logo-img" alt="..."> als erstes Kind in .logo-block einfügen. */
-    .logo-block { display: flex; align-items: center; gap: 12px; }
-    .logo-img { height: 40px; width: auto; display: block; }
-    .logo-text { display: flex; flex-direction: column; gap: 1px; }
-    .logo-main { font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400; color: #fff; line-height: 1.2; }
-    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a {
-      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-    /* HAMBURGER */
-    .nav-burger {
-      display: none; flex-direction: column; justify-content: center; gap: 5px;
-      width: 42px; height: 42px; background: none; border: 1.5px solid rgba(255,255,255,0.3);
-      cursor: pointer; padding: 0 9px; flex-shrink: 0;
-    }
-    .nav-burger span { display: block; height: 2px; width: 100%; background: #fff; transition: transform 0.25s, opacity 0.25s; }
-    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-burger.open span:nth-child(2) { opacity: 0; }
-    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 200; background: var(--ink);
-      flex-direction: column; padding: 88px 28px 40px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--card);
-      padding: 16px 0; border-bottom: 1px solid #1a2c48; text-decoration: none; transition: color 0.2s;
-    }
-    .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); }
-    .mobile-menu-close {
-      position: absolute; top: 22px; right: 24px; width: 44px; height: 44px;
-      background: none; border: 1.5px solid #1a2c48; color: var(--card);
-      font-size: 26px; line-height: 1; cursor: pointer;
-    }
 
     /* HERO */
     .page-hero {
@@ -109,7 +50,7 @@
       font-family: 'Instrument Serif', serif; font-size: clamp(36px, 6vw, 64px);
       font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
     }
-    h1 em { font-style: italic; color: var(--accent); }
+    h1 em { font-style: italic; color: var(--accent-text); }
     .hero-sub { font-size: 17px; color: var(--ink-2); line-height: 1.65; margin-top: 24px; max-width: 640px; }
 
     /* SECTION */
@@ -123,7 +64,7 @@
       font-family: 'Instrument Serif', serif; font-weight: 400;
       font-size: clamp(26px, 4vw, 40px); line-height: 1.05; letter-spacing: -0.02em;
     }
-    .group-head h2 em { font-style: italic; color: var(--accent); }
+    .group-head h2 em { font-style: italic; color: var(--accent-text); }
     .group-head .count {
       font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--muted);
@@ -157,7 +98,7 @@
     .book-publisher {
       display: inline-block;
       font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent-dark);
+      text-transform: uppercase; color: var(--accent-text);
       background: var(--chip); border: 1px solid var(--border);
       padding: 7px 12px;
     }
@@ -170,7 +111,7 @@
       background: var(--ink); color: var(--card); padding: 32px 36px;
       border-left: 4px solid var(--accent);
     }
-    .context-note-inner p { font-size: 14.5px; color: #b8c0cc; line-height: 1.7; }
+    .context-note-inner p { font-size: 14.5px; color: var(--muted-on-ink); line-height: 1.7; }
     .context-note-inner strong { color: var(--card); }
 
     /* CTA */
@@ -180,39 +121,26 @@
       font-family: 'Instrument Serif', serif; font-size: clamp(26px, 4vw, 38px);
       font-weight: 400; line-height: 1.1; margin-bottom: 14px;
     }
-    .pub-cta-box h2 em { font-style: italic; color: var(--accent); }
+    .pub-cta-box h2 em { font-style: italic; color: var(--accent-text); }
     .pub-cta-box p { font-size: 15px; color: var(--ink-2); line-height: 1.6; margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
     .btn-primary {
-      display: inline-block; background: var(--accent); color: #fff;
+      display: inline-block; background: var(--accent); color: var(--ink); font-weight: 700;
       font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.14em;
       text-transform: uppercase; padding: 15px 36px; border: 1.5px solid var(--accent);
       transition: background 0.2s, transform 0.2s; text-decoration: none;
     }
     .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
 
-    /* FOOTER */
-    footer {
-      background: var(--line); color: rgba(255,255,255,0.5); padding: 28px 40px;
-      font-size: 12px; display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; flex-wrap: wrap;
-    }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    /* Footer kommt aus styles.css */
 
     @media (max-width: 860px) {
       .book-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    }
-    @media (max-width: 760px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .nav-burger { display: flex; }
     }
     @media (max-width: 560px) {
       .hero-wrap, .books-wrap, .context-note, .pub-cta { padding-left: 20px; padding-right: 20px; }
       .page-hero::before { font-size: 200px; }
       .book-grid { grid-template-columns: 1fr; gap: 20px; }
       .book-cover { aspect-ratio: auto; max-height: 380px; }
-      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
     }
   </style>
 
@@ -236,37 +164,42 @@
 <body>
 
   <nav>
-    <div class="logo-block">
-      <img src="bilder/logo.png" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung Logo" />
-      <div class="logo-text">
-        <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
-        <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+    <div class="nav-inner">
+      <div class="logo-block">
+        <img src="bilder/logo.png" class="logo-img" alt="Kölner Wirtschaftsprüfer-Ausbildung Logo" />
+        <div class="logo-text">
+          <div class="logo-main">Kölner Wirtschaftsprüfer-Ausbildung</div>
+          <div class="logo-sub">Kölner WiSo-Repetitorium</div>
+          <div class="logo-sub">seit 1948</div>
+        </div>
       </div>
+      <div class="nav-links">
+        <a href="index.html#fuer-wen">Für wen</a>
+        <a href="index.html#abschluss">Ausbildungen</a>
+        <a href="historie.html">Historie</a>
+        <a href="publikationen.html" class="active">Publikationen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="index.html#alumni">Alumni</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="nav-cta" onclick="openModal();return false;">Jetzt informieren →</a>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="nav-links">
-      <a href="index.html#fuer-wen">Für wen</a>
-      <a href="index.html#abschluss">Ausbildungen</a>
-      <a href="historie.html">Historie</a>
-      <a href="publikationen.html" class="active">Publikationen</a>
-      <a href="ueber-uns.html">Über uns</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html">← Startseite</a>
-    </div>
-    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- MOBILES MENÜ -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu-close" aria-label="Menü schließen" onclick="toggleMobileMenu()">×</button>
-    <a href="index.html#fuer-wen">Für wen</a>
-    <a href="index.html#abschluss">Ausbildungen</a>
+    <a href="index.html#fuer-wen" onclick="closeMobileMenu()">Für wen</a>
+    <a href="index.html#abschluss" onclick="closeMobileMenu()">Ausbildungen</a>
     <a href="historie.html">Historie</a>
     <a href="publikationen.html" class="active">Publikationen</a>
     <a href="ueber-uns.html">Über uns</a>
-    <a href="index.html#faq">FAQ</a>
-    <a href="index.html">← Startseite</a>
+    <a href="index.html#alumni" onclick="closeMobileMenu()">Alumni</a>
+    <a href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#" class="mm-cta" onclick="closeMobileMenu();openModal();return false;">Jetzt informieren →</a>
   </div>
 
   <!-- HERO -->
@@ -309,7 +242,7 @@
 
         <!-- Grundlagen der Managementlehre -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/managementlehre.png" alt="Cover: Grundlagen der Managementlehre" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/managementlehre.jpg" alt="Cover: Grundlagen der Managementlehre" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Grundlagen der Managementlehre</div>
             <div class="book-authors">Christoph Braunschweig u.a.</div>
@@ -319,7 +252,7 @@
 
         <!-- Grundlagen des Strategischen Managements -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/strategisches-management.png" alt="Cover: Grundlagen des Strategischen Managements" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/strategisches-management.jpg" alt="Cover: Grundlagen des Strategischen Managements" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Grundlagen des Strategischen Managements</div>
             <div class="book-authors">Christoph Braunschweig, Kathrin Reinhold</div>
@@ -349,7 +282,7 @@
 
         <!-- Unternehmensfinanzierung (De Gruyter) -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/unternehmensfinanzierung-degruyter.png" alt="Cover: Unternehmensfinanzierung" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/unternehmensfinanzierung-degruyter.jpg" alt="Cover: Unternehmensfinanzierung" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Unternehmensfinanzierung</div>
             <div class="book-authors">Christoph Braunschweig</div>
@@ -359,7 +292,7 @@
 
         <!-- Grundlagen der Unternehmungsfinanzierung (Springer / K.E. Braunschweig) -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/unternehmensfinanzierung-springer.png" alt="Cover: Grundlagen der Unternehmungsfinanzierung" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/unternehmensfinanzierung-springer.jpg" alt="Cover: Grundlagen der Unternehmungsfinanzierung" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Grundlagen der Unternehmungsfinanzierung</div>
             <div class="book-authors">Dr. Karl E. Braunschweig</div>
@@ -387,7 +320,7 @@
 
         <!-- Die Kreditgeldwirtschaft -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/kreditgeldwirtschaft.png" alt="Cover: Die Kreditgeldwirtschaft" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/kreditgeldwirtschaft.jpg" alt="Cover: Die Kreditgeldwirtschaft" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Die Kreditgeldwirtschaft</div>
             <div class="book-authors">Christoph Braunschweig, Bernhard Pichler — Hintergründe und Irrtümer der Geld- und Finanzwirtschaft</div>
@@ -397,7 +330,7 @@
 
         <!-- Kluge Geldanlage -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/kluge-geldanlage.png" alt="Cover: Kluge Geldanlage in der Schuldenkrise" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/kluge-geldanlage.jpg" alt="Cover: Kluge Geldanlage in der Schuldenkrise" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Kluge Geldanlage in der Schuldenkrise</div>
             <div class="book-authors">Christoph Braunschweig, Susanne Kablitz — Austrian Investing</div>
@@ -407,7 +340,7 @@
 
         <!-- Die demokratische Krankheit -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/demokratische-krankheit.png" alt="Cover: Die demokratische Krankheit" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/demokratische-krankheit.jpg" alt="Cover: Die demokratische Krankheit" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Die demokratische Krankheit</div>
             <div class="book-authors">Christoph Braunschweig — Der fatale Teufelskreis aus Politikerversprechen und Wähleranspruch</div>
@@ -417,7 +350,7 @@
 
         <!-- Wie wir unsere Zukunft verspielen -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/zukunft-verspielen.png" alt="Cover: Wie wir unsere Zukunft verspielen" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/zukunft-verspielen.jpg" alt="Cover: Wie wir unsere Zukunft verspielen" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Wie wir unsere Zukunft verspielen</div>
             <div class="book-authors">Bernhard Pichler, Christoph Braunschweig, Michael Asanger — Die fatalen Illusionen unserer Wohlfahrtsgesellschaft</div>
@@ -427,7 +360,7 @@
 
         <!-- Wohlfahrtsstaat -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/wohlfahrtsstaat.png" alt="Cover: Wohlfahrtsstaat – leb wohl!" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/wohlfahrtsstaat.jpg" alt="Cover: Wohlfahrtsstaat – leb wohl!" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Wohlfahrtsstaat – leb wohl!</div>
             <div class="book-authors">Christoph Braunschweig — Der wirtschaftliche und moralische Zerfall des Wohlfahrtsstaates</div>
@@ -437,7 +370,7 @@
 
         <!-- Das deutsche Narrenschiff -->
         <div class="book">
-          <div class="book-cover"><img src="buecher/narrenschiff.png" alt="Cover: Das deutsche Narrenschiff" loading="lazy" /></div>
+          <div class="book-cover"><img src="buecher/narrenschiff.jpg" alt="Cover: Das deutsche Narrenschiff" loading="lazy" /></div>
           <div class="book-body">
             <div class="book-title">Das deutsche Narrenschiff</div>
             <div class="book-authors">Christoph Braunschweig — Wie feige Karrieristen, selbsternannte Intellektuelle und politisch korrekte Gutmenschen unser Land ruinieren</div>
@@ -455,14 +388,72 @@
   </div>
 
   <footer>
-    <div class="logo-text">
+    <div class="logo-block">
       <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
-      <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
+      <div class="logo-sub">Kölner WiSo-Repetitorium</div>
+      <div class="logo-sub">seit 1948</div>
     </div>
-    <div><a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
+    <div class="copy">
+      <a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="publikationen.html">Publikationen</a> · <a href="ueber-uns.html">Über uns</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a>
+    </div>
   </footer>
 
+  <!-- Kontaktformular Modal -->
+  <div id="kontakt-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,24,72,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:var(--card);border:1px solid var(--border);box-shadow:6px 6px 0 var(--line);max-width:520px;width:100%;padding:48px 40px 40px;position:relative;max-height:90vh;overflow-y:auto;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;" aria-label="Schließen">×</button>
+
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Kostenlose Infos</p>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:8px;">Jetzt unverbindlich<br /><em style="color:var(--accent-text);font-style:italic;">anfragen.</em></h2>
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:32px;line-height:1.6;">Wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.</p>
+
+      <form id="kontakt-form" onsubmit="sendForm(event)">
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Name *</label>
+          <input type="text" id="f-name" required placeholder="Vor- und Nachname"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">E-Mail *</label>
+          <input type="email" id="f-email" required placeholder="ihre@email.de"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Telefon <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <input type="tel" id="f-tel" placeholder="+43 / +49 ..."
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div style="margin-bottom:28px;">
+          <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink-2);margin-bottom:6px;">Nachricht <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea id="f-msg" rows="3" placeholder="Ihre Fragen oder Anmerkungen …"
+            style="width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;resize:vertical;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button type="submit" id="submit-btn"
+          style="width:100%;padding:16px;background:var(--accent);color:var(--ink);border:2px solid var(--accent);font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;transition:background 0.2s;">
+          Anfrage senden →
+        </button>
+        <div id="form-success" style="display:none;margin-top:20px;padding:16px;background:var(--success-bg);border:1px solid #2f7d3e;color:#2f7d3e;font-size:14px;text-align:center;">
+          ✓ Vielen Dank! Wir melden uns bald bei Ihnen.
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script>
+    function openModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const m = document.getElementById('kontakt-modal');
+      m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const burger = document.getElementById('nav-burger');
@@ -470,13 +461,72 @@
       burger.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.getElementById('mobile-menu').classList.remove('open');
-        document.getElementById('nav-burger').classList.remove('open');
-        document.body.style.overflow = '';
-      }
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const burger = document.getElementById('nav-burger');
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('kontakt-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
     });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeMobileMenu(); }
+    });
+    async function sendForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet …';
+
+      const data = {
+        access_key: '301c5c18-a5fb-465d-ad2b-f996eb5b132a',
+        name:     document.getElementById('f-name').value,
+        email:    document.getElementById('f-email').value,
+        telefon:  document.getElementById('f-tel').value,
+        message: document.getElementById('f-msg').value,
+        subject: 'Neue Kursanfrage – Kölner Wirtschaftsprüfer-Ausbildung',
+        from_name: 'KO·WI·BI Kontaktformular',
+        replyto: document.getElementById('f-email').value,
+        botcheck: '',
+        autoresponse_message: `Sehr geehrte Damen und Herren,
+
+vielen Dank für Ihre Anfrage bei der Kölner Wirtschaftsprüfer-Ausbildung (KO·WI·BI).
+
+Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden persönlich bei Ihnen melden.
+
+Falls Sie in der Zwischenzeit Fragen haben, können Sie uns jederzeit unter info@campushumanitas.com erreichen.
+
+Mit freundlichen Grüßen
+Ihr Team der Kölner Wirtschaftsprüfer-Ausbildung
+
+---
+Kölner WiSo-Repetitorium · seit 1948
+Wirtschaftsprüfer-Ausbildung · seit 1971
+ko-wi-bi.de`
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          document.getElementById('kontakt-form').reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Anfrage senden →';
+          alert('Es gab einen Fehler. Bitte versuchen Sie es erneut.');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Anfrage senden →';
+        alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');
+      }
+    }
   </script>
 
   <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->

@@ -11,20 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root {
-      --bg: #f6f4ef;
-      --ink: #001848;
-      --ink-2: #2a3a52;
-      --muted: #6b7688;
-      --line: #001848;
-      --card: #fffdf7;
-      --accent: #c8a96e;
-      --accent-dark: #a0813e;
-      --green: #2f7d3e;
-      --chip: #efeadc;
-      --border: #d3d0cc;
-    }
+    /* :root-Variablen kommen aus styles.css */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.7; }
@@ -32,15 +21,15 @@
     /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: var(--line); color: #fff;
+      background: var(--card); border-bottom: 1.5px solid var(--line);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 60px;
     }
     .logo-block { display: flex; flex-direction: column; gap: 1px; }
-    .logo-main { font-family: 'Instrument Serif', serif; font-size: 14px; font-weight: 400; color: #fff; line-height: 1.2; }
-    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .nav-back { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; letter-spacing: 0.03em; }
-    .nav-back:hover { color: #fff; }
+    .logo-main { font-family: 'Instrument Serif', serif; font-size: 14px; font-weight: 400; color: var(--ink); line-height: 1.2; }
+    .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .nav-back { font-size: 13px; color: var(--accent-text); text-decoration: none; font-weight: 600; letter-spacing: 0.03em; }
+    .nav-back:hover { color: var(--ink); }
 
     /* CONTENT */
     .page-wrap { max-width: 760px; margin: 0 auto; padding: 64px 32px 96px; }
@@ -56,7 +45,7 @@
       font-weight: 400; line-height: 1.15;
       margin-bottom: 48px;
     }
-    h1 em { font-style: italic; color: var(--accent); }
+    h1 em { font-style: italic; color: var(--accent-text); }
 
     .section {
       background: var(--card);
@@ -94,12 +83,12 @@
     .section ul li::before {
       content: '→';
       position: absolute; left: 0;
-      color: var(--accent); font-size: 12px;
+      color: var(--accent-text); font-size: 12px;
       top: 3px;
     }
     .section ul li strong { color: var(--ink); }
-    .section a { color: var(--accent); }
-    .section a:hover { color: var(--accent-dark); }
+    .section a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+    .section a:hover { color: var(--ink); }
 
     .impressum-box {
       background: var(--chip);
@@ -122,14 +111,14 @@
 
     /* FOOTER */
     footer {
-      background: var(--line); color: rgba(255,255,255,0.5);
       padding: 28px 40px;
       font-size: 12px;
       display: flex; align-items: center; justify-content: space-between;
       gap: 20px; flex-wrap: wrap;
     }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    footer .copy { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.05em; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--ink); }
 
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
@@ -160,7 +149,7 @@
       <p><strong>Campus Humanitas-Innovative Bildung<sup>®</sup></strong><br />
       Vertreten durch: Mag. Sonja Maier</p>
       <p>Breinberg West 24/1<br />
-      Neumarkt am Wallersee, Salzburg, Österreich</p>
+      5202 Neumarkt am Wallersee, Salzburg, Österreich</p>
       <p><strong>E-Mail:</strong> info@bwl-kompakt.com</p>
     </div>
 
@@ -220,8 +209,8 @@
     <!-- PLUGINS -->
     <div class="section">
       <h2>Plugins und eingebettete Funktionen sowie Inhalte</h2>
-      <p>Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein, die von den Servern ihrer jeweiligen Anbieter (nachfolgend bezeichnet als „Drittanbieter") bezogen werden. Dabei kann es sich zum Beispiel um Grafiken, Videos oder Stadtpläne handeln (nachfolgend einheitlich bezeichnet als „Inhalte").</p>
-      <p>Die Einbindung setzt immer voraus, dass die Drittanbieter dieser Inhalte die IP-Adresse der Nutzer verarbeiten, da sie ohne die IP-Adresse die Inhalte nicht an deren Browser senden könnten. Die IP-Adresse ist damit für die Darstellung dieser Inhalte oder Funktionen erforderlich. Wir bemühen uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der Inhalte verwenden. Drittanbieter können ferner sogenannte Pixel-Tags (unsichtbare Grafiken, auch als „Web Beacons" bezeichnet) für statistische oder Marketingzwecke verwenden. Durch die „Pixel-Tags" können Informationen, wie der Besucherverkehr auf den Seiten dieser Webseite, ausgewertet werden. Die pseudonymen Informationen können ferner in Cookies auf dem Gerät der Nutzer gespeichert werden und unter anderem technische Informationen zum Browser und zum Betriebssystem, zu verweisenden Webseiten, zur Besuchszeit sowie weitere Angaben zur Nutzung unseres Onlineangebotes enthalten als auch mit solchen Informationen aus anderen Quellen verbunden werden.</p>
+      <p>Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein, die von den Servern ihrer jeweiligen Anbieter (nachfolgend bezeichnet als „Drittanbieter“) bezogen werden. Dabei kann es sich zum Beispiel um Grafiken, Videos oder Stadtpläne handeln (nachfolgend einheitlich bezeichnet als „Inhalte“).</p>
+      <p>Die Einbindung setzt immer voraus, dass die Drittanbieter dieser Inhalte die IP-Adresse der Nutzer verarbeiten, da sie ohne die IP-Adresse die Inhalte nicht an deren Browser senden könnten. Die IP-Adresse ist damit für die Darstellung dieser Inhalte oder Funktionen erforderlich. Wir bemühen uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der Inhalte verwenden. Drittanbieter können ferner sogenannte Pixel-Tags (unsichtbare Grafiken, auch als „Web Beacons“ bezeichnet) für statistische oder Marketingzwecke verwenden. Durch die „Pixel-Tags“ können Informationen, wie der Besucherverkehr auf den Seiten dieser Webseite, ausgewertet werden. Die pseudonymen Informationen können ferner in Cookies auf dem Gerät der Nutzer gespeichert werden und unter anderem technische Informationen zum Browser und zum Betriebssystem, zu verweisenden Webseiten, zur Besuchszeit sowie weitere Angaben zur Nutzung unseres Onlineangebotes enthalten als auch mit solchen Informationen aus anderen Quellen verbunden werden.</p>
       <ul>
         <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitangaben, Identifikationsnummern, Einwilligungsstatus).</li>
         <li><strong>Betroffene Personen:</strong> Nutzer (z.B. Webseitenbesucher, Nutzer von Onlinediensten).</li>
@@ -287,7 +276,7 @@
       <div class="logo-main" style="font-size:12px;">Kölner Wirtschaftsprüfer-Ausbildung</div>
       <div class="logo-sub">Kölner WiSo-Repetitorium · seit 1948</div>
     </div>
-    <div>© 2025 Campus Humanitas-Innovative Bildung · Mag. Sonja Maier · <a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="datenschutz.html">Datenschutz &amp; Impressum</a></div>
+    <div class="copy">© 2026 Campus Humanitas-Innovative Bildung · Mag. Sonja Maier · <a href="index.html">Startseite</a> · <a href="historie.html">Historie</a> · <a href="publikationen.html">Publikationen</a> · <a href="ueber-uns.html">Über uns</a></div>
   </footer>
 
   <!-- Cookie-Einwilligung (lädt Analytics/Ads erst nach Zustimmung) -->
