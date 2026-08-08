@@ -1661,6 +1661,13 @@ ko-wi-bi.de`
         if (res.ok) {
           document.getElementById('form-success').style.display = 'block';
           document.getElementById('kontakt-form').reset();
+          // GA4/GTM: Conversion-Event für erfolgreiche Kontaktanfrage
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'generate_lead',
+            form_id: 'kontakt-form',
+            form_name: 'Kursanfrage – Kölner Wirtschaftsprüfer-Ausbildung'
+          });
         } else {
           btn.disabled = false;
           btn.textContent = 'Anfrage senden →';
