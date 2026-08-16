@@ -565,6 +565,22 @@
         padding: 14px 28px;
         border-bottom: 1px solid var(--border);
       }
+      .faq-item.faq-new { background: var(--chip); border-left: 4px solid var(--accent); }
+      .faq-item.faq-new .faq-q { padding-left: 24px; }
+      .faq-item.faq-new .faq-a-inner { padding-left: 24px; }
+      .faq-badge-new {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: var(--ink);
+        padding: 3px 9px;
+        margin-right: 12px;
+        vertical-align: 2px;
+      }
     </style>
 
     <!-- ============================================================
@@ -702,6 +718,14 @@
           "@type": "FAQPage",
           "@id": "https://bwl-kompakt.com/#faq",
           "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Warum Quantenlehre?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die Quantenlehre (Quantentheorie/Quantenphysik/Quantenphilosophie) beschreibt die Zukunft als solche, nicht nur aus technologischer Sicht, sondern das gesamte Geschehen in Wirtschaft und Gesellschaft – was sich z. B. im Rahmen des Quantencomputers andeutet. Es geht um den Zusammenschluss von Natur- und Geisteswissenschaften im Sinne holistischen Denkens und Handelns. Ohne Kenntnis der Quantenlehre lassen sich die zukünftigen Herausforderungen nicht lösen."
+              }
+            },
             {
               "@type": "Question",
               "name": "Für wen ist der Lehrgang geeignet?",
@@ -1351,6 +1375,15 @@
         </div>
         <div class="faq-grid">
           <div class="faq-group-label">Zum Lehrgang</div>
+          <div class="faq-item faq-new">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              <span><span class="faq-badge-new">Neu</span>Warum Quantenlehre?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              Die Quantenlehre (Quantentheorie/Quantenphysik/Quantenphilosophie) beschreibt die Zukunft als solche, nicht nur aus technologischer Sicht, sondern das gesamte Geschehen in Wirtschaft und Gesellschaft – was sich z.&nbsp;B. im Rahmen des Quantencomputers andeutet. Es geht um den Zusammenschluss von Natur- und Geisteswissenschaften im Sinne holistischen Denkens und Handelns. Ohne Kenntnis der Quantenlehre lassen sich die zukünftigen Herausforderungen nicht lösen.
+            </div></div>
+          </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
               Für wen ist der Lehrgang geeignet?
