@@ -486,6 +486,39 @@
       .testi-name { font-size: 14px; font-weight: 700; color: var(--ink); }
       .testi-role { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
+      /* ── FLYER-DOWNLOAD ── */
+      .flyer-card {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        box-shadow: 8px 8px 0 var(--line);
+        padding: 56px;
+      }
+      .flyer-preview {
+        position: relative;
+        flex: 0 0 auto;
+        width: 220px;
+        height: 236px;
+      }
+      .flyer-preview img {
+        position: absolute;
+        width: 200px;
+        border: 1.5px solid var(--line);
+        box-shadow: 4px 4px 0 var(--line);
+        display: block;
+      }
+      .flyer-preview img:first-child { top: 28px; left: 20px; transform: rotate(-6deg); z-index: 1; }
+      .flyer-preview img:last-child { top: 0; left: 0; transform: rotate(4deg); z-index: 2; }
+      .flyer-text { flex: 1; min-width: 0; }
+      .flyer-meta { display: flex; gap: 10px; margin: 20px 0 30px; flex-wrap: wrap; }
+      .flyer-hint { font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.6; }
+      @media (max-width: 760px) {
+        .flyer-card { flex-direction: column; text-align: center; padding: 40px 28px; gap: 40px; }
+        .flyer-meta { justify-content: center; }
+      }
+
       /* ── FINAL CTA ── */
       .final-cta { padding: 100px 0 80px; text-align: center; border-bottom: 1.5px solid var(--line); }
       .final-cta h2 { font-size: clamp(44px, 6vw, 80px); max-width: 680px; margin: 0 auto 20px; line-height: 0.95; }
@@ -1524,6 +1557,32 @@
             <div class="faq-a"><div class="faq-a-inner">
               Die klassische BWL ist die entscheidungsorientierte BWL. Sie bezieht sich in erster Linie auf Führungsfunktionen in einem Unternehmen und unterstützt in erster Linie die Entscheidungsfindung der Unternehmensführung. Demgegenüber steht die sog. Moderne BWL, wie sie von den meisten Hochschulen gelehrt wird. Hier findet eine frühzeitige Aufsplitterung in sehr viele Unterbereiche statt. Das wird dabei fälschlicherweise als „ganzheitlich“ fehlinterpretiert. In Wahrheit werden frühere „Assistenten-Stellen“ bzw. gehobene Sachbearbeiter-Stellen auf akademisches Niveau angehoben.
             </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLYER-DOWNLOAD -->
+    <section class="section" id="flyer" aria-label="Ausbildungsflyer zum Download und Selbstausdruck">
+      <div class="wrap">
+        <div class="flyer-card">
+          <div class="flyer-preview">
+            <img src="bilder/flyer-vorschau-2.png" alt="" aria-hidden="true" loading="lazy" />
+            <img src="bilder/flyer-vorschau-1.png" alt="Vorschau: Ausbildungsflyer Kölner Wirtschaftsprüfer-Ausbildung" loading="lazy" />
+          </div>
+          <div class="flyer-text">
+            <span class="badge highlight" style="margin-bottom:16px;display:inline-block;">Zum Mitnehmen</span>
+            <h2>Unser Flyer <em>zum Ausdrucken</em></h2>
+            <p style="font-size:16px;color:var(--ink-2);line-height:1.65;max-width:520px;margin:16px 0 0;">
+              Alle Infos zu Betriebsökonom, Finanz-Controller und Quantenphilosoph kompakt auf einen Blick — ideal zum Selbstausdrucken oder Weitergeben.
+            </p>
+            <div class="flyer-meta">
+              <span class="badge">PDF</span>
+              <span class="badge">2 Seiten</span>
+              <span class="badge">DIN A4</span>
+            </div>
+            <a href="dateien/bwl-kompakt-flyer.pdf" target="_blank" rel="noopener" class="btn-primary">Flyer ansehen &amp; drucken →</a>
+            <p class="flyer-hint">Tipp: Für den klassischen Falt-Flyer beidseitig auf A4 drucken und dreifach falten.</p>
           </div>
         </div>
       </div>
